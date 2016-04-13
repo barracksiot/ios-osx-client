@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		339E66D2CC2FF869BB63E812 /* Pods_Barracks_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F0ADD4EDC4C83E187751CF /* Pods_Barracks_iOS.framework */; };
 		39090CEC1CBEA17C006FA104 /* Barracks iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CE11CBEA17C006FA104 /* Barracks iOS.framework */; };
 		39090D081CBEA1A5006FA104 /* Barracks OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CFE1CBEA1A5006FA104 /* Barracks OSX.framework */; };
 		39090D301CBEB9F9006FA104 /* Barracks.h in Headers */ = {isa = PBXBuildFile; fileRef = 39090D2C1CBEB9E3006FA104 /* Barracks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39090D321CBEBA67006FA104 /* BarracksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39090D311CBEBA67006FA104 /* BarracksClient.swift */; };
 		39090D331CBEBA77006FA104 /* BarracksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39090D311CBEBA67006FA104 /* BarracksClient.swift */; };
 		39090D341CBEBA99006FA104 /* Barracks.h in Headers */ = {isa = PBXBuildFile; fileRef = 39090D2C1CBEB9E3006FA104 /* Barracks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39090D5C1CBEC3FE006FA104 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
+		B88A80EFE0CE7F929D972A22 /* Pods_Barracks_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4712AEFE11816582794DCDD6 /* Pods_Barracks_OSX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3022A7E0F8EB5C39E2523DDA /* Pods-Barracks iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS/Pods-Barracks iOS.release.xcconfig"; sourceTree = "<group>"; };
 		39090CE11CBEA17C006FA104 /* Barracks iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Barracks iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39090CEB1CBEA17C006FA104 /* Barracks iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barracks iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39090CFE1CBEA1A5006FA104 /* Barracks OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Barracks OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +44,12 @@
 		39090D2C1CBEB9E3006FA104 /* Barracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Barracks.h; path = "Source/Supporting Files/Barracks.h"; sourceTree = "<group>"; };
 		39090D2D1CBEB9E3006FA104 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Source/Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		39090D311CBEBA67006FA104 /* BarracksClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClient.swift; path = Source/Client/BarracksClient.swift; sourceTree = "<group>"; };
+		39090D5B1CBEC3FE006FA104 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4712AEFE11816582794DCDD6 /* Pods_Barracks_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B912395ABB5F000062B401E /* Pods-Barracks OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX/Pods-Barracks OSX.release.xcconfig"; sourceTree = "<group>"; };
+		9CAE3807DE3C9E586DF8061A /* Pods-Barracks iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS/Pods-Barracks iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D4F0ADD4EDC4C83E187751CF /* Pods_Barracks_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6CD4C0B0F75D45BE7CE318 /* Pods-Barracks OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX/Pods-Barracks OSX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339E66D2CC2FF869BB63E812 /* Pods_Barracks_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B88A80EFE0CE7F929D972A22 /* Pods_Barracks_OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +91,11 @@
 		39090CD51CBEA12F006FA104 = {
 			isa = PBXGroup;
 			children = (
+				39090D5B1CBEC3FE006FA104 /* Podfile */,
 				39090D281CBEB9A0006FA104 /* Source */,
 				39090CE21CBEA17C006FA104 /* Products */,
+				ECC5D3FAD214BDDCD378D07E /* Pods */,
+				DB1D38F694F622FACCEEC431 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +144,26 @@
 			name = Client;
 			sourceTree = "<group>";
 		};
+		DB1D38F694F622FACCEEC431 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4712AEFE11816582794DCDD6 /* Pods_Barracks_OSX.framework */,
+				D4F0ADD4EDC4C83E187751CF /* Pods_Barracks_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECC5D3FAD214BDDCD378D07E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB6CD4C0B0F75D45BE7CE318 /* Pods-Barracks OSX.debug.xcconfig */,
+				7B912395ABB5F000062B401E /* Pods-Barracks OSX.release.xcconfig */,
+				9CAE3807DE3C9E586DF8061A /* Pods-Barracks iOS.debug.xcconfig */,
+				3022A7E0F8EB5C39E2523DDA /* Pods-Barracks iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -155,10 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39090CF31CBEA17C006FA104 /* Build configuration list for PBXNativeTarget "Barracks iOS" */;
 			buildPhases = (
+				EAB1CF84A8A4B68B39F8807E /* Check Pods Manifest.lock */,
 				39090CDC1CBEA17C006FA104 /* Sources */,
 				39090CDD1CBEA17C006FA104 /* Frameworks */,
 				39090CDE1CBEA17C006FA104 /* Headers */,
 				39090CDF1CBEA17C006FA104 /* Resources */,
+				E875C936FA0D94A507237BF9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,10 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39090D0F1CBEA1A5006FA104 /* Build configuration list for PBXNativeTarget "Barracks OSX" */;
 			buildPhases = (
+				E3E0F0B27FDEE4B5DFC489A4 /* Check Pods Manifest.lock */,
 				39090CF91CBEA1A5006FA104 /* Sources */,
 				39090CFA1CBEA1A5006FA104 /* Frameworks */,
 				39090CFB1CBEA1A5006FA104 /* Headers */,
 				39090CFC1CBEA1A5006FA104 /* Resources */,
+				CA2B9E7DDF0DCF4D69443F23 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39090D5C1CBEC3FE006FA104 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +336,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA2B9E7DDF0DCF4D69443F23 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Barracks OSX/Pods-Barracks OSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3E0F0B27FDEE4B5DFC489A4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E875C936FA0D94A507237BF9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Barracks iOS/Pods-Barracks iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB1CF84A8A4B68B39F8807E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39090CDC1CBEA17C006FA104 /* Sources */ = {
@@ -358,6 +461,7 @@
 		};
 		39090CF41CBEA17C006FA104 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAE3807DE3C9E586DF8061A /* Pods-Barracks iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -417,6 +521,7 @@
 		};
 		39090CF51CBEA17C006FA104 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3022A7E0F8EB5C39E2523DDA /* Pods-Barracks iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -560,6 +665,7 @@
 		};
 		39090D101CBEA1A5006FA104 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB6CD4C0B0F75D45BE7CE318 /* Pods-Barracks OSX.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -620,6 +726,7 @@
 		};
 		39090D111CBEA1A5006FA104 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B912395ABB5F000062B401E /* Pods-Barracks OSX.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -781,6 +888,7 @@
 				39090CF51CBEA17C006FA104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39090CF61CBEA17C006FA104 /* Build configuration list for PBXNativeTarget "Barracks iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -789,6 +897,7 @@
 				39090CF81CBEA17C006FA104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39090D0F1CBEA1A5006FA104 /* Build configuration list for PBXNativeTarget "Barracks OSX" */ = {
 			isa = XCConfigurationList;
@@ -797,6 +906,7 @@
 				39090D111CBEA1A5006FA104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39090D121CBEA1A5006FA104 /* Build configuration list for PBXNativeTarget "Barracks OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -805,6 +915,7 @@
 				39090D141CBEA1A5006FA104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
