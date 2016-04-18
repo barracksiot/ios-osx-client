@@ -39,12 +39,16 @@ import Alamofire
         Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
-                if(response.result.isSuccess) {
-                    print("SUCCESS")
-                } else {
-                    print("FAILURE")
+                guard response.result.isSuccess else {
+                    callback.onError()
+                    return
                 }
-                debugPrint(response)
+                guard let responseJSON = response.result.value as? [String: AnyObject] else {
+                    callback.onUpdateUnavailable()
+                    return
+                }
+                debugPrint(responseJSON)
+                callback.onUpdateAvailable()
         }
     }
 }

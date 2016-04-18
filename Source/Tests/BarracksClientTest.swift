@@ -25,7 +25,7 @@ class OSXExampleTests: XCTestCase {
     
     func testUpdateUnavailable() {
         let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
-        let callback:TestCallback = TestCallback(expectation: expectationWithDescription("callbackCaled"))
+        let callback:UpdateCheckCallback = TestCallbackUnavailable(expectation: expectationWithDescription("callbackCaled"))
         
         stub(isHost("barracks.io")) {
          _ in
@@ -34,7 +34,7 @@ class OSXExampleTests: XCTestCase {
          statusCode:204,
          headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
          )
-         }.name = "Basic Response"
+         }.name = "Unavailable Response"
         
         
         client.checkUpdate(callback)
@@ -43,14 +43,35 @@ class OSXExampleTests: XCTestCase {
             handler: {
                 error in
                 XCTAssertNil(error, "Error")
-                XCTAssert(callback.called)
             }
         )
-        XCTAssert(callback.called)
+    }
+    
+    func testUpdateAvailable() {
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:UpdateCheckCallback = TestCallbackAvailable(expectation: expectationWithDescription("callbackCaled"))
+        
+        stub(isHost("barracks.io")) {
+            _ in
+            return OHHTTPStubsResponse(
+                JSONObject: ["versionId" : "42"],
+                statusCode:200,
+                headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
+            )
+            }.name = "Available Response"
+        
+        
+        client.checkUpdate(callback)
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+            }
+        )
     }
 
-    class TestCallback:UpdateCheckCallback {
-        var called: Bool = false
+    class TestCallbackUnavailable:UpdateCheckCallback {
         let expectation:XCTestExpectation
         
         init(expectation:XCTestExpectation) {
@@ -58,15 +79,45 @@ class OSXExampleTests: XCTestCase {
         }
         
         func onUpdateAvailable() {
-            called = true
-            expectation.fulfill()
         }
         func onUpdateUnavailable(){
-            called = true
+            print("UNAVAILABLE")
             expectation.fulfill()
         }
         func onError(){
-            called = true
+        }
+    }
+    
+    class TestCallbackAvailable:UpdateCheckCallback {
+        let expectation:XCTestExpectation
+        
+        init(expectation:XCTestExpectation) {
+            self.expectation = expectation
+        }
+        
+        func onUpdateAvailable() {
+            print("AVAILABLE")
+            expectation.fulfill()
+        }
+        func onUpdateUnavailable(){
+        }
+        func onError(){
+        }
+    }
+    
+    class TestCallbackEror:UpdateCheckCallback {
+        let expectation:XCTestExpectation
+        
+        init(expectation:XCTestExpectation) {
+            self.expectation = expectation
+        }
+        
+        func onUpdateAvailable() {
+        }
+        func onUpdateUnavailable(){
+        }
+        func onError(){
+            print("ERROR")
             expectation.fulfill()
         }
     }

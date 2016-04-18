@@ -17,6 +17,7 @@
 		39090D5C1CBEC3FE006FA104 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
 		3967297C1CC57D090099D71C /* Barracks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CFE1CBEA1A5006FA104 /* Barracks.framework */; };
 		396729821CC57D110099D71C /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
+		396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3998135B1CC41E2D000AF010 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3998134C1CC41A08000AF010 /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
@@ -99,6 +100,19 @@
 			remoteInfo = "Pods-Barracks OSX Tests";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3967298F1CC5821A0099D71C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		06A13A40CB65D6B49D9451C4 /* Pods-Barracks OSX Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX Tests/Pods-Barracks OSX Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +393,7 @@
 				396729751CC57D090099D71C /* Resources */,
 				DEC390659BEF48D27A55634D /* 📦 Embed Pods Frameworks */,
 				9D5A02365FC91E6FA9F42D74 /* 📦 Copy Pods Resources */,
+				3967298F1CC5821A0099D71C /* CopyFiles */,
 			);
 			buildRules = (
 			);
