@@ -5,7 +5,7 @@
       location = "group:BarracksClient.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CliClient.xcodeproj">
+      location = "group:OSXExample/OSXExample.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

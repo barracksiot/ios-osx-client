@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		391541E51CC3FA9300C1289C /* CheckUpdate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391541E71CC3FA9300C1289C /* CheckUpdate.storyboard */; };
+		3934BFA11CC3F42600BD8770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3934BFA01CC3F42600BD8770 /* AppDelegate.swift */; };
+		3934BFA31CC3F42600BD8770 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3934BFA21CC3F42600BD8770 /* ViewController.swift */; };
+		3934BFA51CC3F42600BD8770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3934BFA41CC3F42600BD8770 /* Assets.xcassets */; };
+		3934BFB31CC3F42600BD8770 /* OSXExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3934BFB21CC3F42600BD8770 /* OSXExampleTests.swift */; };
+		3934BFBE1CC3F42600BD8770 /* OSXExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3934BFBD1CC3F42600BD8770 /* OSXExampleUITests.swift */; };
+		394DC5301CC4023F00009168 /* Barracks.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 394DC5221CC400DD00009168 /* Barracks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		394DC5661CC4074A00009168 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394DC5611CC4074300009168 /* Alamofire.framework */; };
+		394DC5671CC4074A00009168 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 394DC5611CC4074300009168 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3934BFAF1CC3F42600BD8770 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3934BF951CC3F42600BD8770 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3934BF9C1CC3F42600BD8770;
+			remoteInfo = OSXExample;
+		};
+		3934BFBA1CC3F42600BD8770 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3934BF951CC3F42600BD8770 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3934BF9C1CC3F42600BD8770;
+			remoteInfo = OSXExample;
+		};
+		394DC51D1CC400DD00009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 39090CE11CBEA17C006FA104;
+			remoteInfo = "Barracks iOS";
+		};
+		394DC51F1CC400DD00009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 39090CEB1CBEA17C006FA104;
+			remoteInfo = "Barracks iOSTests";
+		};
+		394DC5211CC400DD00009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 39090CFE1CBEA1A5006FA104;
+			remoteInfo = "Barracks OSX";
+		};
+		394DC5231CC400DD00009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 39090D071CBEA1A5006FA104;
+			remoteInfo = "Barracks OSXTests";
+		};
+		394DC5251CC400E500009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 39090CFD1CBEA1A5006FA104;
+			remoteInfo = "Barracks OSX";
+		};
+		394DC55E1CC4074300009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5571CC4074300009168 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77E8C611A5D0D109B922B6C0B5BE8BE8;
+			remoteInfo = "Alamofire-iOS";
+		};
+		394DC5601CC4074300009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5571CC4074300009168 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B24C24FA56B6D7CC780E7FD54745838B;
+			remoteInfo = "Alamofire-OSX";
+		};
+		394DC5621CC4074300009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5571CC4074300009168 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 591C14A6964E3EC0CB2004FD0A925CD6;
+			remoteInfo = "Pods-Barracks iOS";
+		};
+		394DC5641CC4074300009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5571CC4074300009168 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8EF2FBFBFA0F01244CC28E2865A83BEC;
+			remoteInfo = "Pods-Barracks OSX";
+		};
+		394DC5681CC4074A00009168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 394DC5571CC4074300009168 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A46F3686C46DC9D9C11D7DE4BDDBB54;
+			remoteInfo = "Alamofire-OSX";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		394DC52F1CC4022C00009168 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				394DC5301CC4023F00009168 /* Barracks.framework in Copy Frameworks */,
+				394DC5671CC4074A00009168 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		391541E61CC3FA9300C1289C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CheckUpdate.storyboard; sourceTree = "<group>"; };
+		391541E91CC3FA9D00C1289C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CheckUpdate.strings; sourceTree = "<group>"; };
+		391541EB1CC3FA9E00C1289C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/CheckUpdate.strings; sourceTree = "<group>"; };
+		3934BF9D1CC3F42600BD8770 /* OSXExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSXExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3934BFA01CC3F42600BD8770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3934BFA21CC3F42600BD8770 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3934BFA41CC3F42600BD8770 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3934BFA91CC3F42600BD8770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3934BFAE1CC3F42600BD8770 /* OSXExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3934BFB21CC3F42600BD8770 /* OSXExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSXExampleTests.swift; sourceTree = "<group>"; };
+		3934BFB41CC3F42600BD8770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3934BFB91CC3F42600BD8770 /* OSXExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3934BFBD1CC3F42600BD8770 /* OSXExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSXExampleUITests.swift; sourceTree = "<group>"; };
+		3934BFBF1CC3F42600BD8770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BarracksClient.xcodeproj; path = ../BarracksClient.xcodeproj; sourceTree = "<group>"; };
+		394DC5571CC4074300009168 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3934BF9A1CC3F42600BD8770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				394DC5661CC4074A00009168 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3934BFAB1CC3F42600BD8770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3934BFB61CC3F42600BD8770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3934BF941CC3F42600BD8770 = {
+			isa = PBXGroup;
+			children = (
+				394DC5571CC4074300009168 /* Pods.xcodeproj */,
+				394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */,
+				3934BF9F1CC3F42600BD8770 /* OSXExample */,
+				3934BFB11CC3F42600BD8770 /* OSXExampleTests */,
+				3934BFBC1CC3F42600BD8770 /* OSXExampleUITests */,
+				3934BF9E1CC3F42600BD8770 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3934BF9E1CC3F42600BD8770 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3934BF9D1CC3F42600BD8770 /* OSXExample.app */,
+				3934BFAE1CC3F42600BD8770 /* OSXExampleTests.xctest */,
+				3934BFB91CC3F42600BD8770 /* OSXExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3934BF9F1CC3F42600BD8770 /* OSXExample */ = {
+			isa = PBXGroup;
+			children = (
+				391541E71CC3FA9300C1289C /* CheckUpdate.storyboard */,
+				3934BFA21CC3F42600BD8770 /* ViewController.swift */,
+				3934BFA01CC3F42600BD8770 /* AppDelegate.swift */,
+				3934BFA41CC3F42600BD8770 /* Assets.xcassets */,
+				3934BFA91CC3F42600BD8770 /* Info.plist */,
+			);
+			path = OSXExample;
+			sourceTree = "<group>";
+		};
+		3934BFB11CC3F42600BD8770 /* OSXExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				3934BFB21CC3F42600BD8770 /* OSXExampleTests.swift */,
+				3934BFB41CC3F42600BD8770 /* Info.plist */,
+			);
+			path = OSXExampleTests;
+			sourceTree = "<group>";
+		};
+		3934BFBC1CC3F42600BD8770 /* OSXExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3934BFBD1CC3F42600BD8770 /* OSXExampleUITests.swift */,
+				3934BFBF1CC3F42600BD8770 /* Info.plist */,
+			);
+			path = OSXExampleUITests;
+			sourceTree = "<group>";
+		};
+		394DC5171CC400DD00009168 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				394DC51E1CC400DD00009168 /* Barracks.framework */,
+				394DC5201CC400DD00009168 /* Barracks iOSTests.xctest */,
+				394DC5221CC400DD00009168 /* Barracks.framework */,
+				394DC5241CC400DD00009168 /* Barracks OSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		394DC5581CC4074300009168 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				394DC55F1CC4074300009168 /* Alamofire.framework */,
+				394DC5611CC4074300009168 /* Alamofire.framework */,
+				394DC5631CC4074300009168 /* Pods_Barracks_iOS.framework */,
+				394DC5651CC4074300009168 /* Pods_Barracks_OSX.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3934BF9C1CC3F42600BD8770 /* OSXExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3934BFC21CC3F42600BD8770 /* Build configuration list for PBXNativeTarget "OSXExample" */;
+			buildPhases = (
+				394DC52F1CC4022C00009168 /* Copy Frameworks */,
+				3934BF991CC3F42600BD8770 /* Sources */,
+				3934BF9A1CC3F42600BD8770 /* Frameworks */,
+				3934BF9B1CC3F42600BD8770 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				394DC5261CC400E500009168 /* PBXTargetDependency */,
+				394DC5691CC4074A00009168 /* PBXTargetDependency */,
+			);
+			name = OSXExample;
+			productName = OSXExample;
+			productReference = 3934BF9D1CC3F42600BD8770 /* OSXExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3934BFAD1CC3F42600BD8770 /* OSXExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3934BFC51CC3F42600BD8770 /* Build configuration list for PBXNativeTarget "OSXExampleTests" */;
+			buildPhases = (
+				3934BFAA1CC3F42600BD8770 /* Sources */,
+				3934BFAB1CC3F42600BD8770 /* Frameworks */,
+				3934BFAC1CC3F42600BD8770 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3934BFB01CC3F42600BD8770 /* PBXTargetDependency */,
+			);
+			name = OSXExampleTests;
+			productName = OSXExampleTests;
+			productReference = 3934BFAE1CC3F42600BD8770 /* OSXExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3934BFB81CC3F42600BD8770 /* OSXExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3934BFC81CC3F42600BD8770 /* Build configuration list for PBXNativeTarget "OSXExampleUITests" */;
+			buildPhases = (
+				3934BFB51CC3F42600BD8770 /* Sources */,
+				3934BFB61CC3F42600BD8770 /* Frameworks */,
+				3934BFB71CC3F42600BD8770 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3934BFBB1CC3F42600BD8770 /* PBXTargetDependency */,
+			);
+			name = OSXExampleUITests;
+			productName = OSXExampleUITests;
+			productReference = 3934BFB91CC3F42600BD8770 /* OSXExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3934BF951CC3F42600BD8770 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Barracks;
+				TargetAttributes = {
+					3934BF9C1CC3F42600BD8770 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3934BFAD1CC3F42600BD8770 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3934BF9C1CC3F42600BD8770;
+					};
+					3934BFB81CC3F42600BD8770 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3934BF9C1CC3F42600BD8770;
+					};
+				};
+			};
+			buildConfigurationList = 3934BF981CC3F42600BD8770 /* Build configuration list for PBXProject "OSXExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = 3934BF941CC3F42600BD8770;
+			productRefGroup = 3934BF9E1CC3F42600BD8770 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 394DC5171CC400DD00009168 /* Products */;
+					ProjectRef = 394DC5161CC400DD00009168 /* BarracksClient.xcodeproj */;
+				},
+				{
+					ProductGroup = 394DC5581CC4074300009168 /* Products */;
+					ProjectRef = 394DC5571CC4074300009168 /* Pods.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3934BF9C1CC3F42600BD8770 /* OSXExample */,
+				3934BFAD1CC3F42600BD8770 /* OSXExampleTests */,
+				3934BFB81CC3F42600BD8770 /* OSXExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		394DC51E1CC400DD00009168 /* Barracks.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Barracks.framework;
+			remoteRef = 394DC51D1CC400DD00009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC5201CC400DD00009168 /* Barracks iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Barracks iOSTests.xctest";
+			remoteRef = 394DC51F1CC400DD00009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC5221CC400DD00009168 /* Barracks.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Barracks.framework;
+			remoteRef = 394DC5211CC400DD00009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC5241CC400DD00009168 /* Barracks OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Barracks OSXTests.xctest";
+			remoteRef = 394DC5231CC400DD00009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC55F1CC4074300009168 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 394DC55E1CC4074300009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC5611CC4074300009168 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 394DC5601CC4074300009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC5631CC4074300009168 /* Pods_Barracks_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Barracks_iOS.framework;
+			remoteRef = 394DC5621CC4074300009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394DC5651CC4074300009168 /* Pods_Barracks_OSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Barracks_OSX.framework;
+			remoteRef = 394DC5641CC4074300009168 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3934BF9B1CC3F42600BD8770 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3934BFA51CC3F42600BD8770 /* Assets.xcassets in Resources */,
+				391541E51CC3FA9300C1289C /* CheckUpdate.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3934BFAC1CC3F42600BD8770 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3934BFB71CC3F42600BD8770 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3934BF991CC3F42600BD8770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3934BFA31CC3F42600BD8770 /* ViewController.swift in Sources */,
+				3934BFA11CC3F42600BD8770 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3934BFAA1CC3F42600BD8770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3934BFB31CC3F42600BD8770 /* OSXExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3934BFB51CC3F42600BD8770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3934BFBE1CC3F42600BD8770 /* OSXExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3934BFB01CC3F42600BD8770 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3934BF9C1CC3F42600BD8770 /* OSXExample */;
+			targetProxy = 3934BFAF1CC3F42600BD8770 /* PBXContainerItemProxy */;
+		};
+		3934BFBB1CC3F42600BD8770 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3934BF9C1CC3F42600BD8770 /* OSXExample */;
+			targetProxy = 3934BFBA1CC3F42600BD8770 /* PBXContainerItemProxy */;
+		};
+		394DC5261CC400E500009168 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Barracks OSX";
+			targetProxy = 394DC5251CC400E500009168 /* PBXContainerItemProxy */;
+		};
+		394DC5691CC4074A00009168 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire-OSX";
+			targetProxy = 394DC5681CC4074A00009168 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		391541E71CC3FA9300C1289C /* CheckUpdate.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				391541E61CC3FA9300C1289C /* Base */,
+				391541E91CC3FA9D00C1289C /* en */,
+				391541EB1CC3FA9E00C1289C /* fr */,
+			);
+			name = CheckUpdate.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3934BFC01CC3F42600BD8770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3934BFC11CC3F42600BD8770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3934BFC31CC3F42600BD8770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = OSXExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.barracks.OSXExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3934BFC41CC3F42600BD8770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = OSXExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.barracks.OSXExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3934BFC61CC3F42600BD8770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.barracks.OSXExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSXExample.app/Contents/MacOS/OSXExample";
+			};
+			name = Debug;
+		};
+		3934BFC71CC3F42600BD8770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.barracks.OSXExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSXExample.app/Contents/MacOS/OSXExample";
+			};
+			name = Release;
+		};
+		3934BFC91CC3F42600BD8770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.barracks.OSXExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OSXExample;
+			};
+			name = Debug;
+		};
+		3934BFCA1CC3F42600BD8770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.barracks.OSXExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OSXExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3934BF981CC3F42600BD8770 /* Build configuration list for PBXProject "OSXExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3934BFC01CC3F42600BD8770 /* Debug */,
+				3934BFC11CC3F42600BD8770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3934BFC21CC3F42600BD8770 /* Build configuration list for PBXNativeTarget "OSXExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3934BFC31CC3F42600BD8770 /* Debug */,
+				3934BFC41CC3F42600BD8770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3934BFC51CC3F42600BD8770 /* Build configuration list for PBXNativeTarget "OSXExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3934BFC61CC3F42600BD8770 /* Debug */,
+				3934BFC71CC3F42600BD8770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3934BFC81CC3F42600BD8770 /* Build configuration list for PBXNativeTarget "OSXExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3934BFC91CC3F42600BD8770 /* Debug */,
+				3934BFCA1CC3F42600BD8770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3934BF951CC3F42600BD8770 /* Project object */;
+}

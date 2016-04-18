@@ -15,3 +15,36 @@
  */
 
 import Foundation
+import Alamofire
+
+@objc public class BarracksClient : NSObject {
+    let apiKey:String
+    let baseUrl:String
+    
+    
+    public init(apiKey:String, baseUrl:String) {
+        self.apiKey = apiKey
+        self.baseUrl = baseUrl
+    }
+    
+    convenience public init(apiKey:String) {
+        self.init(apiKey: apiKey, baseUrl: "https://barracks.io/device/update/check")
+    }
+    
+    public func checkUpdate(callback:UpdateCheckCallback) {
+        let parameters = [
+            "unitId": "deadbeef",
+            "versionId": "v0.1"
+        ]
+        Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                if(response.result.isSuccess) {
+                    print("SUCCESS")
+                } else {
+                    print("FAILURE")
+                }
+                debugPrint(response)
+        }
+    }
+}

@@ -14,14 +14,7 @@
  *    limitations under the License.
  */
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
-//! Project version number for Barracks iOS.
-FOUNDATION_EXPORT double Barracks_iOSVersionNumber;
-
-//! Project version string for Barracks iOS.
-FOUNDATION_EXPORT const unsigned char Barracks_iOSVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Barracks_iOS/PublicHeader.h>
-
-
+FOUNDATION_EXPORT double BarracksVersionNumber;
+FOUNDATION_EXPORT const unsigned char BarracksVersionString[];
