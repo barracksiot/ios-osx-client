@@ -57,7 +57,12 @@ class OSXExampleTests: XCTestCase {
         stub(isHost("barracks.io")) {
             _ in
             return OHHTTPStubsResponse(
-                JSONObject: ["versionId" : "42"],
+                JSONObject: [
+                    "versionId" : "42",
+                    "url" : "someUrl",
+                    "hash" : "someHash",
+                    "size" : 0
+                ],
                 statusCode:200,
                 headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
             )
@@ -101,7 +106,7 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateAvailable(_:[String: AnyObject]?) {
+        func onUpdateAvailable(_:UpdateCheckResponse) {
         }
         func onUpdateUnavailable(){
             print("UNAVAILABLE")
@@ -118,7 +123,7 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateAvailable(_:[String: AnyObject]?) {
+        func onUpdateAvailable(_:UpdateCheckResponse) {
             print("AVAILABLE")
             expectation.fulfill()
         }
@@ -135,7 +140,7 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateAvailable(_:[String: AnyObject]?) {
+        func onUpdateAvailable(_:UpdateCheckResponse) {
         }
         func onUpdateUnavailable(){
         }

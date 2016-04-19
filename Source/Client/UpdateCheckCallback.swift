@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol UpdateCheckCallback: class {
-    func onUpdateAvailable(json:[String: AnyObject]?)
+    func onUpdateAvailable(update: UpdateCheckResponse)
     func onUpdateUnavailable()
-    func onError(error:NSError?)
+    func onError(error: NSError?)
 }

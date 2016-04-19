@@ -18,6 +18,8 @@
 		3967297C1CC57D090099D71C /* Barracks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CFE1CBEA1A5006FA104 /* Barracks.framework */; };
 		396729821CC57D110099D71C /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
 		396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3998135B1CC41E2D000AF010 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		396729951CC68DFA0099D71C /* UpdateCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */; };
+		396729961CC691D40099D71C /* UpdateCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */; };
 		3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3998134C1CC41A08000AF010 /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
@@ -129,6 +131,7 @@
 		396729771CC57D090099D71C /* Barracks OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barracks OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		396729791CC57D090099D71C /* Barracks_OSX_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barracks_OSX_Tests.swift; sourceTree = "<group>"; };
 		3967297B1CC57D090099D71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckResponse.swift; path = Source/Client/UpdateCheckResponse.swift; sourceTree = "<group>"; };
 		3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckCallback.swift; path = Source/Client/UpdateCheckCallback.swift; sourceTree = "<group>"; };
 		3998134A1CC41927000AF010 /* BarracksClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClientTest.swift; path = Source/Tests/BarracksClientTest.swift; sourceTree = "<group>"; };
 		399813511CC41E2D000AF010 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 			children = (
 				39090D311CBEBA67006FA104 /* BarracksClient.swift */,
 				3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */,
+				396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -708,6 +712,7 @@
 			files = (
 				3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */,
 				39090D321CBEBA67006FA104 /* BarracksClient.swift in Sources */,
+				396729951CC68DFA0099D71C /* UpdateCheckResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396729961CC691D40099D71C /* UpdateCheckResponse.swift in Sources */,
 				3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */,
 				39090D331CBEBA77006FA104 /* BarracksClient.swift in Sources */,
 			);
