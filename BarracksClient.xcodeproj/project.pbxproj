@@ -27,9 +27,9 @@
 		396729B41CC6DECD0099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
 		396729B51CC6DF470099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
 		396729B61CC6DF530099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
+		396729B71CC6F1DB0099D71C /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
 		3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
-		3998134C1CC41A08000AF010 /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
 		39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A1891CC578CF004E8725 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A18A1CC578CF004E8725 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
@@ -776,7 +776,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3998134C1CC41A08000AF010 /* BarracksClientTest.swift in Sources */,
+				396729B71CC6F1DB0099D71C /* BarracksClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
