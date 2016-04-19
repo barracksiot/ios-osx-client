@@ -35,17 +35,18 @@ import Alamofire
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 guard response.result.isSuccess else {
-                    callback.onError(response.result.error)
+                    callback.onError?(response.result.error)
                     return
                 }
-                
+
                 guard let responseJSON = response.result.value as? [String: AnyObject],
                     let versionId:String = responseJSON["versionId"] as? String,
-                    let url:String = responseJSON["packageInfo"]?["url"] as? String,
-                    let hash:String = responseJSON["packageInfo"]?["hash"] as? String,
-                    let size:NSNumber = responseJSON["packageInfo"]?["size"] as? NSNumber
+                    let package = responseJSON["packageInfo"] as? [String: AnyObject],
+                    let url:String = package["url"] as? String,
+                    let hash:String = package["md5"] as? String,
+                    let size:NSNumber = package["size"] as? NSNumber
                     else {
-                        callback.onUpdateUnavailable()
+                        callback.onUpdateUnavailable?()
                         return
                 }
                 
@@ -53,13 +54,12 @@ import Alamofire
                     versionId: versionId,
                     packageInfo:PackageInfo(
                         url: url,
-                        hash: hash,
+                        md5: hash,
                         size: size.unsignedLongLongValue
                     ),
                     properties: responseJSON["properties"] as? [String:AnyObject?]
                 )
-                debugPrint(updateCheckResponse)
-                callback.onUpdateAvailable(updateCheckResponse)
+                callback.onUpdateAvailable?(updateCheckResponse)
         }
     }
 }

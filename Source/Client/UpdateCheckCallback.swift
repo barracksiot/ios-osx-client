@@ -16,8 +16,8 @@
 
 import Foundation
 
-public protocol UpdateCheckCallback: class {
-    func onUpdateAvailable(update: UpdateCheckResponse)
-    func onUpdateUnavailable()
-    func onError(error: NSError?)
+@objc public protocol UpdateCheckCallback: class {
+    optional func onUpdateAvailable(update: UpdateCheckResponse)
+    optional func onUpdateUnavailable()
+    optional func onError(error: NSError?)
 }

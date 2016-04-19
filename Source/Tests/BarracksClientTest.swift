@@ -65,18 +65,8 @@ class OSXExampleTests: XCTestCase {
         
         stub(isHost("barracks.io")) {
             _ in
-            return OHHTTPStubsResponse(
-                JSONObject: [
-                    "versionId" : "42",
-                    "packageInfo" : [
-                        "url" : "someUrl",
-                        "hash" : "someHash",
-                        "size" : 0
-                    ]
-                ],
-                statusCode:200,
-                headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
-            )
+            let stubPath = OHPathForFile("update_check_response_success.json", self.dynamicType)
+            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/json"])
             }.name = "Available Response"
         
         let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
@@ -122,13 +112,13 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateUnavailable(){
+        @objc func onUpdateUnavailable(){
             expectation.fulfill()
         }
-        func onUpdateAvailable(update: UpdateCheckResponse) {
+        @objc func onUpdateAvailable(update: UpdateCheckResponse) {
             expectation.fulfill()
         }
-        func onError(_:NSError?){
+        @objc func onError(_:NSError?){
             expectation.fulfill()
         }
     }

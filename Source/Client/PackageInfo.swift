@@ -14,8 +14,14 @@
  *    limitations under the License.
  */
 
-public struct PackageInfo {
+@objc public class PackageInfo : NSObject {
     let url: String
-    let hash: String
+    let md5: String
     let size: UInt64
+    
+    init(url:String, md5:String, size:UInt64) {
+        self.url = url
+        self.md5 = md5
+        self.size = size
+    }
 }

@@ -24,6 +24,9 @@
 		396729991CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */; };
 		3967299B1CC6CA6B0099D71C /* PackageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967299A1CC6CA6B0099D71C /* PackageInfo.swift */; };
 		3967299C1CC6CA6B0099D71C /* PackageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967299A1CC6CA6B0099D71C /* PackageInfo.swift */; };
+		396729B41CC6DECD0099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
+		396729B51CC6DF470099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
+		396729B61CC6DF530099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
 		3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		3998134C1CC41A08000AF010 /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
@@ -55,6 +58,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 39090CFD1CBEA1A5006FA104;
 			remoteInfo = "Barracks OSX";
+		};
+		396729AF1CC6DE730099D71C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BA8D074269666E05752CA9AAD7D3FEED;
+			remoteInfo = Barracks;
+		};
+		396729B11CC6DE730099D71C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD90AC301E1F943BB53157E71281B2AD;
+			remoteInfo = "Pods-OSXExample";
 		};
 		399813581CC41E2D000AF010 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -138,6 +155,7 @@
 		396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckResponse.swift; path = Source/Client/UpdateCheckResponse.swift; sourceTree = "<group>"; };
 		396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckRequest.swift; path = Source/Client/UpdateCheckRequest.swift; sourceTree = "<group>"; };
 		3967299A1CC6CA6B0099D71C /* PackageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageInfo.swift; path = Source/Client/PackageInfo.swift; sourceTree = "<group>"; };
+		396729B31CC6DECD0099D71C /* update_check_response_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = update_check_response_success.json; path = Source/Tests/Stubs/update_check_response_success.json; sourceTree = "<group>"; };
 		3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckCallback.swift; path = Source/Client/UpdateCheckCallback.swift; sourceTree = "<group>"; };
 		3998134A1CC41927000AF010 /* BarracksClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClientTest.swift; path = Source/Tests/BarracksClientTest.swift; sourceTree = "<group>"; };
 		399813511CC41E2D000AF010 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -241,6 +259,7 @@
 		39090D2A1CBEB9C2006FA104 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				396729A41CC6DE730099D71C /* Stubs */,
 				3998134A1CC41927000AF010 /* BarracksClientTest.swift */,
 			);
 			name = Tests;
@@ -267,17 +286,27 @@
 			path = "Barracks OSX Tests";
 			sourceTree = "<group>";
 		};
+		396729A41CC6DE730099D71C /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				396729B31CC6DECD0099D71C /* update_check_response_success.json */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
 		399813521CC41E2D000AF010 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				399813591CC41E2D000AF010 /* Alamofire.framework */,
 				3998135B1CC41E2D000AF010 /* Alamofire.framework */,
+				396729B01CC6DE730099D71C /* Barracks.framework */,
 				399813781CC55A0F000AF010 /* OHHTTPStubs.framework */,
 				3998137A1CC55A0F000AF010 /* OHHTTPStubs.framework */,
 				3998135D1CC41E2D000AF010 /* Pods_Barracks_iOS.framework */,
 				3959EBC21CC571100084FA72 /* Pods_Barracks_iOS_Barracks_iOSTests.framework */,
 				3998135F1CC41E2D000AF010 /* Pods_Barracks_OSX.framework */,
 				39E743641CC57EB00026B854 /* Pods_Barracks_OSX_Tests.framework */,
+				396729B21CC6DE730099D71C /* Pods_OSXExample.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,6 +503,20 @@
 			remoteRef = 3959EBC11CC571100084FA72 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		396729B01CC6DE730099D71C /* Barracks.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Barracks.framework;
+			remoteRef = 396729AF1CC6DE730099D71C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		396729B21CC6DE730099D71C /* Pods_OSXExample.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_OSXExample.framework;
+			remoteRef = 396729B11CC6DE730099D71C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		399813591CC41E2D000AF010 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -530,6 +573,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396729B41CC6DECD0099D71C /* update_check_response_success.json in Resources */,
 				39090D5C1CBEC3FE006FA104 /* Podfile in Resources */,
 				39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */,
 			);
@@ -539,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396729B61CC6DF530099D71C /* update_check_response_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +600,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396729B51CC6DF470099D71C /* update_check_response_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,8 +14,14 @@
  *    limitations under the License.
  */
 
-public struct UpdateCheckResponse {
-    let versionId: String
-    let packageInfo: PackageInfo
-    let properties: [String: AnyObject?]?
+@objc public class UpdateCheckResponse : NSObject {
+    public let versionId: String
+    public let packageInfo: PackageInfo
+    public let properties: [String: AnyObject?]?
+    
+    public init(versionId:String, packageInfo:PackageInfo, properties: [String: AnyObject?]?) {
+        self.versionId = versionId
+        self.packageInfo = packageInfo
+        self.properties = properties
+    }
 }
