@@ -13,13 +13,13 @@ class ViewController: NSViewController {
     var client: BarracksClient!
     
     class MyCallback : UpdateCheckCallback {
-        func onUpdateAvailable() {
+        func onUpdateAvailable(_:UpdateCheckResponse) {
             print("Available")
         }
         func onUpdateUnavailable(){
             print("Unavailable")
         }
-        func onError(){
+        func onError(_:NSError?){
             print("Error")
         }
     }
