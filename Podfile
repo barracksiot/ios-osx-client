@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
+workspace 'BarracksClient.xcworkspace'
 use_frameworks!
 
 def sharedPods
@@ -27,3 +28,8 @@ target 'Barracks OSX' do
     end
 end
 
+target 'OSXExample' do
+    platform :osx, '10.9'
+    project 'OSXExample/OSXExample.xcodeproj'
+    pod 'Barracks', :path => './'
+end
