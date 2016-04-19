@@ -16,6 +16,9 @@ class OSXExampleTests: XCTestCase {
     override func setUp() {
         super.setUp()
         OHHTTPStubs.setEnabled(true)
+        OHHTTPStubs.onStubActivation() { request, stub, response in
+            print("\(request.URL!) stubbed by \(stub.name).")
+        }
     }
     
     override func tearDown() {
@@ -28,13 +31,13 @@ class OSXExampleTests: XCTestCase {
         let callback:UpdateCheckCallback = TestCallbackUnavailable(expectation: expectationWithDescription("callbackCaled"))
         
         stub(isHost("barracks.io")) {
-         _ in
-         return OHHTTPStubsResponse(
-         data: NSData(),
-         statusCode:204,
-         headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
-         )
-         }.name = "Unavailable Response"
+            _ in
+            return OHHTTPStubsResponse(
+                data: NSData(),
+                statusCode:204,
+                headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
+            )
+            }.name = "Unavailable Response"
         
         
         client.checkUpdate(callback)
@@ -70,7 +73,27 @@ class OSXExampleTests: XCTestCase {
             }
         )
     }
-
+    
+    func testUpdateError() {
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:UpdateCheckCallback = TestCallbackEror(expectation: expectationWithDescription("callbackCaled"))
+        
+        stub(isHost("barracks.io")) {
+            _ in
+            let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.CFURLErrorNotConnectedToInternet.rawValue), userInfo:nil)
+            return OHHTTPStubsResponse(error:notConnectedError)
+            }.name = "Error Response"
+        
+        client.checkUpdate(callback)
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+            }
+        )
+    }
+    
     class TestCallbackUnavailable:UpdateCheckCallback {
         let expectation:XCTestExpectation
         
@@ -78,13 +101,13 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateAvailable() {
+        func onUpdateAvailable(_:[String: AnyObject]?) {
         }
         func onUpdateUnavailable(){
             print("UNAVAILABLE")
             expectation.fulfill()
         }
-        func onError(){
+        func onError(_:NSError?){
         }
     }
     
@@ -95,13 +118,13 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateAvailable() {
+        func onUpdateAvailable(_:[String: AnyObject]?) {
             print("AVAILABLE")
             expectation.fulfill()
         }
         func onUpdateUnavailable(){
         }
-        func onError(){
+        func onError(_:NSError?){
         }
     }
     
@@ -112,11 +135,11 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onUpdateAvailable() {
+        func onUpdateAvailable(_:[String: AnyObject]?) {
         }
         func onUpdateUnavailable(){
         }
-        func onError(){
+        func onError(_:NSError?){
             print("ERROR")
             expectation.fulfill()
         }

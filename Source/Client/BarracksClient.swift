@@ -21,14 +21,9 @@ import Alamofire
     let apiKey:String
     let baseUrl:String
     
-    
-    public init(apiKey:String, baseUrl:String) {
+    public init(apiKey:String, baseUrl:String = "https://barracks.io/device/update/check") {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
-    }
-    
-    convenience public init(apiKey:String) {
-        self.init(apiKey: apiKey, baseUrl: "https://barracks.io/device/update/check")
     }
     
     public func checkUpdate(callback:UpdateCheckCallback) {
@@ -40,7 +35,7 @@ import Alamofire
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 guard response.result.isSuccess else {
-                    callback.onError()
+                    callback.onError(response.result.error)
                     return
                 }
                 guard let responseJSON = response.result.value as? [String: AnyObject] else {
@@ -48,7 +43,7 @@ import Alamofire
                     return
                 }
                 debugPrint(responseJSON)
-                callback.onUpdateAvailable()
+                callback.onUpdateAvailable(responseJSON)
         }
     }
 }

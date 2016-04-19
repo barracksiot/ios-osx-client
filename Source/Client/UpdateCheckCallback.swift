@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol UpdateCheckCallback{
-    func onUpdateAvailable()
+public protocol UpdateCheckCallback: class {
+    func onUpdateAvailable(json:[String: AnyObject]?)
     func onUpdateUnavailable()
-    func onError()
+    func onError(error:NSError?)
 }
