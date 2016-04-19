@@ -25,10 +25,11 @@ import Alamofire
         self.baseUrl = baseUrl
     }
     
-    public func checkUpdate(callback:UpdateCheckCallback) {
-        let parameters = [
-            "unitId": "deadbeef",
-            "versionId": "v0.1"
+    public func checkUpdate(request:UpdateCheckRequest, callback:UpdateCheckCallback) {
+        let parameters:[String:AnyObject] = [
+            "unitId": request.unitId,
+            "versionId": request.versionId,
+            "properties": request.properties
         ]
         Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)

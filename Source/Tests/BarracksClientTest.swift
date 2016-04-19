@@ -46,8 +46,9 @@ class OSXExampleTests: XCTestCase {
             )
             }.name = "Unavailable Response"
         
+        let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
         
-        client.checkUpdate(callback)
+        client.checkUpdate(request, callback:callback)
         waitForExpectationsWithTimeout(
             5,
             handler: {
@@ -75,8 +76,9 @@ class OSXExampleTests: XCTestCase {
             )
             }.name = "Available Response"
         
+        let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
         
-        client.checkUpdate(callback)
+        client.checkUpdate(request, callback: callback)
         waitForExpectationsWithTimeout(
             5,
             handler: {
@@ -96,7 +98,8 @@ class OSXExampleTests: XCTestCase {
             return OHHTTPStubsResponse(error:notConnectedError)
             }.name = "Error Response"
         
-        client.checkUpdate(callback)
+        let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
+        client.checkUpdate(request, callback: callback)
         waitForExpectationsWithTimeout(
             5,
             handler: {

@@ -34,16 +34,11 @@ class ViewController: NSViewController {
         btnCheck.action = #selector(ViewController.checkUpdate(_:))
         client = BarracksClient(apiKey: "deadbeef", baseUrl: "http://integration-01.barracks.io/device/update/check")
     }
-    
-    override var representedObject: AnyObject? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-    
+
     func checkUpdate(obj: AnyObject) {
         print("Checkin update...")
-        client.checkUpdate(MyCallback())
+        let request = UpdateCheckRequest(unitId: "deadbeef", versionId: "v0.1")
+        client.checkUpdate(request, callback:MyCallback())
     }
 }
 
