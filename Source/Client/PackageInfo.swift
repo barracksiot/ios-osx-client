@@ -14,8 +14,8 @@
  *    limitations under the License.
  */
 
-public struct UpdateCheckResponse {
-    let versionId: String
-    let packageInfo: PackageInfo
-    let properties: [String: AnyObject?]?
+public struct PackageInfo {
+    let url: String
+    let hash: String
+    let size: UInt64
 }

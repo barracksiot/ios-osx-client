@@ -41,9 +41,9 @@ import Alamofire
                 
                 guard let responseJSON = response.result.value as? [String: AnyObject],
                     let versionId:String = responseJSON["versionId"] as? String,
-                    let url:String = responseJSON["url"] as? String,
-                    let hash:String = responseJSON["hash"] as? String,
-                    let size:NSNumber = responseJSON["size"] as? NSNumber
+                    let url:String = responseJSON["packageInfo"]?["url"] as? String,
+                    let hash:String = responseJSON["packageInfo"]?["hash"] as? String,
+                    let size:NSNumber = responseJSON["packageInfo"]?["size"] as? NSNumber
                     else {
                         callback.onUpdateUnavailable()
                         return
@@ -51,9 +51,11 @@ import Alamofire
                 
                 let updateCheckResponse = UpdateCheckResponse(
                     versionId: versionId,
-                    url: url,
-                    hash: hash,
-                    size: size.unsignedLongLongValue,
+                    packageInfo:PackageInfo(
+                        url: url,
+                        hash: hash,
+                        size: size.unsignedLongLongValue
+                    ),
                     properties: responseJSON["properties"] as? [String:AnyObject?]
                 )
                 debugPrint(updateCheckResponse)

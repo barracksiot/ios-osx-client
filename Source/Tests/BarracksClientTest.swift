@@ -68,9 +68,11 @@ class OSXExampleTests: XCTestCase {
             return OHHTTPStubsResponse(
                 JSONObject: [
                     "versionId" : "42",
-                    "url" : "someUrl",
-                    "hash" : "someHash",
-                    "size" : 0
+                    "packageInfo" : [
+                        "url" : "someUrl",
+                        "hash" : "someHash",
+                        "size" : 0
+                    ]
                 ],
                 statusCode:200,
                 headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
