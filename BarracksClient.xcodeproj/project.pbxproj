@@ -33,6 +33,8 @@
 		39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A1891CC578CF004E8725 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A18A1CC578CF004E8725 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
+		39CDF8DE1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */; };
+		39CDF8DF1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */; };
 		44E1527661C9139BEC5C0CC4 /* Pods_Barracks_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A7853FC89D27C0FC4412F1 /* Pods_Barracks_OSX_Tests.framework */; };
 		6D4E160529EC9525FBF2AF6B /* Pods_Barracks_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D739830A62509CDB713375DF /* Pods_Barracks_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -160,6 +162,7 @@
 		3998134A1CC41927000AF010 /* BarracksClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClientTest.swift; path = Source/Tests/BarracksClientTest.swift; sourceTree = "<group>"; };
 		399813511CC41E2D000AF010 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Barracks.podspec; sourceTree = "<group>"; };
+		39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageDownloadCallback.swift; path = Source/Client/PackageDownloadCallback.swift; sourceTree = "<group>"; };
 		40E8B52DD845ABFD049D9510 /* Pods-Barracks iOS-Barracks iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS-Barracks iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS-Barracks iOSTests/Pods-Barracks iOS-Barracks iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		584B6060F023C897B61DF466 /* Pods-Barracks OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX/Pods-Barracks OSX.release.xcconfig"; sourceTree = "<group>"; };
 		79A7853FC89D27C0FC4412F1 /* Pods_Barracks_OSX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_OSX_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +276,7 @@
 				396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */,
 				396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */,
 				3967299A1CC6CA6B0099D71C /* PackageInfo.swift */,
+				39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -765,6 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */,
+				39CDF8DE1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */,
 				3967299B1CC6CA6B0099D71C /* PackageInfo.swift in Sources */,
 				396729981CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */,
 				39090D321CBEBA67006FA104 /* BarracksClient.swift in Sources */,
@@ -785,6 +790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				396729961CC691D40099D71C /* UpdateCheckResponse.swift in Sources */,
+				39CDF8DF1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */,
 				3967299C1CC6CA6B0099D71C /* PackageInfo.swift in Sources */,
 				396729991CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */,
 				3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */,

@@ -35,7 +35,7 @@ class OSXExampleTests: XCTestCase {
     
     func testUpdateUnavailable() {
         let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
-        let callback:ExpectedCallback = TestCallbackUnavailable(expectation: expectationWithDescription("callbackCaled"))
+        let callback:ExpectedUpdateCallback = TestCallbackUnavailable(expectation: expectationWithDescription("testUpdateUnavailable"))
         
         stub(isHost("barracks.io")) {
             _ in
@@ -61,7 +61,7 @@ class OSXExampleTests: XCTestCase {
     
     func testUpdateAvailable() {
         let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
-        let callback:ExpectedCallback = TestCallbackAvailable(expectation: expectationWithDescription("callbackCaled"))
+        let callback:ExpectedUpdateCallback = TestCallbackAvailable(expectation: expectationWithDescription("testUpdateAvailable"))
         
         stub(isHost("barracks.io")) {
             _ in
@@ -84,7 +84,7 @@ class OSXExampleTests: XCTestCase {
     
     func testUpdateError() {
         let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
-        let callback:ExpectedCallback = TestCallbackEror(expectation: expectationWithDescription("callbackCaled"))
+        let callback:ExpectedUpdateCallback = TestCallbackError(expectation: expectationWithDescription("testUpdateError"))
         
         stub(isHost("barracks.io")) {
             _ in
@@ -104,7 +104,45 @@ class OSXExampleTests: XCTestCase {
         )
     }
     
-    class ExpectedCallback: UpdateCheckCallback {
+    func testDownloadProgress() {
+        let response = UpdateCheckResponse(
+            versionId:"v0.2",
+            packageInfo:PackageInfo(url:"http://www.learncoredata.com/wp-content/uploads/2015/09/fileToDisk.jpg", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            properties:nil
+        )
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadProgress(expectation: expectationWithDescription("testDownloadProgress"))
+        client.downloadPackage(response, callback: callback)
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+                XCTAssert(callback.success)
+            }
+        )
+    }
+    
+    func testDownloadSuccess() {
+        let response = UpdateCheckResponse(
+            versionId:"v0.2",
+            packageInfo:PackageInfo(url:"http://www.learncoredata.com/wp-content/uploads/2015/09/fileToDisk.jpg", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            properties:nil
+        )
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSuccess"))
+        client.downloadPackage(response, callback: callback)
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+                XCTAssert(callback.success)
+            }
+        )
+    }
+    
+    class ExpectedUpdateCallback: UpdateCheckCallback {
         let expectation:XCTestExpectation
         var success = false
         
@@ -124,24 +162,61 @@ class OSXExampleTests: XCTestCase {
     }
     
     
-    class TestCallbackUnavailable:ExpectedCallback {
+    class TestCallbackUnavailable:ExpectedUpdateCallback {
         override func onUpdateUnavailable(){
             success = true
             super.onUpdateUnavailable()
         }
     }
     
-    class TestCallbackAvailable:ExpectedCallback {
+    class TestCallbackAvailable:ExpectedUpdateCallback {
         override func onUpdateAvailable(r:UpdateCheckResponse) {
             success = true
             super.onUpdateAvailable(r)
         }
     }
     
-    class TestCallbackEror:ExpectedCallback {
+    class TestCallbackError:ExpectedUpdateCallback {
         override func onError(e:NSError?){
             success = true
             super.onError(e)
+        }
+    }
+    
+    class ExpectedDownloadCallback:PackageDownloadCallback {
+        let expectation:XCTestExpectation
+        var success = false
+        
+        init(expectation:XCTestExpectation) {
+            self.expectation = expectation
+        }
+        
+        @objc func onProgress(response:UpdateCheckResponse, progress:UInt){
+        }
+        @objc func onSuccess(response:UpdateCheckResponse, path:String) {
+        }
+        @objc func onError(response:UpdateCheckResponse, error: NSError?){
+            expectation.fulfill()
+        }
+    }
+    
+    class TestDownloadProgress:ExpectedDownloadCallback {
+        override func onProgress(response: UpdateCheckResponse, progress: UInt) {
+            if(progress >= 0 && progress < 100) {
+                print(progress)
+            } else {
+                if(progress == 100) {
+                    success = true
+                }
+                expectation.fulfill()
+            }
+        }
+    }
+    
+    class TestDownloadSuccess:ExpectedDownloadCallback {
+        override func onSuccess(response: UpdateCheckResponse, path: String) {
+            success = true
+            expectation.fulfill()
         }
     }
     
