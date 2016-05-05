@@ -14,8 +14,6 @@
  *    limitations under the License.
  */
 
-import Foundation
-
 @objc public protocol UpdateCheckCallback: class {
     optional func onUpdateAvailable(update: UpdateCheckResponse)
     optional func onUpdateUnavailable()

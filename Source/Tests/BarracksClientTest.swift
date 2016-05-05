@@ -105,9 +105,15 @@ class OSXExampleTests: XCTestCase {
     }
     
     func testDownloadProgress() {
+        stub(isHost("barracks.io")) {
+            _ in
+            let stubPath = OHPathForFile("firmware.jpg", self.dynamicType)
+            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/octet-stream"])
+            }.name = "Firmware response"
+        
         let response = UpdateCheckResponse(
             versionId:"v0.2",
-            packageInfo:PackageInfo(url:"http://www.learncoredata.com/wp-content/uploads/2015/09/fileToDisk.jpg", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
             properties:nil
         )
         let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
@@ -124,14 +130,108 @@ class OSXExampleTests: XCTestCase {
     }
     
     func testDownloadSuccess() {
+        stub(isHost("barracks.io")) {
+            _ in
+            let stubPath = OHPathForFile("firmware.jpg", self.dynamicType)
+            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/octet-stream"])
+            }.name = "Firmware response"
+        
         let response = UpdateCheckResponse(
             versionId:"v0.2",
-            packageInfo:PackageInfo(url:"http://www.learncoredata.com/wp-content/uploads/2015/09/fileToDisk.jpg", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
             properties:nil
         )
         let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSuccess"))
         client.downloadPackage(response, callback: callback)
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+                XCTAssert(callback.success)
+            }
+        )
+        
+    }
+    
+    func testDownloadSpecificLocation() {
+        stub(isHost("barracks.io")) {
+            _ in
+            let stubPath = OHPathForFile("firmware.jpg", self.dynamicType)
+            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/octet-stream"])
+            }.name = "Firmware response"
+        
+        let response = UpdateCheckResponse(
+            versionId:"v0.2",
+            packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            properties:nil
+        )
+        
+        let manager = NSFileManager.defaultManager()
+        let destination = manager
+            .URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+            .URLByAppendingPathComponent("BarracksTests", isDirectory:true)
+            .URLByAppendingPathComponent("firmware.bin")
+        
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSpecificLocation"))
+        
+        client.downloadPackage(response, callback: callback, destination:destination.path)
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+                XCTAssert(callback.success)
+            }
+        )
+    }
+    
+    func testDownloadFileExists() {
+        stub(isHost("barracks.io")) {
+            _ in
+            let stubPath = OHPathForFile("firmware.jpg", self.dynamicType)
+            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/octet-stream"])
+            }.name = "Firmware response"
+        
+        let response = UpdateCheckResponse(
+            versionId:"v0.2",
+            packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            properties:nil
+        )
+        
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadSpecificLocation"))
+        
+        client.downloadPackage(response, callback: callback, destination:"/private")
+        waitForExpectationsWithTimeout(
+            5,
+            handler: {
+                error in
+                XCTAssertNil(error, "Error")
+                XCTAssert(callback.success)
+            }
+        )
+    }
+    
+    func testDownloadDirectoryFailure() {
+        stub(isHost("barracks.io")) {
+            _ in
+            let stubPath = OHPathForFile("firmware.jpg", self.dynamicType)
+            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/octet-stream"])
+            }.name = "Firmware response"
+        
+        let response = UpdateCheckResponse(
+            versionId:"v0.2",
+            packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+            properties:nil
+        )
+        
+        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadSpecificLocation"))
+        
+        client.downloadPackage(response, callback: callback, destination:"/private/directory/subdirectory/destination.bin")
         waitForExpectationsWithTimeout(
             5,
             handler: {
@@ -215,6 +315,13 @@ class OSXExampleTests: XCTestCase {
     
     class TestDownloadSuccess:ExpectedDownloadCallback {
         override func onSuccess(response: UpdateCheckResponse, path: String) {
+            success = true
+            expectation.fulfill()
+        }
+    }
+    
+    class TestDownloadError:ExpectedDownloadCallback {
+        override func onError(response:UpdateCheckResponse, error: NSError?) {
             success = true
             expectation.fulfill()
         }

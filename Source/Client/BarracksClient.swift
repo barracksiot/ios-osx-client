@@ -14,8 +14,6 @@
  *    limitations under the License.
  */
 
-import Alamofire
-
 @objc public class BarracksClient : NSObject {
     let apiKey:String
     let baseUrl:String
@@ -25,78 +23,4 @@ import Alamofire
         self.baseUrl = baseUrl
     }
     
-    public func checkUpdate(request:UpdateCheckRequest, callback:UpdateCheckCallback) {
-        let parameters:[String:AnyObject] = [
-            "unitId": request.unitId,
-            "versionId": request.versionId,
-            "properties": request.properties
-        ]
-        Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                guard response.result.isSuccess else {
-                    callback.onError?(response.result.error)
-                    return
-                }
-                
-                guard let responseJSON = response.result.value as? [String: AnyObject],
-                    let versionId:String = responseJSON["versionId"] as? String,
-                    let package = responseJSON["packageInfo"] as? [String: AnyObject],
-                    let url:String = package["url"] as? String,
-                    let hash:String = package["md5"] as? String,
-                    let size:NSNumber = package["size"] as? NSNumber
-                    else {
-                        callback.onUpdateUnavailable?()
-                        return
-                }
-                
-                let updateCheckResponse = UpdateCheckResponse(
-                    versionId: versionId,
-                    packageInfo:PackageInfo(
-                        url: url,
-                        md5: hash,
-                        size: size.unsignedLongLongValue
-                    ),
-                    properties: responseJSON["properties"] as? [String:AnyObject?]
-                )
-                callback.onUpdateAvailable?(updateCheckResponse)
-        }
-    }
-    
-    public func downloadPackage(response:UpdateCheckResponse, callback:PackageDownloadCallback) {
-        var localPath: NSURL?
-        Alamofire
-            .download(
-                .GET,
-                response.packageInfo.url,
-                destination:{
-                    (temporaryURL, response) in
-                    let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-                    let pathComponent = response.suggestedFilename
-                    localPath = directoryURL.URLByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier ?? "Barracks", isDirectory:true).URLByAppendingPathComponent(pathComponent!)
-
-                    do {
-                        try NSFileManager.defaultManager().removeItemAtURL(localPath!)
-                    } catch {}
-                    print("Saving file to \(localPath)")
-                    return localPath!
-                }
-            )
-            .validate(statusCode: 200..<300)
-            .progress {
-                (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-                callback.onProgress?(response, progress:UInt(100 * totalBytesRead / totalBytesExpectedToRead))
-                return
-            }
-            .response {
-                (request, httpResponse, data, error) in
-                if (error != nil) {
-                    callback.onError?(response, error:error)
-                    return
-                }
-                print(httpResponse)
-                print("Downloaded file to \(localPath!)")
-                callback.onSuccess?(response, path:localPath!.absoluteString)
-        };
-    }
 }
