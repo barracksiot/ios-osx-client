@@ -250,36 +250,36 @@ class OSXExampleTests: XCTestCase {
             self.expectation = expectation
         }
         
-        @objc func onUpdateUnavailable(){
+        @objc func onUpdateUnavailable(request:UpdateCheckRequest){
             expectation.fulfill()
         }
-        @objc func onUpdateAvailable(update: UpdateCheckResponse) {
+        @objc func onUpdateAvailable(request:UpdateCheckRequest, update: UpdateCheckResponse) {
             expectation.fulfill()
         }
-        @objc func onError(_:NSError?){
+        @objc func onError(request:UpdateCheckRequest, error:NSError?){
             expectation.fulfill()
         }
     }
     
     
     class TestCallbackUnavailable:ExpectedUpdateCallback {
-        override func onUpdateUnavailable(){
+        override func onUpdateUnavailable(request:UpdateCheckRequest){
             success = true
-            super.onUpdateUnavailable()
+            super.onUpdateUnavailable(request)
         }
     }
     
     class TestCallbackAvailable:ExpectedUpdateCallback {
-        override func onUpdateAvailable(r:UpdateCheckResponse) {
+        override func onUpdateAvailable(request:UpdateCheckRequest, update:UpdateCheckResponse) {
             success = true
-            super.onUpdateAvailable(r)
+            super.onUpdateAvailable(request, update:update)
         }
     }
     
     class TestCallbackError:ExpectedUpdateCallback {
-        override func onError(e:NSError?){
+        override func onError(request:UpdateCheckRequest, error:NSError?){
             success = true
-            super.onError(e)
+            super.onError(request, error: error)
         }
     }
     
