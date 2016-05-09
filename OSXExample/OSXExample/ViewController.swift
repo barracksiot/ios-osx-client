@@ -21,19 +21,19 @@ class ViewController: NSViewController {
     var client: BarracksClient!
     
     class MyCallback : UpdateCheckCallback {
-        @objc func onUpdateAvailable(response:UpdateCheckResponse) {
+        @objc func onUpdateAvailable(request:UpdateCheckRequest, update:UpdateCheckResponse) {
             print("Available ")
-            debugPrint(response)
+            debugPrint(update)
             let center = NSUserNotificationCenter.defaultUserNotificationCenter()
             let notification = NSUserNotification()
             notification.title = "Update available"
-            notification.subtitle = "Version \(response.versionId)"
+            notification.subtitle = "Version \(update.versionId)"
             center.deliverNotification(notification)
         }
-        @objc func onUpdateUnavailable(){
+        @objc func onUpdateUnavailable(request:UpdateCheckRequest){
             print("Unavailable")
         }
-        @objc func onError(_:NSError?){
+        @objc func onError(request:UpdateCheckRequest, error:NSError?){
             print("Error")
         }
     }
@@ -48,7 +48,7 @@ class ViewController: NSViewController {
         btnCheck.action = #selector(ViewController.checkUpdate(_:))
         client = BarracksClient("deadbeef", baseUrl: "http://integration-01.barracks.io/device/update/check")
     }
-
+    
     func checkUpdate(obj: AnyObject) {
         print("Checkin update...")
         let request = UpdateCheckRequest(unitId: "deadbeef", versionId: version.stringValue)
