@@ -14,10 +14,16 @@
  *    limitations under the License.
  */
 
+/**
+ This class is a container for the package informations useful for downloading and checking the udpate package.
+ */
 @objc public class PackageInfo : NSObject {
-    let url: String
-    let md5: String
-    let size: UInt64
+    /// The url at which the file is available
+    public let url: String
+    /// The MD5 hash which will be used to verify the file integrity
+    public let md5: String
+    /// The expected size of the file
+    public let size: UInt64
     
     init(url:String, md5:String, size:UInt64) {
         self.url = url

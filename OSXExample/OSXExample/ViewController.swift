@@ -46,7 +46,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         btnCheck.target = self
         btnCheck.action = #selector(ViewController.checkUpdate(_:))
-        client = BarracksClient(apiKey: "deadbeef", baseUrl: "http://integration-01.barracks.io/device/update/check")
+        client = BarracksClient("deadbeef", baseUrl: "http://integration-01.barracks.io/device/update/check")
     }
 
     func checkUpdate(obj: AnyObject) {

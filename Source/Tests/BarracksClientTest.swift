@@ -34,7 +34,7 @@ class OSXExampleTests: XCTestCase {
     }
     
     func testUpdateUnavailable() {
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedUpdateCallback = TestCallbackUnavailable(expectation: expectationWithDescription("testUpdateUnavailable"))
         
         stub(isHost("barracks.io")) {
@@ -60,7 +60,7 @@ class OSXExampleTests: XCTestCase {
     }
     
     func testUpdateAvailable() {
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedUpdateCallback = TestCallbackAvailable(expectation: expectationWithDescription("testUpdateAvailable"))
         
         stub(isHost("barracks.io")) {
@@ -83,7 +83,7 @@ class OSXExampleTests: XCTestCase {
     }
     
     func testUpdateError() {
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedUpdateCallback = TestCallbackError(expectation: expectationWithDescription("testUpdateError"))
         
         stub(isHost("barracks.io")) {
@@ -116,7 +116,7 @@ class OSXExampleTests: XCTestCase {
             packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
             properties:nil
         )
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadProgress(expectation: expectationWithDescription("testDownloadProgress"))
         client.downloadPackage(response, callback: callback)
         waitForExpectationsWithTimeout(
@@ -141,7 +141,7 @@ class OSXExampleTests: XCTestCase {
             packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
             properties:nil
         )
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSuccess"))
         client.downloadPackage(response, callback: callback)
         waitForExpectationsWithTimeout(
@@ -174,7 +174,7 @@ class OSXExampleTests: XCTestCase {
             .URLByAppendingPathComponent("BarracksTests", isDirectory:true)
             .URLByAppendingPathComponent("firmware.bin")
         
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSpecificLocation"))
         
         client.downloadPackage(response, callback: callback, destination:destination.path)
@@ -201,7 +201,7 @@ class OSXExampleTests: XCTestCase {
             properties:nil
         )
         
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadSpecificLocation"))
         
         client.downloadPackage(response, callback: callback, destination:"/private")
@@ -228,7 +228,7 @@ class OSXExampleTests: XCTestCase {
             properties:nil
         )
         
-        let client:BarracksClient = BarracksClient(apiKey: "deadbeef")
+        let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadSpecificLocation"))
         
         client.downloadPackage(response, callback: callback, destination:"/private/directory/subdirectory/destination.bin")

@@ -18,6 +18,13 @@ import Alamofire
 
 extension BarracksClient {
     
+    /**
+     This method is used to download an update package from the Barracks service.
+     
+     - parameter response:      The `UpdateCheckResponse` retrieved using `BarracksClient.checkUpdate(_:callback:)`
+     - parameter callback:      The `PackageDownloadCallback` which will be called during the process
+     - parameter destination:   The optional destination for the update package on the filesystem
+     */
     public func downloadPackage(response:UpdateCheckResponse, callback:PackageDownloadCallback, destination:String? = nil) {
         var localPath: NSURL?
         Alamofire

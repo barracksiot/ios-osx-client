@@ -14,11 +14,24 @@
  *    limitations under the License.
  */
 
-public struct UpdateCheckRequest {
-    let unitId:String
-    let versionId:String
-    let properties:[String: AnyObject]
+/**
+ This class is used when performing a request for an update using `BarracksClient.checkUpdate(_:callback:)`
+ */
+@objc public class UpdateCheckRequest : NSObject {
+    /// The unique identifier for the unit being used
+    public let unitId:String
+    /// The version identifier of the current package used by the unit
+    public let versionId:String
+    /// User defined properties which will be sent to the Barracks service
+    public let properties:[String: AnyObject]
     
+    /**
+     Creates a request which can be sent to the Barracks service.
+     
+     - parameter unitId:        The unique identifier for the unit being used
+     - parameter versionId:     The version identifier of the current package used by the unit
+     - parameter properties:    User defined properties which will be sent to the Barracks service
+     */
     public init(unitId:String, versionId:String, properties:[String: AnyObject]=[String:AnyObject]()) {
         self.unitId = unitId
         self.versionId = versionId

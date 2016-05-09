@@ -14,11 +14,24 @@
  *    limitations under the License.
  */
 
+/**
+ The main entry point for using Barracks' SDK.
+ This class provides methods to help you getting information about the available updates
+ for a specific configuration.
+ */
 @objc public class BarracksClient : NSObject {
-    let apiKey:String
-    let baseUrl:String
+    /// Your account's API key
+    public let apiKey:String
+    /// The base URL for contacting the Barracks service
+    public let baseUrl:String
     
-    public init(apiKey:String, baseUrl:String = "https://barracks.io/device/update/check") {
+    /**
+     Create a client using the parameters provided by the Barracks platform.
+     
+     - parameter apiKey:    Your account's API key
+     - parameter baseUrl:   The base URL for Barracks, if you have set one up
+     */
+    public init(_ apiKey:String, baseUrl:String = "https://barracks.io/device/update/check") {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
     }

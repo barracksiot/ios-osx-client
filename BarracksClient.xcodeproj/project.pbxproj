@@ -847,6 +847,7 @@
 		39090CDA1CBEA12F006FA104 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
@@ -855,6 +856,7 @@
 		39090CDB1CBEA12F006FA104 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEFINES_MODULE = YES;
 			};
 			name = Release;
 		};

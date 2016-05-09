@@ -18,6 +18,12 @@ import Alamofire
 
 extension BarracksClient {
     
+    /**
+     This method is used to check wether an update is available on the Barracks service.
+     
+     - parameter request:   The `UpdateCheckRequest` used to perform the check
+     - parameter callback:  The `UpdateCheckCallback` called during the process
+     */
     public func checkUpdate(request:UpdateCheckRequest, callback:UpdateCheckCallback) {
         let parameters:[String:AnyObject] = [
             "unitId": request.unitId,
@@ -28,7 +34,7 @@ extension BarracksClient {
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 guard response.result.isSuccess else {
-                    callback.onError?(response.result.error)
+                    callback.onError?(request, error:response.result.error)
                     return
                 }
                 
@@ -39,7 +45,7 @@ extension BarracksClient {
                     let hash:String = package["md5"] as? String,
                     let size:NSNumber = package["size"] as? NSNumber
                     else {
-                        callback.onUpdateUnavailable?()
+                        callback.onUpdateUnavailable?(request)
                         return
                 }
                 
@@ -52,7 +58,7 @@ extension BarracksClient {
                     ),
                     properties: responseJSON["properties"] as? [String:AnyObject?]
                 )
-                callback.onUpdateAvailable?(updateCheckResponse)
+                callback.onUpdateAvailable?(request, update:updateCheckResponse)
         }
     }
 }

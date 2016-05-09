@@ -14,12 +14,20 @@
  *    limitations under the License.
  */
 
+/**
+ This class is a container for a response provided by the Barracks service.
+ The instance of this class is retrieved in the `UpdateCheckCallback.onUpdateAvailable(update:)` when the call to `BarracksClient.checkUpdate(_:callback:)` is successful.
+ You can then use it to download the update package using `BarracksClient.downloadPackage(response:, callback:, destination:)`.
+ */
 @objc public class UpdateCheckResponse : NSObject {
+    /// The version ID of the update.
     public let versionId: String
+    /// The package information, useful for downloading and checking the package.
     public let packageInfo: PackageInfo
+    /// The user-defined properties of the update.
     public let properties: [String: AnyObject?]?
     
-    public init(versionId:String, packageInfo:PackageInfo, properties: [String: AnyObject?]?) {
+    init(versionId:String, packageInfo:PackageInfo, properties: [String: AnyObject?]?) {
         self.versionId = versionId
         self.packageInfo = packageInfo
         self.properties = properties
