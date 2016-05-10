@@ -10,39 +10,24 @@
 		28CC4D7EFBA221A7A1056FBF /* Pods_Barracks_iOS_Barracks_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1E24107CB8D82F234EB7C0 /* Pods_Barracks_iOS_Barracks_iOSTests.framework */; };
 		291FF9F7048D932434ADBB70 /* Pods_Barracks_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A74100FD5B262494A90C90 /* Pods_Barracks_OSX.framework */; };
 		39090CEC1CBEA17C006FA104 /* Barracks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CE11CBEA17C006FA104 /* Barracks.framework */; };
-		39090D301CBEB9F9006FA104 /* Barracks.h in Headers */ = {isa = PBXBuildFile; fileRef = 39090D2C1CBEB9E3006FA104 /* Barracks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39090D321CBEBA67006FA104 /* BarracksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39090D311CBEBA67006FA104 /* BarracksClient.swift */; };
-		39090D331CBEBA77006FA104 /* BarracksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39090D311CBEBA67006FA104 /* BarracksClient.swift */; };
-		39090D341CBEBA99006FA104 /* Barracks.h in Headers */ = {isa = PBXBuildFile; fileRef = 39090D2C1CBEB9E3006FA104 /* Barracks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39090D5C1CBEC3FE006FA104 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
 		3967297C1CC57D090099D71C /* Barracks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CFE1CBEA1A5006FA104 /* Barracks.framework */; };
-		396729821CC57D110099D71C /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
 		396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3998135B1CC41E2D000AF010 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		396729951CC68DFA0099D71C /* UpdateCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */; };
-		396729961CC691D40099D71C /* UpdateCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */; };
-		396729981CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */; };
-		396729991CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */; };
-		3967299B1CC6CA6B0099D71C /* PackageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967299A1CC6CA6B0099D71C /* PackageInfo.swift */; };
-		3967299C1CC6CA6B0099D71C /* PackageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967299A1CC6CA6B0099D71C /* PackageInfo.swift */; };
-		396729B41CC6DECD0099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
-		396729B51CC6DF470099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
-		396729B61CC6DF530099D71C /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 396729B31CC6DECD0099D71C /* update_check_response_success.json */; };
-		396729B71CC6F1DB0099D71C /* BarracksClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3998134A1CC41927000AF010 /* BarracksClientTest.swift */; };
-		3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
-		3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */; };
 		39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A1891CC578CF004E8725 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A18A1CC578CF004E8725 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
-		39CDF8DE1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */; };
-		39CDF8DF1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */; };
-		39CDF8EB1CDBC5BA00D6DF5B /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39CDF8EA1CDBC5BA00D6DF5B /* firmware.jpg */; };
-		39CDF8EC1CDBC5BA00D6DF5B /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39CDF8EA1CDBC5BA00D6DF5B /* firmware.jpg */; };
-		39CDF8EE1CDBC68800D6DF5B /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39CDF8EA1CDBC5BA00D6DF5B /* firmware.jpg */; };
-		39CDF8EF1CDBC68D00D6DF5B /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39CDF8EA1CDBC5BA00D6DF5B /* firmware.jpg */; };
-		39CDF8F11CDBDC0700D6DF5B /* CheckUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8F01CDBDC0700D6DF5B /* CheckUpdate.swift */; };
-		39CDF8F21CDBDC0700D6DF5B /* CheckUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8F01CDBDC0700D6DF5B /* CheckUpdate.swift */; };
-		39CDF8F41CDBDC4900D6DF5B /* DownloadPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8F31CDBDC4900D6DF5B /* DownloadPackage.swift */; };
-		39CDF8F51CDBDC4900D6DF5B /* DownloadPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CDF8F31CDBDC4900D6DF5B /* DownloadPackage.swift */; };
+		39D1DB691CE23AEB0040A04B /* Barracks.h in Headers */ = {isa = PBXBuildFile; fileRef = 39D1DB671CE23AEB0040A04B /* Barracks.h */; };
+		39D1DB6A1CE23AEB0040A04B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D1DB681CE23AEB0040A04B /* Info.plist */; };
+		39D1DB6D1CE23AF50040A04B /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39D1DB6B1CE23AF50040A04B /* firmware.jpg */; };
+		39D1DB6E1CE23AF50040A04B /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 39D1DB6C1CE23AF50040A04B /* update_check_response_success.json */; };
+		39D1DB811CE23B320040A04B /* BarracksClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB711CE23B160040A04B /* BarracksClient.swift */; };
+		39D1DB821CE23B320040A04B /* CheckUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB721CE23B160040A04B /* CheckUpdate.swift */; };
+		39D1DB831CE23B320040A04B /* DownloadPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB731CE23B160040A04B /* DownloadPackage.swift */; };
+		39D1DB841CE23B320040A04B /* PackageDownloadCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB741CE23B160040A04B /* PackageDownloadCallback.swift */; };
+		39D1DB851CE23B320040A04B /* PackageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB751CE23B160040A04B /* PackageInfo.swift */; };
+		39D1DB861CE23B320040A04B /* UpdateCheckCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB761CE23B160040A04B /* UpdateCheckCallback.swift */; };
+		39D1DB871CE23B320040A04B /* UpdateCheckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB771CE23B160040A04B /* UpdateCheckRequest.swift */; };
+		39D1DB881CE23B320040A04B /* UpdateCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1DB781CE23B160040A04B /* UpdateCheckResponse.swift */; };
 		44E1527661C9139BEC5C0CC4 /* Pods_Barracks_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A7853FC89D27C0FC4412F1 /* Pods_Barracks_OSX_Tests.framework */; };
 		6D4E160529EC9525FBF2AF6B /* Pods_Barracks_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D739830A62509CDB713375DF /* Pods_Barracks_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -154,26 +139,24 @@
 		39090CE11CBEA17C006FA104 /* Barracks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Barracks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39090CEB1CBEA17C006FA104 /* Barracks iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barracks iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39090CFE1CBEA1A5006FA104 /* Barracks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Barracks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		39090D2C1CBEB9E3006FA104 /* Barracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Barracks.h; path = "Source/Supporting Files/Barracks.h"; sourceTree = "<group>"; };
-		39090D2D1CBEB9E3006FA104 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Source/Supporting Files/Info.plist"; sourceTree = "<group>"; };
-		39090D311CBEBA67006FA104 /* BarracksClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClient.swift; path = Source/Client/BarracksClient.swift; sourceTree = "<group>"; };
 		39090D5B1CBEC3FE006FA104 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		394DC53D1CC4041600009168 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/BarracksClient-ekwgxcshjqooychbevgwjpvyezku/Build/Products/Debug/Alamofire-OSX/Alamofire.framework"; sourceTree = "<group>"; };
 		396729771CC57D090099D71C /* Barracks OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Barracks OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		396729791CC57D090099D71C /* Barracks_OSX_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barracks_OSX_Tests.swift; sourceTree = "<group>"; };
-		3967297B1CC57D090099D71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckResponse.swift; path = Source/Client/UpdateCheckResponse.swift; sourceTree = "<group>"; };
-		396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckRequest.swift; path = Source/Client/UpdateCheckRequest.swift; sourceTree = "<group>"; };
-		3967299A1CC6CA6B0099D71C /* PackageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageInfo.swift; path = Source/Client/PackageInfo.swift; sourceTree = "<group>"; };
-		396729B31CC6DECD0099D71C /* update_check_response_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = update_check_response_success.json; path = Source/Tests/Stubs/update_check_response_success.json; sourceTree = "<group>"; };
-		3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckCallback.swift; path = Source/Client/UpdateCheckCallback.swift; sourceTree = "<group>"; };
-		3998134A1CC41927000AF010 /* BarracksClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClientTest.swift; path = Source/Tests/BarracksClientTest.swift; sourceTree = "<group>"; };
 		399813511CC41E2D000AF010 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Barracks.podspec; sourceTree = "<group>"; };
-		39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageDownloadCallback.swift; path = Source/Client/PackageDownloadCallback.swift; sourceTree = "<group>"; };
-		39CDF8EA1CDBC5BA00D6DF5B /* firmware.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = firmware.jpg; path = Source/Tests/Stubs/firmware.jpg; sourceTree = "<group>"; };
-		39CDF8F01CDBDC0700D6DF5B /* CheckUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckUpdate.swift; path = Source/Client/CheckUpdate.swift; sourceTree = "<group>"; };
-		39CDF8F31CDBDC4900D6DF5B /* DownloadPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadPackage.swift; path = Source/Client/DownloadPackage.swift; sourceTree = "<group>"; };
+		39D1DB671CE23AEB0040A04B /* Barracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Barracks.h; path = "Client/Supporting Files/Barracks.h"; sourceTree = "<group>"; };
+		39D1DB681CE23AEB0040A04B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Client/Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		39D1DB6B1CE23AF50040A04B /* firmware.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = firmware.jpg; path = Client/Tests/Stubs/firmware.jpg; sourceTree = "<group>"; };
+		39D1DB6C1CE23AF50040A04B /* update_check_response_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = update_check_response_success.json; path = Client/Tests/Stubs/update_check_response_success.json; sourceTree = "<group>"; };
+		39D1DB6F1CE23B080040A04B /* BarracksClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClientTest.swift; path = Client/Tests/BarracksClientTest.swift; sourceTree = "<group>"; };
+		39D1DB711CE23B160040A04B /* BarracksClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarracksClient.swift; path = Client/Source/BarracksClient.swift; sourceTree = "<group>"; };
+		39D1DB721CE23B160040A04B /* CheckUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckUpdate.swift; path = Client/Source/CheckUpdate.swift; sourceTree = "<group>"; };
+		39D1DB731CE23B160040A04B /* DownloadPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadPackage.swift; path = Client/Source/DownloadPackage.swift; sourceTree = "<group>"; };
+		39D1DB741CE23B160040A04B /* PackageDownloadCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageDownloadCallback.swift; path = Client/Source/PackageDownloadCallback.swift; sourceTree = "<group>"; };
+		39D1DB751CE23B160040A04B /* PackageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageInfo.swift; path = Client/Source/PackageInfo.swift; sourceTree = "<group>"; };
+		39D1DB761CE23B160040A04B /* UpdateCheckCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckCallback.swift; path = Client/Source/UpdateCheckCallback.swift; sourceTree = "<group>"; };
+		39D1DB771CE23B160040A04B /* UpdateCheckRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckRequest.swift; path = Client/Source/UpdateCheckRequest.swift; sourceTree = "<group>"; };
+		39D1DB781CE23B160040A04B /* UpdateCheckResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateCheckResponse.swift; path = Client/Source/UpdateCheckResponse.swift; sourceTree = "<group>"; };
 		40E8B52DD845ABFD049D9510 /* Pods-Barracks iOS-Barracks iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS-Barracks iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS-Barracks iOSTests/Pods-Barracks iOS-Barracks iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		584B6060F023C897B61DF466 /* Pods-Barracks OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX/Pods-Barracks OSX.release.xcconfig"; sourceTree = "<group>"; };
 		79A7853FC89D27C0FC4412F1 /* Pods_Barracks_OSX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_OSX_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,8 +215,9 @@
 				399813511CC41E2D000AF010 /* Pods.xcodeproj */,
 				39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */,
 				39090D5B1CBEC3FE006FA104 /* Podfile */,
+				39090D291CBEB9A7006FA104 /* Supporting Files */,
+				39090D2A1CBEB9C2006FA104 /* Tests */,
 				39090D281CBEB9A0006FA104 /* Source */,
-				396729781CC57D090099D71C /* Barracks OSX Tests */,
 				39090CE21CBEA17C006FA104 /* Products */,
 				A8672AE1E1E60FA579BB9CAC /* Frameworks */,
 				E91A3A35B1347DAE52135954 /* Pods */,
@@ -254,9 +238,14 @@
 		39090D281CBEB9A0006FA104 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				39090D2B1CBEB9CE006FA104 /* Client */,
-				39090D2A1CBEB9C2006FA104 /* Tests */,
-				39090D291CBEB9A7006FA104 /* Supporting Files */,
+				39D1DB711CE23B160040A04B /* BarracksClient.swift */,
+				39D1DB721CE23B160040A04B /* CheckUpdate.swift */,
+				39D1DB731CE23B160040A04B /* DownloadPackage.swift */,
+				39D1DB741CE23B160040A04B /* PackageDownloadCallback.swift */,
+				39D1DB751CE23B160040A04B /* PackageInfo.swift */,
+				39D1DB761CE23B160040A04B /* UpdateCheckCallback.swift */,
+				39D1DB771CE23B160040A04B /* UpdateCheckRequest.swift */,
+				39D1DB781CE23B160040A04B /* UpdateCheckResponse.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -264,8 +253,8 @@
 		39090D291CBEB9A7006FA104 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39090D2C1CBEB9E3006FA104 /* Barracks.h */,
-				39090D2D1CBEB9E3006FA104 /* Info.plist */,
+				39D1DB671CE23AEB0040A04B /* Barracks.h */,
+				39D1DB681CE23AEB0040A04B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,41 +262,17 @@
 		39090D2A1CBEB9C2006FA104 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				39D1DB6F1CE23B080040A04B /* BarracksClientTest.swift */,
 				396729A41CC6DE730099D71C /* Stubs */,
-				3998134A1CC41927000AF010 /* BarracksClientTest.swift */,
 			);
 			name = Tests;
-			sourceTree = "<group>";
-		};
-		39090D2B1CBEB9CE006FA104 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				39090D311CBEBA67006FA104 /* BarracksClient.swift */,
-				3988BE271CC40A0C00BD9951 /* UpdateCheckCallback.swift */,
-				396729941CC68DFA0099D71C /* UpdateCheckResponse.swift */,
-				396729971CC6A9B70099D71C /* UpdateCheckRequest.swift */,
-				3967299A1CC6CA6B0099D71C /* PackageInfo.swift */,
-				39CDF8DD1CDA8E7000D6DF5B /* PackageDownloadCallback.swift */,
-				39CDF8F01CDBDC0700D6DF5B /* CheckUpdate.swift */,
-				39CDF8F31CDBDC4900D6DF5B /* DownloadPackage.swift */,
-			);
-			name = Client;
-			sourceTree = "<group>";
-		};
-		396729781CC57D090099D71C /* Barracks OSX Tests */ = {
-			isa = PBXGroup;
-			children = (
-				396729791CC57D090099D71C /* Barracks_OSX_Tests.swift */,
-				3967297B1CC57D090099D71C /* Info.plist */,
-			);
-			path = "Barracks OSX Tests";
 			sourceTree = "<group>";
 		};
 		396729A41CC6DE730099D71C /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				39CDF8EA1CDBC5BA00D6DF5B /* firmware.jpg */,
-				396729B31CC6DECD0099D71C /* update_check_response_success.json */,
+				39D1DB6B1CE23AF50040A04B /* firmware.jpg */,
+				39D1DB6C1CE23AF50040A04B /* update_check_response_success.json */,
 			);
 			name = Stubs;
 			sourceTree = "<group>";
@@ -366,7 +331,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39090D301CBEB9F9006FA104 /* Barracks.h in Headers */,
+				39D1DB691CE23AEB0040A04B /* Barracks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +339,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39090D341CBEBA99006FA104 /* Barracks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,10 +555,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39CDF8EB1CDBC5BA00D6DF5B /* firmware.jpg in Resources */,
-				396729B41CC6DECD0099D71C /* update_check_response_success.json in Resources */,
+				39D1DB6D1CE23AF50040A04B /* firmware.jpg in Resources */,
 				39090D5C1CBEC3FE006FA104 /* Podfile in Resources */,
 				39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */,
+				39D1DB6E1CE23AF50040A04B /* update_check_response_success.json in Resources */,
+				39D1DB6A1CE23AEB0040A04B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,8 +567,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39CDF8EF1CDBC68D00D6DF5B /* firmware.jpg in Resources */,
-				396729B61CC6DF530099D71C /* update_check_response_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +575,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				39C3A18A1CC578CF004E8725 /* Podfile in Resources */,
-				39CDF8EC1CDBC5BA00D6DF5B /* firmware.jpg in Resources */,
 				39C3A1891CC578CF004E8725 /* Barracks.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,8 +583,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39CDF8EE1CDBC68800D6DF5B /* firmware.jpg in Resources */,
-				396729B51CC6DF470099D71C /* update_check_response_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,14 +746,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3988BE281CC40A0C00BD9951 /* UpdateCheckCallback.swift in Sources */,
-				39CDF8DE1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */,
-				3967299B1CC6CA6B0099D71C /* PackageInfo.swift in Sources */,
-				396729981CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */,
-				39CDF8F41CDBDC4900D6DF5B /* DownloadPackage.swift in Sources */,
-				39090D321CBEBA67006FA104 /* BarracksClient.swift in Sources */,
-				396729951CC68DFA0099D71C /* UpdateCheckResponse.swift in Sources */,
-				39CDF8F11CDBDC0700D6DF5B /* CheckUpdate.swift in Sources */,
+				39D1DB811CE23B320040A04B /* BarracksClient.swift in Sources */,
+				39D1DB821CE23B320040A04B /* CheckUpdate.swift in Sources */,
+				39D1DB831CE23B320040A04B /* DownloadPackage.swift in Sources */,
+				39D1DB841CE23B320040A04B /* PackageDownloadCallback.swift in Sources */,
+				39D1DB851CE23B320040A04B /* PackageInfo.swift in Sources */,
+				39D1DB861CE23B320040A04B /* UpdateCheckCallback.swift in Sources */,
+				39D1DB871CE23B320040A04B /* UpdateCheckRequest.swift in Sources */,
+				39D1DB881CE23B320040A04B /* UpdateCheckResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,7 +761,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396729B71CC6F1DB0099D71C /* BarracksClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,14 +768,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396729961CC691D40099D71C /* UpdateCheckResponse.swift in Sources */,
-				39CDF8DF1CDA8E7000D6DF5B /* PackageDownloadCallback.swift in Sources */,
-				3967299C1CC6CA6B0099D71C /* PackageInfo.swift in Sources */,
-				396729991CC6A9B70099D71C /* UpdateCheckRequest.swift in Sources */,
-				39CDF8F51CDBDC4900D6DF5B /* DownloadPackage.swift in Sources */,
-				3988BE291CC40B2700BD9951 /* UpdateCheckCallback.swift in Sources */,
-				39090D331CBEBA77006FA104 /* BarracksClient.swift in Sources */,
-				39CDF8F21CDBDC0700D6DF5B /* CheckUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,7 +775,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396729821CC57D110099D71C /* BarracksClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -957,7 +907,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1011,7 +961,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1055,7 +1005,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1113,7 +1063,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1170,7 +1120,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1222,7 +1172,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1266,7 +1216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Source/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Client/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
