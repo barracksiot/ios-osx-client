@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.3.1)
+  - Alamofire (3.4.0)
   - Barracks (0.0.1):
     - Alamofire (~> 3.3)
   - OHHTTPStubs (5.0.0):
@@ -29,10 +29,10 @@ EXTERNAL SOURCES:
     :path: ./
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  Barracks: fa348af33f6619d030ca6c608fb7a517a71c68d0
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Barracks: 2975f075c5e6f330b40877255d7d2ed00fa93ad1
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
 
-PODFILE CHECKSUM: f70c82366b0c6a519f9c4183af644aacc670a71f
+PODFILE CHECKSUM: e6853269485f8d9cc72ecf0087008f1d84126efb
 
 COCOAPODS: 1.0.0.beta.6

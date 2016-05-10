@@ -11,7 +11,7 @@ target 'Barracks iOS' do
     project 'BarracksClient.xcodeproj'
     platform :ios, '8.0'
     sharedPods
-    target 'Barracks iOSTests' do
+    target 'Barracks iOS Tests' do
         pod 'OHHTTPStubs'
         pod 'OHHTTPStubs/Swift'
     end
@@ -22,7 +22,6 @@ target 'Barracks OSX' do
     platform :osx, '10.9'
     sharedPods
     target 'Barracks OSX Tests' do
-        inherit! :search_paths
         pod 'OHHTTPStubs'
         pod 'OHHTTPStubs/Swift'
     end

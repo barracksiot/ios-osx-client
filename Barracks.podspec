@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |s|
 s.name = 'Barracks'
 s.version = '0.0.1'
@@ -12,7 +11,7 @@ s.source = { :git => 'ssh://git@bitbucket.org/barracksiot/barracks-client-ios.gi
 s.ios.deployment_target = '8.0'
 s.osx.deployment_target = '10.9'
 
-s.source_files = 'Source/Client/*.swift'
+s.source_files = 'Client/Source/*.swift'
 
 s.dependency 'Alamofire', '~> 3.3'
 end
