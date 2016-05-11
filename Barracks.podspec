@@ -9,18 +9,14 @@ s.authors = { 'Barracks Solutions' => 'contact@barracks.io' }
 s.source = { :git => 'ssh://git@bitbucket.org/barracksiot/barracks-client-ios.git', :branch => 'common_crypto' }
 
 s.ios.deployment_target = '8.0'
-s.osx.deployment_target = '10.9'
+s.osx.deployment_target = '10.10'
 
 s.source_files = 'Client/Source/*.swift'
 
-s.dependency 'Alamofire', '~> 3.3'
+s.requires_arc = true
 
-s.preserve_paths = 'CommonCrypto/*'
-s.pod_target_xcconfig = {
-    'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'        => '$(SRCROOT)/Barracks/CommonCrypto/',
-    'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]' => '$(SRCROOT)/Barracks/CommonCrypto/',
-    'SWIFT_INCLUDE_PATHS[sdk=macosx*]'          => '$(SRCROOT)/Barracks/CommonCrypto/'
-}
+s.dependency 'Alamofire', '~> 3.3'
+s.dependency 'IDZSwiftCommonCrypto', '~> 0.7.1'
 
 end
 

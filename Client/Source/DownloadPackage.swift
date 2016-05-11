@@ -15,7 +15,7 @@
  */
 
 import Alamofire
-import CommonCrypto
+import IDZSwiftCommonCrypto
 
 extension BarracksClient {
     
@@ -89,19 +89,13 @@ extension BarracksClient {
         let inputStream = NSInputStream(URL:path)
         if let input = inputStream {
             input.open()
-            var hashObject = CC_MD5_CTX()
-            CC_MD5_Init(&hashObject)
+            let hashObject : Digest = Digest(algorithm:.MD5)
             let buffer:[UInt8] = [UInt8](count:4096, repeatedValue: 0)
             while(input.hasBytesAvailable) {
                 let size = input.read(UnsafeMutablePointer(buffer), maxLength:4096)
-                CC_MD5_Update(&hashObject, buffer, UInt32(size));
+                hashObject.update(UnsafePointer(buffer), size);
             }
-            let bytes = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
-            CC_MD5_Final(UnsafeMutablePointer(bytes), &hashObject);
-            let MD5 = NSMutableString()
-            for c in bytes {
-                MD5.appendFormat("%02x", c)
-            }
+            let MD5 = hexStringFromArray(hashObject.final())
             input.close()
             return MD5 == hash
         }

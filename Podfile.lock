@@ -2,6 +2,8 @@ PODS:
   - Alamofire (3.4.0)
   - Barracks (0.0.1):
     - Alamofire (~> 3.3)
+    - IDZSwiftCommonCrypto (~> 0.7.1)
+  - IDZSwiftCommonCrypto (0.7.1)
   - OHHTTPStubs (5.0.0):
     - OHHTTPStubs/Default (= 5.0.0)
   - OHHTTPStubs/Core (5.0.0)
@@ -21,6 +23,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.3)
   - Barracks (from `./`)
+  - IDZSwiftCommonCrypto (~> 0.7.1)
   - OHHTTPStubs
   - OHHTTPStubs/Swift
 
@@ -30,9 +33,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  Barracks: ce32c6cc715b029e9462fd66a6b8cba73f8dcdf4
+  Barracks: d21301cc6f19c79c1972e2a32f378cb9ece26da9
+  IDZSwiftCommonCrypto: 320d5d0254b3d5230004bb01ef7753b0777d916c
   OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
 
-PODFILE CHECKSUM: e6853269485f8d9cc72ecf0087008f1d84126efb
+PODFILE CHECKSUM: f0db339835b2bd34367d4639a1f488b9db3f5ddb
 
 COCOAPODS: 1.0.0
