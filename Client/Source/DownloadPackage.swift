@@ -80,7 +80,9 @@ extension BarracksClient {
                 if(self.checkMD5(localPath!, hash:response.packageInfo.md5)) {
                     callback.onSuccess?(response, path:localPath!.path!)
                 } else {
-                    //callback.onError?(response, error:NSError())
+                    let failureReason = "MD5 hash did not match."
+                    let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: failureReason]
+                    callback.onError?(response, error:NSError(domain: Barracks.Error.Domain, code: Barracks.Error.Code.HashVerificationFailed.rawValue, userInfo:userInfo))
                 }
         };
     }
