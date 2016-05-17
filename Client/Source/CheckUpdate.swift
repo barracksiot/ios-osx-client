@@ -30,7 +30,7 @@ extension BarracksClient {
             "versionId": request.versionId,
             "properties": request.properties
         ]
-        Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON, headers:["Authorization" : apiKey])
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 guard response.result.isSuccess else {
