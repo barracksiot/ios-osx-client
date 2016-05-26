@@ -1,0 +1,11 @@
+{
+	"xcodebuild_arguments": ["-project", "client/BarracksClient.xcodeproj", "-scheme", "Barracks iOS"],
+	"module": "Barracks",
+	"theme": "fullwidth",
+	"author": "Barracks",
+	"author_url": "https://barracks.io",
+	"github_url": "https://github.com/barracksiot/ios-osx-client",
+	"root_url": "http://barracksiot.github.io/ios-osx-client/",
+	"github_file_prefix": "https://github.com/barracksiot/ios-osx-client/tree/master",
+	"theme": "./theme"
+}
