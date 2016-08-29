@@ -32,6 +32,7 @@ extension BarracksClient {
             .download(
                 .GET,
                 response.packageInfo.url,
+                headers:["Authorization" : apiKey],
                 destination:{
                     (temporaryURL, response) in
                     let manager = NSFileManager.defaultManager()

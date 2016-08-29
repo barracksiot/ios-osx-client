@@ -51,10 +51,10 @@ class DownloadTests: XCTestCase {
     }
     
     func testDownloadProgress() {
-        stub(isHost("barracks.io"), response: validFirmwareResponse).name = "Firmware response"
-        
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadProgress(expectation: expectationWithDescription("testDownloadProgress"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
+        
         client.downloadPackage(validResponse, callback: callback)
         waitForExpectationsWithTimeout(
             5,
@@ -67,10 +67,10 @@ class DownloadTests: XCTestCase {
     }
     
     func testDownloadSuccess() {
-        stub(isHost("barracks.io"), response: validFirmwareResponse).name = "Firmware response"
-        
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSuccess"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
+        
         client.downloadPackage(validResponse, callback: callback)
         waitForExpectationsWithTimeout(
             5,
@@ -84,16 +84,15 @@ class DownloadTests: XCTestCase {
     }
     
     func testDownloadSpecificLocation() {
-        stub(isHost("barracks.io"), response: validFirmwareResponse).name = "Firmware response"
+        let client:BarracksClient = BarracksClient("deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSpecificLocation"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
         let manager = NSFileManager.defaultManager()
         let destination = manager
             .URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
             .URLByAppendingPathComponent("BarracksTests", isDirectory:true)
             .URLByAppendingPathComponent("firmware.bin")
-        
-        let client:BarracksClient = BarracksClient("deadbeef")
-        let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectationWithDescription("testDownloadSpecificLocation"))
         
         client.downloadPackage(validResponse, callback: callback, destination:destination.path)
         waitForExpectationsWithTimeout(
@@ -107,10 +106,9 @@ class DownloadTests: XCTestCase {
     }
     
     func testDownloadFileExists() {
-        stub(isHost("barracks.io"), response: validFirmwareResponse).name = "Firmware response"
-        
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadFileExists"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
         client.downloadPackage(validResponse, callback: callback, destination:"/private")
         waitForExpectationsWithTimeout(
@@ -124,10 +122,9 @@ class DownloadTests: XCTestCase {
     }
     
     func testDownloadDirectoryFailure() {
-        stub(isHost("barracks.io"), response: validFirmwareResponse).name = "Firmware response"
-        
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadDirectoryFailure"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
         client.downloadPackage(validResponse, callback: callback, destination:"/private/directory/subdirectory/destination.bin")
         waitForExpectationsWithTimeout(
@@ -141,14 +138,13 @@ class DownloadTests: XCTestCase {
     }
     
     func testDownloadFailure() {
-        stub(isHost("barracks.io")) {
+        let client:BarracksClient = BarracksClient("deadbeef")
+        let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadFailure"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.CFURLErrorNotConnectedToInternet.rawValue), userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
             }.name = "Error Response"
-        
-        let client:BarracksClient = BarracksClient("deadbeef")
-        let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testDownloadFailure"))
         
         client.downloadPackage(validResponse, callback: callback, destination:"/private/directory/subdirectory/destination.bin")
         waitForExpectationsWithTimeout(
@@ -162,10 +158,9 @@ class DownloadTests: XCTestCase {
     }
     
     func testHashFailure() {
-        stub(isHost("barracks.io"), response: validFirmwareResponse).name = "Firmware response"
-        
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectationWithDescription("testHashFailure"))
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
         let manager = NSFileManager.defaultManager()
         let destination = manager

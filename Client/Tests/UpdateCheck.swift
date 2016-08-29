@@ -37,12 +37,12 @@ class UpdateCheckTests: XCTestCase {
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedUpdateCallback = TestCallbackUnavailable(expectation: expectationWithDescription("testUpdateUnavailable"))
         
-        stub(isHost("barracks.io")) {
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
             return OHHTTPStubsResponse(
                 data: NSData(),
                 statusCode:204,
-                headers:["Content-Type":"application/json","Cache-Control":"no-cache"]
+                headers:["Content-Type":"application/json", "Cache-Control":"no-cache"]
             )
             }.name = "Unavailable Response"
         
@@ -63,7 +63,7 @@ class UpdateCheckTests: XCTestCase {
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedUpdateCallback = TestCallbackAvailable(expectation: expectationWithDescription("testUpdateAvailable"))
         
-        stub(isHost("barracks.io")) {
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
             let stubPath = OHPathForFile("update_check_response_success.json", self.dynamicType)
             return fixture(stubPath!, status:200, headers: ["Content-Type":"application/json"])
@@ -86,7 +86,7 @@ class UpdateCheckTests: XCTestCase {
         let client:BarracksClient = BarracksClient("deadbeef")
         let callback:ExpectedUpdateCallback = TestCallbackError(expectation: expectationWithDescription("testUpdateError"))
         
-        stub(isHost("barracks.io")) {
+        stub(isHost("barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.CFURLErrorNotConnectedToInternet.rawValue), userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
