@@ -28,7 +28,7 @@ extension BarracksClient {
         let parameters:[String:AnyObject] = [
             "unitId": request.unitId,
             "versionId": request.versionId,
-            "properties": request.properties
+            "customClientData": request.customClientData
         ]
         Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON, headers:["Authorization" : apiKey])
             .validate(statusCode: 200..<300)
