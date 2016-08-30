@@ -22,19 +22,19 @@
     public let unitId:String
     /// The version identifier of the current package used by the unit
     public let versionId:String
-    /// User defined properties which will be sent to the Barracks service
-    public let properties:[String: AnyObject]
+    /// User defined customClientData which will be sent to the Barracks service
+    public let customClientData:[String: AnyObject]
     
     /**
      Creates a request which can be sent to the Barracks service.
      
      - parameter unitId:        The unique identifier for the unit being used
      - parameter versionId:     The version identifier of the current package used by the unit
-     - parameter properties:    User defined properties which will be sent to the Barracks service
+     - parameter customClientData:    User defined customClientData which will be sent to the Barracks service
      */
-    public init(unitId:String, versionId:String, properties:[String: AnyObject]=[String:AnyObject]()) {
+    public init(unitId:String, versionId:String, customClientData:[String: AnyObject]=[String:AnyObject]()) {
         self.unitId = unitId
         self.versionId = versionId
-        self.properties = properties
+        self.customClientData = customClientData
     }
 }
