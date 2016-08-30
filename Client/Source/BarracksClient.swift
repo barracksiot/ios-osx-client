@@ -33,7 +33,7 @@ import Foundation
      - parameter apiKey:    Your account's API key
      - parameter baseUrl:   The base URL for Barracks, if you have set one up
      */
-    public init(_ apiKey:String, baseUrl:String = "https://barracks.io/device/update/check") {
+    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/api/device/update/check") {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
     }
