@@ -21,13 +21,13 @@ import OHHTTPStubs
 class DownloadTests: XCTestCase {
     let validResponse = UpdateCheckResponse(
         versionId:"v0.2",
-        packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
+        packageInfo:PackageInfo(url:"https://app.barracks.io/api/devices/update/download/v0.2", md5:"09928956275ef9e22ac2c0208bbc2928", size:101236),
         properties:nil
     )
     
     let invalidResponse = UpdateCheckResponse(
         versionId:"v0.2",
-        packageInfo:PackageInfo(url:"http://barracks.io/devices/update/download/v0.2", md5:"dummycrapfortestpurpose", size:101236),
+        packageInfo:PackageInfo(url:"https://app.barracks.io/api/devices/update/download/v0.2", md5:"dummycrapfortestpurpose", size:101236),
         properties:nil
     )
     
