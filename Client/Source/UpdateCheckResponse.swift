@@ -24,12 +24,12 @@
     public let versionId: String
     /// The package information, useful for downloading and checking the package.
     public let packageInfo: PackageInfo
-    /// The user-defined customClientData of the update.
-    public let customClientData: [String: AnyObject?]?
+    /// The user-defined customUpdateData of the update.
+    public let customUpdateData: [String: AnyObject?]?
     
-    init(versionId:String, packageInfo:PackageInfo, customClientData: [String: AnyObject?]?) {
+    init(versionId:String, packageInfo:PackageInfo, customUpdateData: [String: AnyObject?]?) {
         self.versionId = versionId
         self.packageInfo = packageInfo
-        self.customClientData = customClientData
+        self.customUpdateData = customUpdateData
     }
 }
