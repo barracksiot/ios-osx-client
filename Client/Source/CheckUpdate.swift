@@ -56,7 +56,7 @@ extension BarracksClient {
                         md5: hash,
                         size: size.unsignedLongLongValue
                     ),
-                    properties: responseJSON["properties"] as? [String:AnyObject?]
+                    customClientData: responseJSON["customClientData"] as? [String:AnyObject?]
                 )
                 callback.onUpdateAvailable?(request, update:updateCheckResponse)
         }
