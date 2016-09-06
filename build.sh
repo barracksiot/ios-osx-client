@@ -6,4 +6,4 @@ fi
 
 pod update --project-directory=$PWD/client
 
-jazzy --config .jazzy.json --clean --output docs --module-version "master"
+cd client && jazzy --config ../.jazzy.json --clean --output ../docs --module-version "master"

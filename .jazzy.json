@@ -1,5 +1,5 @@
 {
-	"xcodebuild_arguments": ["-project", "client/BarracksClient.xcodeproj", "-scheme", "Barracks iOS"],
+	"xcodebuild_arguments": ["-project", "BarracksClient.xcodeproj", "-scheme", "Barracks iOS"],
 	"module": "Barracks",
 	"theme": "fullwidth",
 	"author": "Barracks",
