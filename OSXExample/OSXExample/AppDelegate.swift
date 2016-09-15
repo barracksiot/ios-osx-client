@@ -33,6 +33,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
         return true
     }
+    
+    func userNotificationCenter(center: NSUserNotificationCenter, didActivateNotification notification: NSUserNotification) {
+        if let path = notification.userInfo?["path"] as! String? {
+            NSWorkspace.sharedWorkspace().openFile(path)
+        }
+    }
 
 }
 

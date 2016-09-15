@@ -19,41 +19,76 @@ import Barracks
 
 class ViewController: NSViewController {
     var client: BarracksClient!
+    var update:UpdateCheckResponse!
     
-    class MyCallback : UpdateCheckCallback {
+    class MyUpdateCallback : UpdateCheckCallback {
+        weak var parent: ViewController! = nil
         @objc func onUpdateAvailable(request:UpdateCheckRequest, update:UpdateCheckResponse) {
-            print("Available ")
             debugPrint(update)
-            let center = NSUserNotificationCenter.defaultUserNotificationCenter()
-            let notification = NSUserNotification()
-            notification.title = "Update available"
-            notification.subtitle = "Version \(update.versionId)"
-            center.deliverNotification(notification)
+            parent.update = update
+            printNotification("Update available", subtitle: "Version \(update.versionId)")
+            parent.btnDownload.enabled = true
         }
         @objc func onUpdateUnavailable(request:UpdateCheckRequest){
-            print("Unavailable")
+            printNotification("No update available", subtitle: "Please check later")
+            parent.btnDownload.enabled = false
         }
         @objc func onError(request:UpdateCheckRequest, error:NSError?){
-            print("Error")
+            parent.btnDownload.enabled = false
+            printNotification("Error while checking for updates", subtitle: (error?.localizedFailureReason)!)
+        }
+        
+        
+    }
+    
+    class MyDownloadCallback : PackageDownloadCallback {
+        weak var parent: ViewController! = nil
+        @objc func onError(response: UpdateCheckResponse, error: NSError?) {
+            printNotification("Error while checking for updates", subtitle: (error?.localizedFailureReason)!)
+        }
+        @objc func onProgress(response: UpdateCheckResponse, progress: UInt) {
+            
+        }
+        @objc func onSuccess(update: UpdateCheckResponse, path: String) {
+            printNotification("Update \(update.versionId) downloaded", subtitle: path, userInfo: ["path": path])
         }
     }
     
     @IBOutlet weak var version: NSTextField!
     @IBOutlet weak var btnCheck: NSButton!
+    @IBOutlet weak var btnDownload: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello world")
         // Do any additional setup after loading the view.
         btnCheck.target = self
         btnCheck.action = #selector(ViewController.checkUpdate(_:))
-        client = BarracksClient("deadbeef", baseUrl: "http://integration-01.barracks.io/device/update/check")
+        btnDownload.target = self
+        btnDownload.action = #selector(ViewController.downloadUpdate(_:))
+        client = BarracksClient("deadbeef", baseUrl: "https://app.barracks.io/api/device/update/check")
     }
     
     func checkUpdate(obj: AnyObject) {
-        print("Checkin update...")
         let request = UpdateCheckRequest(unitId: "deadbeef", versionId: version.stringValue)
-        client.checkUpdate(request, callback:MyCallback())
+        let callback = MyUpdateCallback()
+        callback.parent = self
+        client.checkUpdate(request, callback:callback)
     }
     
+    func downloadUpdate(obj: AnyObject) {
+        btnDownload.enabled = false
+        let callback = MyDownloadCallback()
+        callback.parent = self
+        client.downloadPackage(update, callback: callback)
+    }
 }
+
+func printNotification(title:String, subtitle:String! = nil, userInfo:[String: AnyObject] = [String:AnyObject]()) {
+    let center = NSUserNotificationCenter.defaultUserNotificationCenter()
+    let notification = NSUserNotification.init()
+    notification.title = title
+    notification.subtitle = subtitle
+    notification.userInfo = userInfo
+    center.deliverNotification(notification)
+}
+
 
