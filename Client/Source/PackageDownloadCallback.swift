@@ -24,7 +24,7 @@
      - parameter response:  The `UpdateCheckResponse` used to trigger the download.
      - parameter progress:  The download progress in percent.
      */
-    optional func onProgress(response:UpdateCheckResponse, progress:UInt)
+    @objc optional func onProgress(_ response:UpdateCheckResponse, progress:UInt)
     
     /**
      This method is called when an error occurs during the download.
@@ -32,7 +32,7 @@
      - parameter response:  The `UpdateCheckResponse` used to trigger the download.
      - parameter error:     The error raised during the download.
      */
-    optional func onError(response:UpdateCheckResponse, error: NSError?)
+    @objc optional func onError(_ response:UpdateCheckResponse, error: NSError?)
     
     /**
      This method is used when an download is successfully completed.
@@ -40,5 +40,5 @@
      - parameter response:  The `UpdateCheckResponse` used to trigger the download.
      - parameter path:      The path of the downloaded file.
      */
-    optional func onSuccess(response:UpdateCheckResponse, path:String)
+    @objc optional func onSuccess(_ response:UpdateCheckResponse, path:String)
 }

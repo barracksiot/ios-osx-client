@@ -24,14 +24,14 @@
      - parameter request:   The `UpdateCheckRequest` request used to check for an update
      - parameter update:    The `UpdateCheckResponse` containing the details of the eligible update
      */
-    optional func onUpdateAvailable(request: UpdateCheckRequest, update: UpdateCheckResponse)
+    @objc optional func onUpdateAvailable(_ request: UpdateCheckRequest, update: UpdateCheckResponse)
     
     /**
      This method is called when the Barracks service identifies that there is no eligible update
      
      - parameter request:   The `UpdateCheckRequest` request used to check for an update
      */
-    optional func onUpdateUnavailable(request: UpdateCheckRequest)
+    @objc optional func onUpdateUnavailable(_ request: UpdateCheckRequest)
     
     /**
      This method is called when an error occurs during the request to the Barracks service.
@@ -39,5 +39,5 @@
      - parameter request:   The `UpdateCheckRequest` request used to check for an update
      - parameter error:     The error which happened during the request
      */
-    optional func onError(request: UpdateCheckRequest, error: NSError?)
+    @objc optional func onError(_ request: UpdateCheckRequest, error: NSError?)
 }

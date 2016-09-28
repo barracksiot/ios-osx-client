@@ -8,15 +8,15 @@ s.social_media_url = 'http://twitter.com/barracksiot'
 s.authors = { 'Barracks Solutions' => 'contact@barracks.io' }
 s.source = { :git => 'ssh://git@bitbucket.org/barracksiot/barracks-client-ios.git', :branch => 'master' }
 
-s.ios.deployment_target = '8.0'
-s.osx.deployment_target = '10.10'
+s.ios.deployment_target = '9.3'
+s.osx.deployment_target = '10.12'
 
 s.source_files = 'Client/Source/*.swift'
 
 s.requires_arc = true
 
-s.dependency 'Alamofire', '~> 3.3'
-s.dependency 'IDZSwiftCommonCrypto', '~> 0.7.1'
+s.dependency 'Alamofire', '~> 4.0'
+s.dependency 'IDZSwiftCommonCrypto'
 
 end
 

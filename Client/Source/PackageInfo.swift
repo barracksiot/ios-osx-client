@@ -17,13 +17,13 @@
 /**
  This class is a container for the package informations useful for downloading and checking the udpate package.
  */
-@objc public class PackageInfo : NSObject {
+@objc open class PackageInfo : NSObject {
     /// The url at which the file is available
-    public let url: String
+    open let url: String
     /// The MD5 hash which will be used to verify the file integrity
-    public let md5: String
+    open let md5: String
     /// The expected size of the file
-    public let size: UInt64
+    open let size: UInt64
     
     init(url:String, md5:String, size:UInt64) {
         self.url = url

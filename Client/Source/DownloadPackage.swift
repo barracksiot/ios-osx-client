@@ -26,79 +26,83 @@ extension BarracksClient {
      - parameter callback:      The `PackageDownloadCallback` which will be called during the process
      - parameter destination:   The optional destination for the update package on the filesystem
      */
-    public func downloadPackage(response:UpdateCheckResponse, callback:PackageDownloadCallback, destination:String? = nil) {
-        var localPath: NSURL?
+    public func downloadPackage(_ response:UpdateCheckResponse, callback:PackageDownloadCallback, destination:String? = nil) {
+        var localPath: URL?
         Alamofire
             .download(
-                .GET,
                 response.packageInfo.url,
+                method: .get,
                 headers:["Authorization" : apiKey],
-                destination:{
+                to:{
                     (temporaryURL, response) in
-                    let manager = NSFileManager.defaultManager()
+                    let manager = FileManager.default
                     if destination != nil {
-                        localPath = NSURL(fileURLWithPath:destination!)
+                        localPath = URL(fileURLWithPath:destination!)
                     } else {
-                        let directoryURL = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+                        let directoryURL = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
                         let pathComponent = response.suggestedFilename
-                        localPath = directoryURL.URLByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier ?? "Barracks", isDirectory:true).URLByAppendingPathComponent(pathComponent!)
+                        localPath = directoryURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "Barracks", isDirectory:true).appendingPathComponent(pathComponent!)
                     }
                     
-                    if (manager.fileExistsAtPath(localPath!.path!)) {
+                    if (manager.fileExists(atPath: localPath!.path)) {
                         do {
-                            try manager.removeItemAtURL(localPath!)
+                            try manager.removeItem(at: localPath!)
                         } catch let error {
                             print(error)
                             //throw error
                         }
                     }
-                    let parent = localPath?.URLByDeletingLastPathComponent
-                    if (!manager.fileExistsAtPath(parent!.path!)) {
+                    let parent = localPath?.deletingLastPathComponent
+                    if (!manager.fileExists(atPath: parent!().path)) {
                         do {
-                            try manager.createDirectoryAtURL(parent!, withIntermediateDirectories:true, attributes:nil)
+                            try manager.createDirectory(at: parent!(), withIntermediateDirectories:true, attributes:nil)
                         } catch let error {
                             print(error)
                             //throw error
                         }
                     }
-                    return localPath!
+                    return (localPath!, DownloadRequest.DownloadOptions())
                 }
             )
             .validate(statusCode: 200..<300)
-            .progress {
-                (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-                callback.onProgress?(response, progress:UInt(100 * totalBytesRead / totalBytesExpectedToRead))
+            .downloadProgress{
+                progress in
+        
+                //callback.onProgress?(response, progress:UInt(100 * progress.completedUnitCount / progress.totalUnitCount))
+                
+                callback.onProgress?(response, progress:UInt(100 * progress.fractionCompleted))
                 return
             }
             .response {
-                (request, httpResponse, data, error) in
-                if (error != nil) {
-                    callback.onError?(response, error:error)
+                 downloadResponse in
+                
+                if (downloadResponse.error != nil) {
+                    callback.onError?(response, error:downloadResponse.error as NSError?)
                     return
                 }
-                print(httpResponse)
+                print(downloadResponse.response)
                 print("Downloaded file to \(localPath!.path)")
                 if(self.checkMD5(localPath!, hash:response.packageInfo.md5)) {
-                    callback.onSuccess?(response, path:localPath!.path!)
+                    callback.onSuccess?(response, path:localPath!.path)
                 } else {
                     let failureReason = "MD5 hash did not match."
-                    let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: failureReason]
-                    callback.onError?(response, error:NSError(domain: Barracks.Error.Domain, code: Barracks.Error.Code.HashVerificationFailed.rawValue, userInfo:userInfo))
+                    let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey as NSObject: failureReason as AnyObject]
+                    callback.onError?(response, error:NSError(domain: Barracks.Error.Domain, code: Barracks.Error.Code.hashVerificationFailed.rawValue, userInfo:userInfo))
                 }
         };
     }
     
-    private func checkMD5(path:NSURL, hash:String) -> Bool {
-        let inputStream = NSInputStream(URL:path)
+    fileprivate func checkMD5(_ path:URL, hash:String) -> Bool {
+        let inputStream = InputStream(url:path)
         if let input = inputStream {
             input.open()
-            let hashObject : Digest = Digest(algorithm:.MD5)
-            let buffer:[UInt8] = [UInt8](count:4096, repeatedValue: 0)
+            let hashObject : Digest = Digest(algorithm:.md5)
+            let buffer:[UInt8] = [UInt8](repeating: 0, count: 4096)
             while(input.hasBytesAvailable) {
-                let size = input.read(UnsafeMutablePointer(buffer), maxLength:4096)
-                hashObject.update(UnsafePointer(buffer), size);
+                let size = input.read(UnsafeMutablePointer(mutating: buffer), maxLength:4096)
+                hashObject.update(buffer: UnsafePointer(buffer), byteCount: size);
             }
-            let MD5 = hexStringFromArray(hashObject.final())
+            let MD5 = hexString(fromArray: hashObject.final(), uppercase: false)
             input.close()
             return MD5 == hash
         }

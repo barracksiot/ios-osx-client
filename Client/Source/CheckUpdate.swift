@@ -24,13 +24,51 @@ extension BarracksClient {
      - parameter request:   The `UpdateCheckRequest` used to perform the check
      - parameter callback:  The `UpdateCheckCallback` called during the process
      */
-    public func checkUpdate(request:UpdateCheckRequest, callback:UpdateCheckCallback) {
-        let parameters:[String:AnyObject] = [
-            "unitId": request.unitId,
-            "versionId": request.versionId,
-            "customClientData": request.customClientData
+    public func checkUpdate(_ request:UpdateCheckRequest, callback:UpdateCheckCallback) {
+        
+       
+        let parameters: Parameters = [
+            "unitId": request.unitId as AnyObject,
+            "versionId": request.versionId as AnyObject,
+            "customClientData": request.customClientData as AnyObject
         ]
-        Alamofire.request(.POST, baseUrl, parameters: parameters, encoding: .JSON, headers:["Authorization" : apiKey])
+        
+    
+        Alamofire.request(baseUrl, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers:["Authorization" : apiKey])
+         .validate(statusCode: 200..<300)
+         .responseJSON { response in
+         guard response.result.isSuccess else {
+         callback.onError?(request, error:response.result.error as NSError?)
+         return
+         }
+         
+         guard let responseJSON = response.result.value as? [String: AnyObject],
+         let versionId:String = responseJSON["versionId"] as? String,
+         let package = responseJSON["packageInfo"] as? [String: AnyObject],
+         let url:String = package["url"] as? String,
+         let hash:String = package["md5"] as? String,
+         let size:NSNumber = package["size"] as? NSNumber
+         else {
+         callback.onUpdateUnavailable?(request)
+         return
+         }
+         
+         let updateCheckResponse = UpdateCheckResponse(
+         versionId: versionId,
+         packageInfo:PackageInfo(
+         url: url,
+         md5: hash,
+         size: size.uint64Value
+         ),
+         customUpdateData: responseJSON["customUpdateData"] as? [String:AnyObject?]
+         )
+         callback.onUpdateAvailable?(request, update:updateCheckResponse)
+         }
+ 
+        
+        
+        /*
+        Alamofire.request(baseUrl, methode: .post, parameters: parameters, encoding: JSONEncoding.default, headers:["Authorization" : apiKey])
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 guard response.result.isSuccess else {
@@ -60,5 +98,27 @@ extension BarracksClient {
                 )
                 callback.onUpdateAvailable?(request, update:updateCheckResponse)
         }
+        */
     }
+    /*
+    public class AccessTokenAdapter: RequestAdapter{
+        
+        private let acessToken:String
+        
+        init(acessToken:String){
+            self.acessToken = acessToken
+        }
+        
+        public func adapt(_ urlRequest: URLRequest) throws -> URLRequest{
+            var urlRequest = urlRequest
+            
+            if urlRequest.url!.absoluteString.hasPrefix(baseUrl){
+                
+                urlRequest.setValue(acessToken, forHTTPHeaderField: "Authorization")
+            }
+            
+            return urlRequest
+        }
+    }
+     */
 }

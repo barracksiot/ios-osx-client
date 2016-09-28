@@ -23,8 +23,8 @@ class UpdateCheckTests: XCTestCase {
     override func setUp() {
         super.setUp()
         OHHTTPStubs.setEnabled(true)
-        OHHTTPStubs.onStubActivation() { request, stub, response in
-            print("\(request.URL!) stubbed by \(stub.name).")
+        OHHTTPStubs.onStubActivation { (request, stubDescriptor, stubResponse) in
+            print("\(request.url!) stubbed by \(stubDescriptor.name).")
         }
     }
     
@@ -35,12 +35,12 @@ class UpdateCheckTests: XCTestCase {
     
     func testUpdateUnavailable() {
         let client:BarracksClient = BarracksClient("deadbeef")
-        let callback:ExpectedUpdateCallback = TestCallbackUnavailable(expectation: expectationWithDescription("testUpdateUnavailable"))
+        let callback:ExpectedUpdateCallback = TestCallbackUnavailable(expectation: expectation(description: "testUpdateUnavailable"))
         
-        stub(isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
+        stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
             return OHHTTPStubsResponse(
-                data: NSData(),
+                data: Data(),
                 statusCode:204,
                 headers:["Content-Type":"application/json", "Cache-Control":"no-cache"]
             )
@@ -49,8 +49,8 @@ class UpdateCheckTests: XCTestCase {
         let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
         
         client.checkUpdate(request, callback:callback)
-        waitForExpectationsWithTimeout(
-            5,
+        waitForExpectations(
+            timeout: 5,
             handler: {
                 error in
                 XCTAssertNil(error, "Error")
@@ -61,19 +61,19 @@ class UpdateCheckTests: XCTestCase {
     
     func testUpdateAvailable() {
         let client:BarracksClient = BarracksClient("deadbeef")
-        let callback:ExpectedUpdateCallback = TestCallbackAvailable(expectation: expectationWithDescription("testUpdateAvailable"))
+        let callback:ExpectedUpdateCallback = TestCallbackAvailable(expectation: expectation(description: "testUpdateAvailable"))
         
-        stub(isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
+        stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
-            let stubPath = OHPathForFile("update_check_response_success.json", self.dynamicType)
-            return fixture(stubPath!, status:200, headers: ["Content-Type":"application/json"])
+            let stubPath = OHPathForFile("update_check_response_success.json", type(of: self))
+            return fixture(filePath: stubPath!, status:200, headers: ["Content-Type" as NSObject:"application/json" as AnyObject])
             }.name = "Available Response"
         
         let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
         
         client.checkUpdate(request, callback: callback)
-        waitForExpectationsWithTimeout(
-            5,
+        waitForExpectations(
+            timeout: 5,
             handler: {
                 error in
                 XCTAssertNil(error, "Error")
@@ -84,18 +84,18 @@ class UpdateCheckTests: XCTestCase {
     
     func testUpdateError() {
         let client:BarracksClient = BarracksClient("deadbeef")
-        let callback:ExpectedUpdateCallback = TestCallbackError(expectation: expectationWithDescription("testUpdateError"))
+        let callback:ExpectedUpdateCallback = TestCallbackError(expectation: expectation(description: "testUpdateError"))
         
-        stub(isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
+        stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey)) {
             _ in
-            let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.CFURLErrorNotConnectedToInternet.rawValue), userInfo:nil)
+            let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
             }.name = "Error Response"
         
         let request = UpdateCheckRequest(unitId:"deadbeef", versionId: "42")
         client.checkUpdate(request, callback: callback)
-        waitForExpectationsWithTimeout(
-            5,
+        waitForExpectations(
+            timeout: 5,
             handler: {
                 error in
                 XCTAssertNil(error, "Error")
@@ -112,34 +112,34 @@ class UpdateCheckTests: XCTestCase {
             self.expectation = expectation
         }
         
-        @objc func onUpdateUnavailable(request:UpdateCheckRequest){
+        @objc func onUpdateUnavailable(_ request:UpdateCheckRequest){
             expectation.fulfill()
         }
-        @objc func onUpdateAvailable(request:UpdateCheckRequest, update: UpdateCheckResponse) {
+        @objc func onUpdateAvailable(_ request:UpdateCheckRequest, update: UpdateCheckResponse) {
             expectation.fulfill()
         }
-        @objc func onError(request:UpdateCheckRequest, error:NSError?){
+        @objc func onError(_ request:UpdateCheckRequest, error:NSError?){
             expectation.fulfill()
         }
     }
     
     
     class TestCallbackUnavailable:ExpectedUpdateCallback {
-        override func onUpdateUnavailable(request:UpdateCheckRequest){
+        override func onUpdateUnavailable(_ request:UpdateCheckRequest){
             success = true
             super.onUpdateUnavailable(request)
         }
     }
     
     class TestCallbackAvailable:ExpectedUpdateCallback {
-        override func onUpdateAvailable(request:UpdateCheckRequest, update:UpdateCheckResponse) {
+        override func onUpdateAvailable(_ request:UpdateCheckRequest, update:UpdateCheckResponse) {
             success = true
             super.onUpdateAvailable(request, update:update)
         }
     }
     
     class TestCallbackError:ExpectedUpdateCallback {
-        override func onError(request:UpdateCheckRequest, error:NSError?){
+        override func onError(_ request:UpdateCheckRequest, error:NSError?){
             success = true
             super.onError(request, error: error)
         }
