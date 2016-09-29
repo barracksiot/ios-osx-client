@@ -35,7 +35,8 @@ class ViewController: NSViewController {
         }
         @objc func onError(_ request:UpdateCheckRequest, error:NSError?){
             parent.btnDownload.isEnabled = false
-            printNotification(title: "Error while checking for updates", subtitle: error?.localizedFailureReason ?? "Errord")
+
+            printNotification(title: "Error while checking for updates", subtitle: error?.localizedDescription ?? "Error")
         }
         
         

@@ -38,8 +38,8 @@ extension BarracksClient {
          .validate(statusCode: 200..<300)
          .responseJSON { response in
          guard response.result.isSuccess else {
-         callback.onError?(request, error:response.result.error as NSError?)
-         return
+            callback.onError?(request, error:response.result.error as NSError?)
+            return
          }
          
          guard let responseJSON = response.result.value as? [String: AnyObject],
@@ -64,61 +64,5 @@ extension BarracksClient {
          )
          callback.onUpdateAvailable?(request, update:updateCheckResponse)
          }
- 
-        
-        
-        /*
-        Alamofire.request(baseUrl, methode: .post, parameters: parameters, encoding: JSONEncoding.default, headers:["Authorization" : apiKey])
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                guard response.result.isSuccess else {
-                    callback.onError?(request, error:response.result.error)
-                    return
-                }
-                
-                guard let responseJSON = response.result.value as? [String: AnyObject],
-                    let versionId:String = responseJSON["versionId"] as? String,
-                    let package = responseJSON["packageInfo"] as? [String: AnyObject],
-                    let url:String = package["url"] as? String,
-                    let hash:String = package["md5"] as? String,
-                    let size:NSNumber = package["size"] as? NSNumber
-                    else {
-                        callback.onUpdateUnavailable?(request)
-                        return
-                }
-                
-                let updateCheckResponse = UpdateCheckResponse(
-                    versionId: versionId,
-                    packageInfo:PackageInfo(
-                        url: url,
-                        md5: hash,
-                        size: size.unsignedLongLongValue
-                    ),
-                    customUpdateData: responseJSON["customUpdateData"] as? [String:AnyObject?]
-                )
-                callback.onUpdateAvailable?(request, update:updateCheckResponse)
-        }
-        */
     }
-    /*
-    public class AccessTokenAdapter: RequestAdapter{
-        
-        private let acessToken:String
-        
-        init(acessToken:String){
-            self.acessToken = acessToken
-        }
-        
-        public func adapt(_ urlRequest: URLRequest) throws -> URLRequest{
-            var urlRequest = urlRequest
-            
-            if urlRequest.url!.absoluteString.hasPrefix(baseUrl){
-                
-                urlRequest.setValue(acessToken, forHTTPHeaderField: "Authorization")
-            }
-            
-            return urlRequest
-        }
-    }
-     */
 }
