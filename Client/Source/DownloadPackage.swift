@@ -28,7 +28,8 @@ extension BarracksClient {
      */
     public func downloadPackage(_ response:UpdateCheckResponse, callback:PackageDownloadCallback, destination:String? = nil) {
         var localPath: URL?
-        Alamofire
+        
+        networkSessionManager
             .download(
                 response.packageInfo.url,
                 method: .get,

@@ -34,7 +34,7 @@ extension BarracksClient {
         ]
         
     
-        Alamofire.request(baseUrl, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers:["Authorization" : apiKey])
+        networkSessionManager.request(baseUrl, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers:["Authorization" : apiKey])
          .validate(statusCode: 200..<300)
          .responseJSON { response in
          guard response.result.isSuccess else {

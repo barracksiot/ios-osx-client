@@ -65,7 +65,7 @@ class ViewController: NSViewController {
         btnCheck.action = #selector(ViewController.checkUpdate(obj:))
         btnDownload.target = self
         btnDownload.action = #selector(ViewController.downloadUpdate(obj:))
-        client = BarracksClient("deadbeef", baseUrl: "https://app.barracks.io/api/device/update/check")
+        client = BarracksClient("deadbeef", baseUrl: "https://app.barracks.io/api/device/update/check", ignoreSSL:true)
     }
     
     func checkUpdate(obj: AnyObject) {

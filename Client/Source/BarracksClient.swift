@@ -15,6 +15,7 @@
  */
 
 import Foundation
+import Alamofire
 
 /**
  The main entry point for using Barracks' SDK.
@@ -26,16 +27,28 @@ import Foundation
     open let apiKey:String
     /// The base URL for contacting the Barracks service
     open let baseUrl:String
+    /// Flag to ignore SSL certificate check
+    open let ignoreSSL:Bool
+    
+    /// Network Session Manager
+    public var networkSessionManager:SessionManager
     
     /**
      Create a client using the parameters provided by the Barracks platform.
      
      - parameter apiKey:    Your account's API key
      - parameter baseUrl:   The base URL for Barracks, if you have set one up
+     - parameter ignoreSSL: Flag to ignore SSL certificate check
      */
-    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/api/device/update/check") {
+    
+    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/api/device/update/check", ignoreSSL:Bool=false) {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
+        self.ignoreSSL = ignoreSSL
+        
+        let domain = NSURL(string: baseUrl)!.host!
+        
+        self.networkSessionManager = ignoreSSL ? SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: [domain:ServerTrustPolicy.disableEvaluation])) : Alamofire.SessionManager.default
     }
     
 }
