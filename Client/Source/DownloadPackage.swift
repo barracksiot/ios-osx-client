@@ -68,27 +68,25 @@ extension BarracksClient {
             .validate(statusCode: 200..<300)
             .downloadProgress{
                 progress in
-        
+                
                 //callback.onProgress?(response, progress:UInt(100 * progress.completedUnitCount / progress.totalUnitCount))
                 
-                callback.onProgress?(response, progress:UInt(100 * progress.fractionCompleted))
+                callback.onProgress(response, progress:UInt(100 * progress.fractionCompleted))
                 return
             }
             .response {
-                 downloadResponse in
+                downloadResponse in
                 
                 if (downloadResponse.error != nil) {
-                    callback.onError?(response, error:downloadResponse.error as NSError?)
+                    callback.onError(response, error:downloadResponse.error)
                     return
                 }
                 print(downloadResponse.response)
                 print("Downloaded file to \(localPath!.path)")
                 if(self.checkMD5(localPath!, hash:response.packageInfo.md5)) {
-                    callback.onSuccess?(response, path:localPath!.path)
+                    callback.onSuccess(response, path:localPath!.path)
                 } else {
-                    let failureReason = "MD5 hash did not match."
-                    let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey as NSObject: failureReason as AnyObject]
-                    callback.onError?(response, error:NSError(domain: Barracks.Error.Domain, code: Barracks.Error.Code.hashVerificationFailed.rawValue, userInfo:userInfo))
+                    callback.onError(response, error:DownloadPackageError.hashVerificationFailed)
                 }
         };
     }
@@ -109,4 +107,8 @@ extension BarracksClient {
         }
         return false
     }
+}
+
+public enum DownloadPackageError : Error {
+    case hashVerificationFailed
 }

@@ -17,13 +17,13 @@
 /**
  This class is used when performing a request for an update using `BarracksClient.checkUpdate(_:callback:)`
  */
-@objc open class UpdateCheckRequest : NSObject {
+public class UpdateCheckRequest {
     /// The unique identifier for the unit being used
-    open let unitId:String
+    let unitId:String
     /// The version identifier of the current package used by the unit
-    open let versionId:String
+    let versionId:String
     /// User defined customClientData which will be sent to the Barracks service
-    open let customClientData:[String: AnyObject]
+    let customClientData:[String: AnyObject]
     
     /**
      Creates a request which can be sent to the Barracks service.

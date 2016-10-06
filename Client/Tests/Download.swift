@@ -189,11 +189,11 @@ class DownloadTests: XCTestCase {
             self.expectation = expectation
         }
         
-        @objc func onProgress(_ response:UpdateCheckResponse, progress:UInt){
+        func onProgress(_ response:UpdateCheckResponse, progress:UInt){
         }
-        @objc func onSuccess(_ response:UpdateCheckResponse, path:String) {
+        func onSuccess(_ response:UpdateCheckResponse, path:String) {
         }
-        @objc func onError(_ response:UpdateCheckResponse, error: NSError?){
+        func onError(_ response:UpdateCheckResponse, error: Error?){
             expectation?.fulfill()
         }
     }
@@ -219,7 +219,7 @@ class DownloadTests: XCTestCase {
     }
     
     class TestDownloadError:ExpectedDownloadCallback {
-        override func onError(_ response:UpdateCheckResponse, error: NSError?) {
+        override func onError(_ response:UpdateCheckResponse, error: Error?) {
             success = true
             expectation?.fulfill()
         }

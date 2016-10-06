@@ -9,7 +9,7 @@ s.authors = { 'Barracks Solutions' => 'contact@barracks.io' }
 s.source = { :git => 'ssh://git@bitbucket.org/barracksiot/barracks-client-ios.git', :branch => 'master' }
 
 s.ios.deployment_target = '9.3'
-s.osx.deployment_target = '10.12'
+s.osx.deployment_target = '10.11'
 
 s.source_files = 'Client/Source/*.swift'
 

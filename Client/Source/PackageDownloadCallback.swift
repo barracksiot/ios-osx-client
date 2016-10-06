@@ -17,14 +17,14 @@
 /**
  This protocol is used when downloading an update using `BarracksClient.downloadPackage(response:, callback:, destination:)`
  */
-@objc public protocol PackageDownloadCallback {
+public protocol PackageDownloadCallback {
     /**
      This method is called during the download, to inform of the progress of the download.
      
      - parameter response:  The `UpdateCheckResponse` used to trigger the download.
      - parameter progress:  The download progress in percent.
      */
-    @objc optional func onProgress(_ response:UpdateCheckResponse, progress:UInt)
+    func onProgress(_ response:UpdateCheckResponse, progress:UInt)
     
     /**
      This method is called when an error occurs during the download.
@@ -32,7 +32,7 @@
      - parameter response:  The `UpdateCheckResponse` used to trigger the download.
      - parameter error:     The error raised during the download.
      */
-    @objc optional func onError(_ response:UpdateCheckResponse, error: NSError?)
+    func onError(_ response:UpdateCheckResponse, error: Error?)
     
     /**
      This method is used when an download is successfully completed.
@@ -40,5 +40,5 @@
      - parameter response:  The `UpdateCheckResponse` used to trigger the download.
      - parameter path:      The path of the downloaded file.
      */
-    @objc optional func onSuccess(_ response:UpdateCheckResponse, path:String)
+    func onSuccess(_ response:UpdateCheckResponse, path:String)
 }

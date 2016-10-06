@@ -17,21 +17,21 @@
 /**
  This protocol is used when requesting details about an update using `BarracksClient.checkUpdate(_:callback:)`.
  */
-@objc public protocol UpdateCheckCallback: class {
+public protocol UpdateCheckCallback: class {
     /**
      This method is called when the Barracks service identifies an eligible update.
      
      - parameter request:   The `UpdateCheckRequest` request used to check for an update
      - parameter update:    The `UpdateCheckResponse` containing the details of the eligible update
      */
-    @objc optional func onUpdateAvailable(_ request: UpdateCheckRequest, update: UpdateCheckResponse)
+    func onUpdateAvailable(_ request: UpdateCheckRequest, update: UpdateCheckResponse)
     
     /**
      This method is called when the Barracks service identifies that there is no eligible update
      
      - parameter request:   The `UpdateCheckRequest` request used to check for an update
      */
-    @objc optional func onUpdateUnavailable(_ request: UpdateCheckRequest)
+    func onUpdateUnavailable(_ request: UpdateCheckRequest)
     
     /**
      This method is called when an error occurs during the request to the Barracks service.
@@ -39,5 +39,5 @@
      - parameter request:   The `UpdateCheckRequest` request used to check for an update
      - parameter error:     The error which happened during the request
      */
-    @objc optional func onError(_ request: UpdateCheckRequest, error: NSError?)
+    func onError(_ request: UpdateCheckRequest, error: Error?)
 }

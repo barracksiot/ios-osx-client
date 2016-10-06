@@ -23,17 +23,17 @@ class ViewController: NSViewController {
     
     class MyUpdateCallback : UpdateCheckCallback {
         weak var parent: ViewController! = nil
-        @objc func onUpdateAvailable(_ request:UpdateCheckRequest, update:UpdateCheckResponse) {
+        func onUpdateAvailable(_ request:UpdateCheckRequest, update:UpdateCheckResponse) {
             debugPrint(update)
             parent.update = update
             printNotification(title: "Update available", subtitle: "Version \(update.versionId)")
             parent.btnDownload.isEnabled = true
         }
-        @objc func onUpdateUnavailable(_ request:UpdateCheckRequest){
+        func onUpdateUnavailable(_ request:UpdateCheckRequest){
             printNotification(title: "No update available", subtitle: "Please check later")
             parent.btnDownload.isEnabled = false
         }
-        @objc func onError(_ request:UpdateCheckRequest, error:NSError?){
+        func onError(_ request:UpdateCheckRequest, error:Error?){
             parent.btnDownload.isEnabled = false
 
             printNotification(title: "Error while checking for updates", subtitle: error?.localizedDescription ?? "Error")
@@ -44,14 +44,14 @@ class ViewController: NSViewController {
     
     class MyDownloadCallback : PackageDownloadCallback {
         weak var parent: ViewController! = nil
-        @objc func onError(_ response: UpdateCheckResponse, error: NSError?) {
-            printNotification(title: "Error while checking for updates", subtitle: (error?.localizedFailureReason)!)
+        func onError(_ response: UpdateCheckResponse, error: Error?) {
+            printNotification(title: "Error while checking for updates", subtitle: (error?.localizedDescription)!)
         }
-        @objc func onProgress(_ response: UpdateCheckResponse, progress: UInt) {
+        func onProgress(_ response: UpdateCheckResponse, progress: UInt) {
             
         }
-        @objc func onSuccess(update: UpdateCheckResponse, path: String) {
-            printNotification(title: "Update \(update.versionId) downloaded", subtitle: path, userInfo: ["path": path as AnyObject])
+        func onSuccess(_ response: UpdateCheckResponse, path: String) {
+            printNotification(title: "Update \(response.versionId) downloaded", subtitle: path, userInfo: ["path": path as AnyObject])
         }
     }
     

@@ -26,43 +26,38 @@ extension BarracksClient {
      */
     public func checkUpdate(_ request:UpdateCheckRequest, callback:UpdateCheckCallback) {
         
-       
+        
         let parameters: Parameters = [
             "unitId": request.unitId as AnyObject,
             "versionId": request.versionId as AnyObject,
             "customClientData": request.customClientData as AnyObject
         ]
         
-    
+        
         networkSessionManager.request(baseUrl, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers:["Authorization" : apiKey])
-         .validate(statusCode: 200..<300)
-         .responseJSON { response in
-         guard response.result.isSuccess else {
-            callback.onError?(request, error:response.result.error as NSError?)
-            return
-         }
-         
-         guard let responseJSON = response.result.value as? [String: AnyObject],
-         let versionId:String = responseJSON["versionId"] as? String,
-         let package = responseJSON["packageInfo"] as? [String: AnyObject],
-         let url:String = package["url"] as? String,
-         let hash:String = package["md5"] as? String,
-         let size:NSNumber = package["size"] as? NSNumber
-         else {
-         callback.onUpdateUnavailable?(request)
-         return
-         }
-         
-         let updateCheckResponse = UpdateCheckResponse(
-         versionId: versionId,
-         packageInfo:PackageInfo(
-         url: url,
-         md5: hash,
-         size: size.uint64Value
-         ),
-         customUpdateData: responseJSON["customUpdateData"] as? [String:AnyObject?]
-         )
-         callback.onUpdateAvailable?(request, update:updateCheckResponse)
-         }
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                guard response.result.isSuccess else {
+                    callback.onError(request, error:response.result.error as NSError?)
+                    return
+                }
+                
+                guard let responseJSON = response.result.value as? [String: AnyObject],
+                    let versionId:String = responseJSON["versionId"] as? String,
+                    let package = responseJSON["packageInfo"] as? [String: AnyObject],
+                    let url:String = package["url"] as? String,
+                    let hash:String = package["md5"] as? String,
+                    let size:NSNumber = package["size"] as? NSNumber
+                    else {
+                        callback.onUpdateUnavailable(request)
+                        return
+                }
+                let updateCheckResponse = UpdateCheckResponse(
+                    versionId: versionId,
+                    packageInfo:PackageInfo(url: url, md5: hash, size: size.uint64Value),
+                    customUpdateData: responseJSON["customUpdateData"] as? [String:AnyObject?]
+                )
+                callback.onUpdateAvailable(request, update:updateCheckResponse)
+        }
     }
 }

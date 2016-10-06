@@ -19,13 +19,13 @@
  The instance of this class is retrieved in the `UpdateCheckCallback.onUpdateAvailable(update:)` when the call to `BarracksClient.checkUpdate(_:callback:)` is successful.
  You can then use it to download the update package using `BarracksClient.downloadPackage(response:, callback:, destination:)`.
  */
-@objc open class UpdateCheckResponse : NSObject {
+public class UpdateCheckResponse : NSObject {
     /// The version ID of the update.
-    open let versionId: String
+    public let versionId: String
     /// The package information, useful for downloading and checking the package.
-    open let packageInfo: PackageInfo
+    public let packageInfo: PackageInfo
     /// The user-defined customUpdateData of the update.
-    open let customUpdateData: [String: AnyObject?]?
+    public let customUpdateData: [String: AnyObject?]?
     
     init(versionId:String, packageInfo:PackageInfo, customUpdateData: [String: AnyObject?]?) {
         self.versionId = versionId

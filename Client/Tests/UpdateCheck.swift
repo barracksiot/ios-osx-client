@@ -112,17 +112,16 @@ class UpdateCheckTests: XCTestCase {
             self.expectation = expectation
         }
         
-        @objc func onUpdateUnavailable(_ request:UpdateCheckRequest){
+        func onUpdateUnavailable(_ request:UpdateCheckRequest){
             expectation.fulfill()
         }
-        @objc func onUpdateAvailable(_ request:UpdateCheckRequest, update: UpdateCheckResponse) {
+        func onUpdateAvailable(_ request:UpdateCheckRequest, update: UpdateCheckResponse) {
             expectation.fulfill()
         }
-        @objc func onError(_ request:UpdateCheckRequest, error:NSError?){
+        func onError(_ request:UpdateCheckRequest, error:Error?){
             expectation.fulfill()
         }
     }
-    
     
     class TestCallbackUnavailable:ExpectedUpdateCallback {
         override func onUpdateUnavailable(_ request:UpdateCheckRequest){
@@ -139,11 +138,9 @@ class UpdateCheckTests: XCTestCase {
     }
     
     class TestCallbackError:ExpectedUpdateCallback {
-        override func onError(_ request:UpdateCheckRequest, error:NSError?){
+        override func onError(_ request:UpdateCheckRequest, error:Error?){
             success = true
             super.onError(request, error: error)
         }
     }
-    
-    
 }
