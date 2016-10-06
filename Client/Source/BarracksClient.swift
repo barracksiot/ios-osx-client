@@ -40,7 +40,7 @@ open class BarracksClient {
      - parameter baseUrl:   The base URL for Barracks, if you have set one up
      - parameter ignoreSSL: Flag to ignore SSL certificate check
      */
-    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/api/device/update/check", ignoreSSL:Bool=false) {
+    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/api/device/update/check", ignoreSSL:Bool = false) {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
         self.ignoreSSL = ignoreSSL

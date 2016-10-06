@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'Barracks'
-s.version = '0.0.1'
+s.version = '1.0.0'
 s.license = 'Apache 2'
 s.summary = 'Barracks Client in swift'
 s.homepage = 'https://barracks.io'
