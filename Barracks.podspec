@@ -6,7 +6,7 @@ s.summary = 'Barracks Client in swift'
 s.homepage = 'https://barracks.io'
 s.social_media_url = 'http://twitter.com/barracksiot'
 s.authors = { 'Barracks Solutions' => 'contact@barracks.io' }
-s.source = { :git => 'ssh://git@github.com/barracksiot/ios-osx-client.git', :tag => '1.0.0' }
+s.source = { :git => 'https://github.com/barracksiot/ios-osx-client.git', :tag => '1.0.0' }
 
 s.ios.deployment_target = '9.3'
 s.osx.deployment_target = '10.11'
