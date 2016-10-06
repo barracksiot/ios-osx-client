@@ -22,7 +22,7 @@
         <a class="header-link" href="../index.html">
           Barracks Docs
         </a>
-         (96% documented)
+         (92% documented)
       </p>
     
         <p class="header-col header-col--secondary">
@@ -67,6 +67,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DownloadPackageError.html">DownloadPackageError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -74,17 +82,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/UpdateCheckCallback.html">UpdateCheckCallback</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Error.html">Error</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Error/Code.html">– Code</a>
               </li>
             </ul>
           </li>
@@ -97,7 +94,7 @@
             <h1>UpdateCheckRequest</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpdateCheckRequest</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpdateCheckRequest</span></code></pre>
 
                 </div>
               </div>
@@ -110,96 +107,6 @@
           <div class="section-content">
             <div class="task-group">
               <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC8Barracks18UpdateCheckRequest6unitIdSS"></a>
-                    <a name="//apple_ref/swift/Property/unitId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8Barracks18UpdateCheckRequest6unitIdSS">unitId</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The unique identifier for the unit being used</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">unitId</span><span class="p">:</span><span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/UpdateCheckRequest.swift#L22">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC8Barracks18UpdateCheckRequest9versionIdSS"></a>
-                    <a name="//apple_ref/swift/Property/versionId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8Barracks18UpdateCheckRequest9versionIdSS">versionId</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The version identifier of the current package used by the unit</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">versionId</span><span class="p">:</span><span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/UpdateCheckRequest.swift#L24">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC8Barracks18UpdateCheckRequest16customClientDataGVs10DictionarySSPs9AnyObject__"></a>
-                    <a name="//apple_ref/swift/Property/customClientData" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8Barracks18UpdateCheckRequest16customClientDataGVs10DictionarySSPs9AnyObject__">customClientData</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>User defined customClientData which will be sent to the Barracks service</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">customClientData</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/UpdateCheckRequest.swift#L26">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -284,8 +191,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2016 <a class="link" href="https://barracks.io" target="_blank" rel="external">Barracks</a>. All rights reserved. (Last updated: 2016-09-06)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2016 <a class="link" href="https://barracks.io" target="_blank" rel="external">Barracks</a>. All rights reserved. (Last updated: 2016-10-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

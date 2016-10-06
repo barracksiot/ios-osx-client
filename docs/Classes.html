@@ -21,7 +21,7 @@
         <a class="header-link" href="index.html">
           Barracks Docs
         </a>
-         (96% documented)
+         (92% documented)
       </p>
     
         <p class="header-col header-col--secondary">
@@ -66,6 +66,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/DownloadPackageError.html">DownloadPackageError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -73,17 +81,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/UpdateCheckCallback.html">UpdateCheckCallback</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Structs.html">Structs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/Error.html">Error</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/Error/Code.html">– Code</a>
               </li>
             </ul>
           </li>
@@ -126,12 +123,12 @@ for a specific configuration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">BarracksClient</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BarracksClient</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L24-L41">Show on GitHub</a>
+                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L25-L52">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -161,7 +158,7 @@ for a specific configuration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">PackageInfo</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">PackageInfo</span></code></pre>
 
                         </div>
                       </div>
@@ -196,7 +193,7 @@ for a specific configuration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpdateCheckRequest</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpdateCheckRequest</span></code></pre>
 
                         </div>
                       </div>
@@ -233,7 +230,7 @@ You can then use it to download the update package using <code>BarracksClient.do
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpdateCheckResponse</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">UpdateCheckResponse</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -251,8 +248,8 @@ You can then use it to download the update package using <code>BarracksClient.do
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2016 <a class="link" href="https://barracks.io" target="_blank" rel="external">Barracks</a>. All rights reserved. (Last updated: 2016-09-06)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2016 <a class="link" href="https://barracks.io" target="_blank" rel="external">Barracks</a>. All rights reserved. (Last updated: 2016-10-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

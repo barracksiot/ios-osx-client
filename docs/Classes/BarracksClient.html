@@ -22,7 +22,7 @@
         <a class="header-link" href="../index.html">
           Barracks Docs
         </a>
-         (96% documented)
+         (92% documented)
       </p>
     
         <p class="header-col header-col--secondary">
@@ -67,6 +67,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DownloadPackageError.html">DownloadPackageError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -74,17 +82,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/UpdateCheckCallback.html">UpdateCheckCallback</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Error.html">Error</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Error/Code.html">– Code</a>
               </li>
             </ul>
           </li>
@@ -97,7 +94,7 @@
             <h1>BarracksClient</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">class</span> <span class="kt">BarracksClient</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BarracksClient</span></code></pre>
 
                 </div>
               </div>
@@ -115,9 +112,9 @@ for a specific configuration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8Barracks14BarracksClient6apiKeySS"></a>
-                    <a name="//apple_ref/swift/Property/apiKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8Barracks14BarracksClient6apiKeySS">apiKey</a>
+                    <a name="/s:vC8Barracks14BarracksClient21networkSessionManagerC9Alamofire14SessionManager"></a>
+                    <a name="//apple_ref/swift/Property/networkSessionManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8Barracks14BarracksClient21networkSessionManagerC9Alamofire14SessionManager">networkSessionManager</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -125,19 +122,19 @@ for a specific configuration.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Your account&rsquo;s API key</p>
+                        <p>Network Session Manager</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">apiKey</span><span class="p">:</span><span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">networkSessionManager</span><span class="p">:</span><span class="kt">SessionManager</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L26">Show on GitHub</a>
+                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -145,39 +142,9 @@ for a specific configuration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8Barracks14BarracksClient7baseUrlSS"></a>
-                    <a name="//apple_ref/swift/Property/baseUrl" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8Barracks14BarracksClient7baseUrlSS">baseUrl</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The base URL for contacting the Barracks service</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">baseUrl</span><span class="p">:</span><span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L28">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC8Barracks14BarracksClientcFTSS7baseUrlSS_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(_:baseUrl:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8Barracks14BarracksClientcFTSS7baseUrlSS_S0_">init(_:baseUrl:)</a>
+                    <a name="/s:FC8Barracks14BarracksClientcFTSS7baseUrlSS9ignoreSSLSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(_:baseUrl:ignoreSSL:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8Barracks14BarracksClientcFTSS7baseUrlSS9ignoreSSLSb_S0_">init(_:baseUrl:ignoreSSL:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -192,7 +159,7 @@ for a specific configuration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">apiKey</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span><span class="kt">String</span> <span class="o">=</span> <span class="s">"https://app.barracks.io/api/device/update/check"</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">apiKey</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span><span class="kt">String</span> <span class="o">=</span> <span class="s">"https://app.barracks.io/api/device/update/check"</span><span class="p">,</span> <span class="nv">ignoreSSL</span><span class="p">:</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -208,7 +175,7 @@ for a specific configuration.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Your account&rsquo;s API key</p>
+                                  <p>Your account’s API key</p>
 
                                 </div>
                               </td>
@@ -226,11 +193,24 @@ for a specific configuration.</p>
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ignoreSSL</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Flag to ignore SSL certificate check</p>
+
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L36-L39">Show on GitHub</a>
+                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/BarracksClient.swift#L43-L51">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -259,7 +239,7 @@ for a specific configuration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">checkUpdate</span><span class="p">(</span><span class="nv">request</span><span class="p">:</span><span class="kt"><a href="../Classes/UpdateCheckRequest.html">UpdateCheckRequest</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span><span class="kt"><a href="../Protocols/UpdateCheckCallback.html">UpdateCheckCallback</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">checkUpdate</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span><span class="kt"><a href="../Classes/UpdateCheckRequest.html">UpdateCheckRequest</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span><span class="kt"><a href="../Protocols/UpdateCheckCallback.html">UpdateCheckCallback</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -297,7 +277,7 @@ for a specific configuration.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/CheckUpdate.swift#L27-L63">Show on GitHub</a>
+                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/CheckUpdate.swift#L27-L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -326,7 +306,7 @@ for a specific configuration.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">downloadPackage</span><span class="p">(</span><span class="nv">response</span><span class="p">:</span><span class="kt"><a href="../Classes/UpdateCheckResponse.html">UpdateCheckResponse</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span><span class="kt"><a href="../Protocols/PackageDownloadCallback.html">PackageDownloadCallback</a></span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">downloadPackage</span><span class="p">(</span><span class="n">_</span> <span class="nv">response</span><span class="p">:</span><span class="kt"><a href="../Classes/UpdateCheckResponse.html">UpdateCheckResponse</a></span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span><span class="kt"><a href="../Protocols/PackageDownloadCallback.html">PackageDownloadCallback</a></span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span><span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -377,7 +357,7 @@ for a specific configuration.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/DownloadPackage.swift#L29-L89">Show on GitHub</a>
+                        <a href="https://github.com/barracksiot/ios-osx-client/tree/master/Client/Source/DownloadPackage.swift#L29-L92">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -390,8 +370,8 @@ for a specific configuration.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2016 <a class="link" href="https://barracks.io" target="_blank" rel="external">Barracks</a>. All rights reserved. (Last updated: 2016-09-06)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2016 <a class="link" href="https://barracks.io" target="_blank" rel="external">Barracks</a>. All rights reserved. (Last updated: 2016-10-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
