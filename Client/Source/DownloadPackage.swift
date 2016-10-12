@@ -15,7 +15,7 @@
  */
 
 import Alamofire
-import IDZSwiftCommonCrypto
+import CryptoSwift
 
 extension BarracksClient {
     
@@ -83,27 +83,34 @@ extension BarracksClient {
                 }
                 print(downloadResponse.response)
                 print("Downloaded file to \(localPath!.path)")
-                if(self.checkMD5(localPath!, hash:response.packageInfo.md5)) {
-                    callback.onSuccess(response, path:localPath!.path)
-                } else {
-                    callback.onError(response, error:DownloadPackageError.hashVerificationFailed)
+                do {
+                    let isHashCorrect = try self.checkMD5(localPath!, hash:response.packageInfo.md5)
+                    if(isHashCorrect) {
+                        callback.onSuccess(response, path:localPath!.path)
+                    } else {
+                        callback.onError(response, error:DownloadPackageError.hashVerificationFailed)
+                    }
+                } catch let error {
+                    callback.onError(response, error: error)
                 }
         };
     }
     
-    fileprivate func checkMD5(_ path:URL, hash:String) -> Bool {
+    fileprivate func checkMD5(_ path:URL, hash:String) throws -> Bool {
         let inputStream = InputStream(url:path)
         if let input = inputStream {
             input.open()
-            let hashObject : Digest = Digest(algorithm:.md5)
+            var hashObject : MD5 = MD5()
             let buffer:[UInt8] = [UInt8](repeating: 0, count: 4096)
             while(input.hasBytesAvailable) {
                 let size = input.read(UnsafeMutablePointer(mutating: buffer), maxLength:4096)
-                hashObject.update(buffer: UnsafePointer(buffer), byteCount: size);
+                if(size > 0){
+                    try hashObject.update(withBytes: buffer[0...(size-1)]);
+                }
             }
-            let MD5 = hexString(fromArray: hashObject.final(), uppercase: false)
+            let MD5hash = try hashObject.finish().map() { String(format:"%02x", $0) }.reduce("", +)
             input.close()
-            return MD5 == hash
+            return MD5hash == hash
         }
         return false
     }
