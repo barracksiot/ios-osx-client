@@ -72,6 +72,8 @@
 		BF64821B1F15544A004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64821A1F15544A004A81FB /* get_device_packages_response.json */; };
 		BF64821D1F1555DC004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64821A1F15544A004A81FB /* get_device_packages_response.json */; };
 		BF64821E1F1555EC004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64821A1F15544A004A81FB /* get_device_packages_response.json */; };
+		BF6482201F155785004A81FB /* PackageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64821F1F155785004A81FB /* PackageDownload.swift */; };
+		BF6482211F155785004A81FB /* PackageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64821F1F155785004A81FB /* PackageDownload.swift */; };
 		C8715E26AF5212396BA83B31 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CF54AA19277D7623E9B778 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework */; };
 		DDB64E9201667544456BF768 /* Pods_Barracks_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA77484393AD1D0979BA4C /* Pods_Barracks_OSX.framework */; };
 		F9E3BC5A1FCCEA5DDE114386 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFF0B46D7F008143EEB9B24 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework */; };
@@ -236,6 +238,7 @@
 		BF6482121F154569004A81FB /* DownloadPackageCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadPackageCallback.swift; sourceTree = "<group>"; };
 		BF6482151F1549FB004A81FB /* GetPackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPackages.swift; sourceTree = "<group>"; };
 		BF64821A1F15544A004A81FB /* get_device_packages_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = get_device_packages_response.json; sourceTree = "<group>"; };
+		BF64821F1F155785004A81FB /* PackageDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageDownload.swift; sourceTree = "<group>"; };
 		C04F8DF83B3435868CE2332C /* Pods-Barracks OSX-Barracks OSX Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX-Barracks OSX Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX-Barracks OSX Tests/Pods-Barracks OSX-Barracks OSX Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C6DA77484393AD1D0979BA4C /* Pods_Barracks_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA72FB568FEB90F7EF8FF27 /* Pods-Barracks iOS-Barracks iOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS-Barracks iOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS-Barracks iOS Tests/Pods-Barracks iOS-Barracks iOS Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -349,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6482151F1549FB004A81FB /* GetPackages.swift */,
+				BF64821F1F155785004A81FB /* PackageDownload.swift */,
 				39D1DB6F1CE23B080040A04B /* UpdateCheck.swift */,
 				39139F331CE3C0DE00E546B7 /* Download.swift */,
 				396729A41CC6DE730099D71C /* Stubs */,
@@ -897,6 +901,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6482201F155785004A81FB /* PackageDownload.swift in Sources */,
 				BF6482181F154A65004A81FB /* GetPackages.swift in Sources */,
 				39139F421CE3C15900E546B7 /* Download.swift in Sources */,
 				39D1DB8C1CE23D800040A04B /* UpdateCheck.swift in Sources */,
@@ -934,6 +939,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6482211F155785004A81FB /* PackageDownload.swift in Sources */,
 				BF6482191F154A6B004A81FB /* GetPackages.swift in Sources */,
 				39139F431CE3C15E00E546B7 /* Download.swift in Sources */,
 				39D1DB961CE23D840040A04B /* UpdateCheck.swift in Sources */,

@@ -50,7 +50,7 @@ extension BarracksClient {
                             let url:String = jsonPackage["url"] as? String,
                             let md5:String = jsonPackage["md5"] as? String,
                             let size:NSNumber = jsonPackage["size"] as? NSNumber,
-                            let fileName:String = jsonPackage["fileName"] as? String else {
+                            let filename:String = jsonPackage["filename"] as? String else {
                                 continue
                         }
                         
@@ -59,7 +59,7 @@ extension BarracksClient {
                                                           url: url,
                                                           md5: md5,
                                                           size: size.uint64Value,
-                                                          fileName: fileName))
+                                                          filename: filename))
                     }
                 }
                 
@@ -73,7 +73,7 @@ extension BarracksClient {
                             let url:String = jsonPackage["url"] as? String,
                             let md5:String = jsonPackage["md5"] as? String,
                             let size:NSNumber = jsonPackage["size"] as? NSNumber,
-                            let fileName:String = jsonPackage["fileName"] as? String else {
+                            let filename:String = jsonPackage["filename"] as? String else {
                                 continue
                         }
                         
@@ -82,7 +82,7 @@ extension BarracksClient {
                                                       url: url,
                                                       md5: md5,
                                                       size: size.uint64Value,
-                                                      fileName: fileName))
+                                                      filename: filename))
                     }
                 }
                 

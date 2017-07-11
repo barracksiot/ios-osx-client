@@ -19,14 +19,14 @@ public class AvailablePackage: DevicePackage {
     /// The expected size of the file
     public let size: UInt64
     ///
-    public let fileName:String
+    public let filename:String
     
-    init(reference:String, version:String, url:String, md5:String, size:UInt64, fileName:String) {
+    init(reference:String, version:String, url:String, md5:String, size:UInt64, filename:String) {
         self.version = version
         self.url = url
         self.md5 = md5
         self.size = size
-        self.fileName = fileName
+        self.filename = filename
         super.init(reference:reference)
     }
 }

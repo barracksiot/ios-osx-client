@@ -1,7 +1,7 @@
 {
     "available": [
         {
-            "reference": "abc.edf",
+            "reference": "a.new.package",
             "version": "0.0.1",
             "url": "https://app.barracks.io/path/to/package/version/",
             "md5": "deadbeefbadc0ffee",
@@ -11,7 +11,7 @@
     ],
     "changed": [
         {
-            "reference": "abc.edf",
+            "reference": "an.changed.package",
             "version": "0.0.1",
             "url": "https://app.barracks.io/path/to/package/version/",
             "md5": "deadbeefbadc0ffee",
@@ -21,13 +21,13 @@
     ],
     "unchanged": [
         {
-            "reference": "abc.edf",
+            "reference": "an.ungchanged.package",
             "version": "0.0.1",
         }
     ],
     "unavailable": [
         {
-            "reference": "abc.edf",
+            "reference": "an.unavailable.package",
         }
     ]
 }

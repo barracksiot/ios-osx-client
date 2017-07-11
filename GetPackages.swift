@@ -11,7 +11,7 @@ import XCTest
 import OHHTTPStubs
 @testable import Barracks
 
-class GetPackages: XCTestCase {
+class GetPackagesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -62,7 +62,7 @@ class GetPackages: XCTestCase {
         let request = GetDevicePackagesRequest(unitId: "deadbeef", packages: [], customClientData: [:])
         client.getDevicePackages(request: request, callback: callback)
         waitForExpectations(
-            timeout: 5,
+            timeout: 50,
             handler: {
                 error in
                 XCTAssertNil(error, "Error")
@@ -98,7 +98,11 @@ class GetPackages: XCTestCase {
     
     class TestCallbackResponse:ExpectedGetDevicePackagesCallback {
         override func onResponse(request: GetDevicePackagesRequest, response: GetDevicePackagesResponse) {
-            success = true
+            success = response.available.count == 1
+                && response.changed.count == 1
+                && response.unavailable.count == 1
+                && response.unchanged.count == 1
+            
             super.onResponse(request: request, response: response)
         }
     }
