@@ -1,0 +1,33 @@
+{
+    "available": [
+        {
+            "reference": "abc.edf",
+            "version": "0.0.1",
+            "url": "https://app.barracks.io/path/to/package/version/",
+            "md5": "deadbeefbadc0ffee",
+            "size": 42,
+            "filename": "aFile.sh"
+        }
+    ],
+    "changed": [
+        {
+            "reference": "abc.edf",
+            "version": "0.0.1",
+            "url": "https://app.barracks.io/path/to/package/version/",
+            "md5": "deadbeefbadc0ffee",
+            "size": 42,
+            "filename": "aFile.sh"
+        }
+    ],
+    "unchanged": [
+        {
+            "reference": "abc.edf",
+            "version": "0.0.1",
+        }
+    ],
+    "unavailable": [
+        {
+            "reference": "abc.edf",
+        }
+    ]
+}

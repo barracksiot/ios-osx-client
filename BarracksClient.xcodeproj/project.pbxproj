@@ -43,6 +43,35 @@
 		39D1DBAF1CE24DA60040A04B /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39D1DB6B1CE23AF50040A04B /* firmware.jpg */; };
 		39D1DBB01CE24DA60040A04B /* update_check_response_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 39D1DB6C1CE23AF50040A04B /* update_check_response_success.json */; };
 		4A2102825397E15FFE7E8C7C /* Pods_Barracks_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BAA13DF7A4491D29D222C3 /* Pods_Barracks_iOS.framework */; };
+		BF6481EF1F151605004A81FB /* GetDevicePackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481EE1F151605004A81FB /* GetDevicePackages.swift */; };
+		BF6481F11F15167D004A81FB /* GetDevicePackagesCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481F01F15167D004A81FB /* GetDevicePackagesCallback.swift */; };
+		BF6481F21F15167D004A81FB /* GetDevicePackagesCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481F01F15167D004A81FB /* GetDevicePackagesCallback.swift */; };
+		BF6481F41F151770004A81FB /* GetDevicePackagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481F31F151770004A81FB /* GetDevicePackagesRequest.swift */; };
+		BF6481F51F151770004A81FB /* GetDevicePackagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481F31F151770004A81FB /* GetDevicePackagesRequest.swift */; };
+		BF6481FA1F151A5B004A81FB /* InstalledPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481F91F151A5B004A81FB /* InstalledPackage.swift */; };
+		BF6481FB1F151A5B004A81FB /* InstalledPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481F91F151A5B004A81FB /* InstalledPackage.swift */; };
+		BF6481FD1F151CDD004A81FB /* DevicePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481FC1F151CDD004A81FB /* DevicePackage.swift */; };
+		BF6481FE1F151CDD004A81FB /* DevicePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481FC1F151CDD004A81FB /* DevicePackage.swift */; };
+		BF6482001F151DD0004A81FB /* AvailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481FF1F151DD0004A81FB /* AvailablePackage.swift */; };
+		BF6482011F151DD0004A81FB /* AvailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6481FF1F151DD0004A81FB /* AvailablePackage.swift */; };
+		BF6482031F151EE1004A81FB /* ChangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482021F151EE1004A81FB /* ChangedPackage.swift */; };
+		BF6482041F151EE1004A81FB /* ChangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482021F151EE1004A81FB /* ChangedPackage.swift */; };
+		BF6482071F152158004A81FB /* UnchangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482061F152158004A81FB /* UnchangedPackage.swift */; };
+		BF6482081F152158004A81FB /* UnchangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482061F152158004A81FB /* UnchangedPackage.swift */; };
+		BF64820A1F1521C6004A81FB /* UnavailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482091F1521C6004A81FB /* UnavailablePackage.swift */; };
+		BF64820B1F1521C6004A81FB /* UnavailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482091F1521C6004A81FB /* UnavailablePackage.swift */; };
+		BF64820D1F1541F5004A81FB /* GetDevicePackagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64820C1F1541F5004A81FB /* GetDevicePackagesResponse.swift */; };
+		BF64820E1F1541F5004A81FB /* GetDevicePackagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64820C1F1541F5004A81FB /* GetDevicePackagesResponse.swift */; };
+		BF6482101F154397004A81FB /* DownloadPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64820F1F154397004A81FB /* DownloadPackages.swift */; };
+		BF6482111F154397004A81FB /* DownloadPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64820F1F154397004A81FB /* DownloadPackages.swift */; };
+		BF6482131F154569004A81FB /* DownloadPackageCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482121F154569004A81FB /* DownloadPackageCallback.swift */; };
+		BF6482141F154569004A81FB /* DownloadPackageCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482121F154569004A81FB /* DownloadPackageCallback.swift */; };
+		BF6482171F1549FB004A81FB /* GetPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482151F1549FB004A81FB /* GetPackages.swift */; };
+		BF6482181F154A65004A81FB /* GetPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482151F1549FB004A81FB /* GetPackages.swift */; };
+		BF6482191F154A6B004A81FB /* GetPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482151F1549FB004A81FB /* GetPackages.swift */; };
+		BF64821B1F15544A004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64821A1F15544A004A81FB /* get_device_packages_response.json */; };
+		BF64821D1F1555DC004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64821A1F15544A004A81FB /* get_device_packages_response.json */; };
+		BF64821E1F1555EC004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64821A1F15544A004A81FB /* get_device_packages_response.json */; };
 		C8715E26AF5212396BA83B31 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CF54AA19277D7623E9B778 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework */; };
 		DDB64E9201667544456BF768 /* Pods_Barracks_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA77484393AD1D0979BA4C /* Pods_Barracks_OSX.framework */; };
 		F9E3BC5A1FCCEA5DDE114386 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFF0B46D7F008143EEB9B24 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework */; };
@@ -193,6 +222,20 @@
 		4A60C9005F6B111F05000F73 /* Pods-Barracks iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS/Pods-Barracks iOS.release.xcconfig"; sourceTree = "<group>"; };
 		71A75803DADB720D59C16AA5 /* Pods-Barracks iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS/Pods-Barracks iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		970C87157B58C1A8E66FB738 /* Pods-Barracks OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX/Pods-Barracks OSX.debug.xcconfig"; sourceTree = "<group>"; };
+		BF6481EE1F151605004A81FB /* GetDevicePackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDevicePackages.swift; sourceTree = "<group>"; };
+		BF6481F01F15167D004A81FB /* GetDevicePackagesCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDevicePackagesCallback.swift; sourceTree = "<group>"; };
+		BF6481F31F151770004A81FB /* GetDevicePackagesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDevicePackagesRequest.swift; sourceTree = "<group>"; };
+		BF6481F91F151A5B004A81FB /* InstalledPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstalledPackage.swift; sourceTree = "<group>"; };
+		BF6481FC1F151CDD004A81FB /* DevicePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePackage.swift; sourceTree = "<group>"; };
+		BF6481FF1F151DD0004A81FB /* AvailablePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailablePackage.swift; sourceTree = "<group>"; };
+		BF6482021F151EE1004A81FB /* ChangedPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangedPackage.swift; sourceTree = "<group>"; };
+		BF6482061F152158004A81FB /* UnchangedPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnchangedPackage.swift; sourceTree = "<group>"; };
+		BF6482091F1521C6004A81FB /* UnavailablePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnavailablePackage.swift; sourceTree = "<group>"; };
+		BF64820C1F1541F5004A81FB /* GetDevicePackagesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDevicePackagesResponse.swift; sourceTree = "<group>"; };
+		BF64820F1F154397004A81FB /* DownloadPackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadPackages.swift; sourceTree = "<group>"; };
+		BF6482121F154569004A81FB /* DownloadPackageCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadPackageCallback.swift; sourceTree = "<group>"; };
+		BF6482151F1549FB004A81FB /* GetPackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPackages.swift; sourceTree = "<group>"; };
+		BF64821A1F15544A004A81FB /* get_device_packages_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = get_device_packages_response.json; sourceTree = "<group>"; };
 		C04F8DF83B3435868CE2332C /* Pods-Barracks OSX-Barracks OSX Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks OSX-Barracks OSX Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks OSX-Barracks OSX Tests/Pods-Barracks OSX-Barracks OSX Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C6DA77484393AD1D0979BA4C /* Pods_Barracks_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA72FB568FEB90F7EF8FF27 /* Pods-Barracks iOS-Barracks iOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barracks iOS-Barracks iOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barracks iOS-Barracks iOS Tests/Pods-Barracks iOS-Barracks iOS Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,9 +324,9 @@
 		39090D281CBEB9A0006FA104 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BF6481E11F15150D004A81FB /* v2 */,
 				39D1DB711CE23B160040A04B /* BarracksClient.swift */,
 				39D1DB721CE23B160040A04B /* CheckUpdate.swift */,
-				39D1DB731CE23B160040A04B /* DownloadPackage.swift */,
 				39D1DB741CE23B160040A04B /* PackageDownloadCallback.swift */,
 				39D1DB751CE23B160040A04B /* PackageInfo.swift */,
 				39D1DB761CE23B160040A04B /* UpdateCheckCallback.swift */,
@@ -305,6 +348,7 @@
 		39090D2A1CBEB9C2006FA104 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				BF6482151F1549FB004A81FB /* GetPackages.swift */,
 				39D1DB6F1CE23B080040A04B /* UpdateCheck.swift */,
 				39139F331CE3C0DE00E546B7 /* Download.swift */,
 				396729A41CC6DE730099D71C /* Stubs */,
@@ -317,6 +361,7 @@
 			children = (
 				39D1DB6B1CE23AF50040A04B /* firmware.jpg */,
 				39D1DB6C1CE23AF50040A04B /* update_check_response_success.json */,
+				BF64821A1F15544A004A81FB /* get_device_packages_response.json */,
 			);
 			name = Stubs;
 			sourceTree = "<group>";
@@ -350,6 +395,34 @@
 				40CF54AA19277D7623E9B778 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6481E11F15150D004A81FB /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+				BF6482051F151F32004A81FB /* Pacakges */,
+				BF6481EE1F151605004A81FB /* GetDevicePackages.swift */,
+				BF6481F01F15167D004A81FB /* GetDevicePackagesCallback.swift */,
+				BF6481F31F151770004A81FB /* GetDevicePackagesRequest.swift */,
+				BF64820C1F1541F5004A81FB /* GetDevicePackagesResponse.swift */,
+				BF64820F1F154397004A81FB /* DownloadPackages.swift */,
+				39D1DB731CE23B160040A04B /* DownloadPackage.swift */,
+				BF6482121F154569004A81FB /* DownloadPackageCallback.swift */,
+			);
+			name = v2;
+			sourceTree = "<group>";
+		};
+		BF6482051F151F32004A81FB /* Pacakges */ = {
+			isa = PBXGroup;
+			children = (
+				BF6481F91F151A5B004A81FB /* InstalledPackage.swift */,
+				BF6481FC1F151CDD004A81FB /* DevicePackage.swift */,
+				BF6481FF1F151DD0004A81FB /* AvailablePackage.swift */,
+				BF6482021F151EE1004A81FB /* ChangedPackage.swift */,
+				BF6482061F152158004A81FB /* UnchangedPackage.swift */,
+				BF6482091F1521C6004A81FB /* UnavailablePackage.swift */,
+			);
+			name = Pacakges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,6 +677,7 @@
 				39090D5C1CBEC3FE006FA104 /* Podfile in Resources */,
 				39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */,
 				39D1DB6E1CE23AF50040A04B /* update_check_response_success.json in Resources */,
+				BF64821B1F15544A004A81FB /* get_device_packages_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +685,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF64821D1F1555DC004A81FB /* get_device_packages_response.json in Resources */,
 				39D1DBAF1CE24DA60040A04B /* firmware.jpg in Resources */,
 				39D1DBB01CE24DA60040A04B /* update_check_response_success.json in Resources */,
 			);
@@ -629,6 +704,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF64821E1F1555EC004A81FB /* get_device_packages_response.json in Resources */,
 				39D1DBAD1CE24DA00040A04B /* firmware.jpg in Resources */,
 				39D1DBAE1CE24DA00040A04B /* update_check_response_success.json in Resources */,
 			);
@@ -795,12 +871,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D1DB811CE23B320040A04B /* BarracksClient.swift in Sources */,
+				BF6482131F154569004A81FB /* DownloadPackageCallback.swift in Sources */,
 				39D1DB821CE23B320040A04B /* CheckUpdate.swift in Sources */,
 				39D1DB831CE23B320040A04B /* DownloadPackage.swift in Sources */,
 				39D1DB841CE23B320040A04B /* PackageDownloadCallback.swift in Sources */,
+				BF6481EF1F151605004A81FB /* GetDevicePackages.swift in Sources */,
 				39D1DB851CE23B320040A04B /* PackageInfo.swift in Sources */,
+				BF6481F41F151770004A81FB /* GetDevicePackagesRequest.swift in Sources */,
+				BF6481FD1F151CDD004A81FB /* DevicePackage.swift in Sources */,
 				39D1DB861CE23B320040A04B /* UpdateCheckCallback.swift in Sources */,
+				BF6482031F151EE1004A81FB /* ChangedPackage.swift in Sources */,
+				BF6482101F154397004A81FB /* DownloadPackages.swift in Sources */,
+				BF64820D1F1541F5004A81FB /* GetDevicePackagesResponse.swift in Sources */,
 				39D1DB871CE23B320040A04B /* UpdateCheckRequest.swift in Sources */,
+				BF6482001F151DD0004A81FB /* AvailablePackage.swift in Sources */,
+				BF64820A1F1521C6004A81FB /* UnavailablePackage.swift in Sources */,
+				BF6481FA1F151A5B004A81FB /* InstalledPackage.swift in Sources */,
+				BF6481F11F15167D004A81FB /* GetDevicePackagesCallback.swift in Sources */,
+				BF6482071F152158004A81FB /* UnchangedPackage.swift in Sources */,
 				39D1DB881CE23B320040A04B /* UpdateCheckResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,6 +897,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6482181F154A65004A81FB /* GetPackages.swift in Sources */,
 				39139F421CE3C15900E546B7 /* Download.swift in Sources */,
 				39D1DB8C1CE23D800040A04B /* UpdateCheck.swift in Sources */,
 			);
@@ -820,12 +909,24 @@
 			files = (
 				39D1DBA51CE24D6C0040A04B /* BarracksClient.swift in Sources */,
 				39D1DBA61CE24D6C0040A04B /* CheckUpdate.swift in Sources */,
+				BF6481FE1F151CDD004A81FB /* DevicePackage.swift in Sources */,
+				BF64820B1F1521C6004A81FB /* UnavailablePackage.swift in Sources */,
 				39D1DBA71CE24D6C0040A04B /* DownloadPackage.swift in Sources */,
+				BF64820E1F1541F5004A81FB /* GetDevicePackagesResponse.swift in Sources */,
+				BF6482111F154397004A81FB /* DownloadPackages.swift in Sources */,
+				BF6482171F1549FB004A81FB /* GetPackages.swift in Sources */,
+				BF6482141F154569004A81FB /* DownloadPackageCallback.swift in Sources */,
 				39D1DBA81CE24D6C0040A04B /* PackageDownloadCallback.swift in Sources */,
+				BF6482011F151DD0004A81FB /* AvailablePackage.swift in Sources */,
 				39D1DBA91CE24D6C0040A04B /* PackageInfo.swift in Sources */,
+				BF6481FB1F151A5B004A81FB /* InstalledPackage.swift in Sources */,
 				39D1DBAA1CE24D6C0040A04B /* UpdateCheckCallback.swift in Sources */,
+				BF6481F21F15167D004A81FB /* GetDevicePackagesCallback.swift in Sources */,
 				39D1DBAB1CE24D6C0040A04B /* UpdateCheckRequest.swift in Sources */,
 				39D1DBAC1CE24D6C0040A04B /* UpdateCheckResponse.swift in Sources */,
+				BF6481F51F151770004A81FB /* GetDevicePackagesRequest.swift in Sources */,
+				BF6482081F152158004A81FB /* UnchangedPackage.swift in Sources */,
+				BF6482041F151EE1004A81FB /* ChangedPackage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +934,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6482191F154A6B004A81FB /* GetPackages.swift in Sources */,
 				39139F431CE3C15E00E546B7 /* Download.swift in Sources */,
 				39D1DB961CE23D840040A04B /* UpdateCheck.swift in Sources */,
 			);

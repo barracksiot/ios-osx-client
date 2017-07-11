@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.0.1)
-  - Barracks (1.0.0):
+  - Barracks (1.1.0):
     - Alamofire (~> 4.0.0)
     - CryptoSwift (~> 0.6.0)
   - CryptoSwift (0.6.0)
@@ -33,10 +33,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  Barracks: bdcb8633fffb80d86526b67efc266138221d0043
+  Barracks: 26a6f1dd31ef265942a8b660354cfd600b8e1f8d
   CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
   OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
 
 PODFILE CHECKSUM: 8b4fe733cd548219f9523f4846fed7a74a9c6b4c
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

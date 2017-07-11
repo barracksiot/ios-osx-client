@@ -18,7 +18,77 @@ import Alamofire
 import CryptoSwift
 
 extension BarracksClient {
+   
     
+    public func downloadPackage(_ package:AvailablePackage, callback:DownloadPackageCallback, destination:String? = nil) {
+        var localPath: URL?
+        
+        networkSessionManager
+            .download(
+                package.url,
+                method: .get,
+                headers:["Authorization" : apiKey],
+                to:{
+                    (temporaryURL, response) in
+                    let manager = FileManager.default
+                    if destination != nil {
+                        localPath = URL(fileURLWithPath:destination!)
+                    } else {
+                        let directoryURL = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                        let pathComponent = response.suggestedFilename
+                        localPath = directoryURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "Barracks", isDirectory:true).appendingPathComponent(pathComponent!)
+                    }
+                    
+                    if (manager.fileExists(atPath: localPath!.path)) {
+                        do {
+                            try manager.removeItem(at: localPath!)
+                        } catch let error {
+                            print(error)
+                            //throw error
+                        }
+                    }
+                    let parent = localPath?.deletingLastPathComponent
+                    if (!manager.fileExists(atPath: parent!().path)) {
+                        do {
+                            try manager.createDirectory(at: parent!(), withIntermediateDirectories:true, attributes:nil)
+                        } catch let error {
+                            print(error)
+                            //throw error
+                        }
+                    }
+                    return (localPath!, DownloadRequest.DownloadOptions())
+            }
+            )
+            .validate(statusCode: 200..<300)
+            .downloadProgress{
+                progress in
+                
+                callback.onProgress(package, progress:UInt(100 * progress.fractionCompleted))
+                return
+            }
+            .response {
+                downloadResponse in
+                
+                if (downloadResponse.error != nil) {
+                    callback.onError(package, error:downloadResponse.error)
+                    return
+                }
+                
+                print("Downloaded file to \(localPath!.path)")
+                do {
+                    let isHashCorrect = try self.checkMD5(localPath!, hash:package.md5)
+                    if(isHashCorrect) {
+                        callback.onSuccess(package, path:localPath!.path)
+                    } else {
+                        callback.onError(package, error:DownloadPackageError.hashVerificationFailed)
+                    }
+                } catch let error {
+                    callback.onError(package, error: error)
+                }
+        };
+    }
+    
+
     /**
      This method is used to download an update package from the Barracks service.
      
