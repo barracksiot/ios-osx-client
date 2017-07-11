@@ -18,8 +18,14 @@ import Alamofire
 import CryptoSwift
 
 extension BarracksClient {
-   
     
+    /**
+     This method is used to download an update package from the Barracks service.
+     
+     - parameter response:      The `GetDevicePackagesResponse` retrieved using `BarracksClient.getDevicePackages(_:callback:)`
+     - parameter callback:      The `DownloadPackageCallback` which will be called during the process
+     - parameter destination:   The optional destination for the update package on the filesystem
+     */
     public func downloadPackage(_ package:AvailablePackage, callback:DownloadPackageCallback, destination:String? = nil) {
         var localPath: URL?
         
@@ -84,84 +90,6 @@ extension BarracksClient {
                     }
                 } catch let error {
                     callback.onError(package, error: error)
-                }
-        };
-    }
-    
-
-    /**
-     This method is used to download an update package from the Barracks service.
-     
-     - parameter response:      The `UpdateCheckResponse` retrieved using `BarracksClient.checkUpdate(_:callback:)`
-     - parameter callback:      The `PackageDownloadCallback` which will be called during the process
-     - parameter destination:   The optional destination for the update package on the filesystem
-     */
-    public func downloadPackage(_ response:UpdateCheckResponse, callback:PackageDownloadCallback, destination:String? = nil) {
-        var localPath: URL?
-        
-        networkSessionManager
-            .download(
-                response.packageInfo.url,
-                method: .get,
-                headers:["Authorization" : apiKey],
-                to:{
-                    (temporaryURL, response) in
-                    let manager = FileManager.default
-                    if destination != nil {
-                        localPath = URL(fileURLWithPath:destination!)
-                    } else {
-                        let directoryURL = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                        let pathComponent = response.suggestedFilename
-                        localPath = directoryURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "Barracks", isDirectory:true).appendingPathComponent(pathComponent!)
-                    }
-                    
-                    if (manager.fileExists(atPath: localPath!.path)) {
-                        do {
-                            try manager.removeItem(at: localPath!)
-                        } catch let error {
-                            print(error)
-                            //throw error
-                        }
-                    }
-                    let parent = localPath?.deletingLastPathComponent
-                    if (!manager.fileExists(atPath: parent!().path)) {
-                        do {
-                            try manager.createDirectory(at: parent!(), withIntermediateDirectories:true, attributes:nil)
-                        } catch let error {
-                            print(error)
-                            //throw error
-                        }
-                    }
-                    return (localPath!, DownloadRequest.DownloadOptions())
-                }
-            )
-            .validate(statusCode: 200..<300)
-            .downloadProgress{
-                progress in
-                
-                //callback.onProgress?(response, progress:UInt(100 * progress.completedUnitCount / progress.totalUnitCount))
-                
-                callback.onProgress(response, progress:UInt(100 * progress.fractionCompleted))
-                return
-            }
-            .response {
-                downloadResponse in
-                
-                if (downloadResponse.error != nil) {
-                    callback.onError(response, error:downloadResponse.error)
-                    return
-                }
-                print(downloadResponse.response)
-                print("Downloaded file to \(localPath!.path)")
-                do {
-                    let isHashCorrect = try self.checkMD5(localPath!, hash:response.packageInfo.md5)
-                    if(isHashCorrect) {
-                        callback.onSuccess(response, path:localPath!.path)
-                    } else {
-                        callback.onError(response, error:DownloadPackageError.hashVerificationFailed)
-                    }
-                } catch let error {
-                    callback.onError(response, error: error)
                 }
         };
     }

@@ -11,6 +11,12 @@ import Alamofire
 
 extension BarracksClient {
 
+    /**
+     This method is used to get device's packages status or update from the Barracks service.
+     
+     - parameter request:   The `GetDevicePackagesRequest` used to perform the request
+     - parameter callback:  The `GetDevicePackagesCallback` called during the process
+     */
     public func getDevicePackages(request:GetDevicePackagesRequest, callback:GetDevicePackagesCallback) {
         
         let packagesParam:[[String:String]] = request.packages.map { (package) -> [String:String] in
@@ -40,7 +46,7 @@ extension BarracksClient {
                     return
                 }
                 
-                /// Available
+                /// Available pacakges
                 var available:[AvailablePackage] = []
                 if let availableJSON = responseJSON["available"] as? [[String: AnyObject]] {
                     for jsonPackage in availableJSON {
@@ -63,7 +69,7 @@ extension BarracksClient {
                     }
                 }
                 
-                /// Changed
+                /// Changed packages
                 var changed:[ChangedPackage] = []
                 if let changedJSON = responseJSON["changed"] as? [[String: AnyObject]] {
                     for jsonPackage in changedJSON {
@@ -86,7 +92,7 @@ extension BarracksClient {
                     }
                 }
                 
-                /// Unchanged
+                /// Unchanged packages
                 var unchanged:[UnchangedPackage] = []
                 if let unchangedJSON = responseJSON["unchanged"] as? [[String: AnyObject]] {
                     for jsonPackage in unchangedJSON {
@@ -101,7 +107,7 @@ extension BarracksClient {
                     }
                 }
                 
-                /// Unavailable
+                /// Unavailable packages
                 var unavailable:[UnavailablePackage] = []
                 if let unavailableJSON = responseJSON["unavailable"] as? [[String: AnyObject]] {
                     for jsonPackage in unavailableJSON {

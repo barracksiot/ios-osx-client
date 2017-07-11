@@ -59,7 +59,7 @@ class GetPackagesTests: XCTestCase {
             return fixture(filePath: stubPath!, status:200, headers: ["Content-Type" as NSObject:"application/json" as AnyObject])
             }.name = "Available Response"
         
-        let request = GetDevicePackagesRequest(unitId: "deadbeef", packages: [], customClientData: [:])
+        let request = GetDevicePackagesRequest(unitId: "deadbeef", packages: [InstalledPackage(reference:"an.ungchanged.package", version:"0.0.1")], customClientData: [:])
         client.getDevicePackages(request: request, callback: callback)
         waitForExpectations(
             timeout: 50,

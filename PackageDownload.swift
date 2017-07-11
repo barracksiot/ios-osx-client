@@ -46,7 +46,7 @@ class PackageDownloadTests: XCTestCase {
     
     let validFirmwareResponse:OHHTTPStubsResponseBlock = {
         _ in
-        let stubPath = OHPathForFile("firmware.jpg", DownloadTests.self)
+        let stubPath = OHPathForFile("firmware.jpg", PackageDownloadTests.self)
         return fixture(filePath: stubPath!, status:200, headers: ["Content-Type" as NSObject:"application/octet-stream" as AnyObject])
     }
     
