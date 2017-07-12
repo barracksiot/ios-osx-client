@@ -20,13 +20,13 @@
 public class GetDevicePackagesRequest {
     
     /// The unique identifier for the unit being used
-    let unitId:String
+    public let unitId:String
     
     /// User defined customClientData which will be sent to the Barracks service
-    let customClientData:[String: AnyObject]
+    public let customClientData:[String: AnyObject]
     
     /// The list of the references and versions of the packages installed on the device
-    let packages:[InstalledPackage]
+    public let packages:[InstalledPackage]
     
     /**
      Creates a request which can be sent to the Barracks service.
@@ -35,7 +35,7 @@ public class GetDevicePackagesRequest {
      - parameter packages:          The list of the references and versions of the packages installed on the device, wrapped in `InstalledPackage` objects
      - parameter customClientData:  User defined customClientData which will be sent to the Barracks service
      */
-    init(unitId:String, packages:[InstalledPackage], customClientData:[String: AnyObject]) {
+    public init(unitId:String, packages:[InstalledPackage], customClientData:[String: AnyObject]) {
         self.unitId = unitId
         self.packages = packages
         self.customClientData = customClientData

@@ -19,39 +19,34 @@ import Barracks
 
 class ViewController: NSViewController {
     var client: BarracksClient!
-    var update:UpdateCheckResponse!
+    var response: GetDevicePackagesResponse!
     
-    class MyUpdateCallback : UpdateCheckCallback {
+    class MyGetPackagesCallback : GetDevicePackagesCallback {
         weak var parent: ViewController! = nil
-        func onUpdateAvailable(_ request:UpdateCheckRequest, update:UpdateCheckResponse) {
-            debugPrint(update)
-            parent.update = update
-            printNotification(title: "Update available", subtitle: "Version \(update.versionId)")
+        
+        func onResponse(request: GetDevicePackagesRequest, response: GetDevicePackagesResponse) {
+            debugPrint(response)
+            parent.response = response
+            printNotification(title: "Packages status available", subtitle: "Available: \(response.available.count), Changed: \(response.changed.count), Unchanged: \(response.unchanged.count), Unavailable: \(response.unavailable.count)")
             parent.btnDownload.isEnabled = true
         }
-        func onUpdateUnavailable(_ request:UpdateCheckRequest){
-            printNotification(title: "No update available", subtitle: "Please check later")
-            parent.btnDownload.isEnabled = false
-        }
-        func onError(_ request:UpdateCheckRequest, error:Error?){
-            parent.btnDownload.isEnabled = false
-
-            printNotification(title: "Error while checking for updates", subtitle: error?.localizedDescription ?? "Error")
-        }
         
-        
+        func onError(_ request: GetDevicePackagesRequest, error: Error?) {
+            parent.btnDownload.isEnabled = false
+            printNotification(title: "Error while checking for device packages status", subtitle: error?.localizedDescription ?? "Error")
+        }
     }
     
-    class MyDownloadCallback : PackageDownloadCallback {
+    class MyDownloadCallback : DownloadPackageCallback {
         weak var parent: ViewController! = nil
-        func onError(_ response: UpdateCheckResponse, error: Error?) {
+        func onError(_ package: AvailablePackage, error: Error?) {
             printNotification(title: "Error while checking for updates", subtitle: (error?.localizedDescription)!)
         }
-        func onProgress(_ response: UpdateCheckResponse, progress: UInt) {
+        func onProgress(_ package: AvailablePackage, progress: UInt) {
             
         }
-        func onSuccess(_ response: UpdateCheckResponse, path: String) {
-            printNotification(title: "Update \(response.versionId) downloaded", subtitle: path, userInfo: ["path": path as AnyObject])
+        func onSuccess(_ package: AvailablePackage, path: String) {
+            printNotification(title: "Package \(package.reference) version \(package.version) downloaded", subtitle: path, userInfo: ["path": path as AnyObject])
         }
     }
     
@@ -65,21 +60,21 @@ class ViewController: NSViewController {
         btnCheck.action = #selector(ViewController.checkUpdate(obj:))
         btnDownload.target = self
         btnDownload.action = #selector(ViewController.downloadUpdate(obj:))
-        client = BarracksClient("deadbeef", baseUrl: "https://app.barracks.io/api/device/update/check", ignoreSSL:true)
+        client = BarracksClient("747ae2efa7c0e68fa7dda312aaea2ddeb8bfcffb003c9205b509ae430760cabf", baseUrl: "https://app.barracks.io/", ignoreSSL:true)
     }
     
     func checkUpdate(obj: AnyObject) {
-        let request = UpdateCheckRequest(unitId: "deadbeef", versionId: version.stringValue)
-        let callback = MyUpdateCallback()
+        let request = GetDevicePackagesRequest(unitId: "", packages:[], customClientData:[:])
+        let callback = MyGetPackagesCallback()
         callback.parent = self
-        client.checkUpdate(request, callback:callback)
+        client.getDevicePackages(request: request, callback: callback)
     }
     
     func downloadUpdate(obj: AnyObject) {
         btnDownload.isEnabled = false
         let callback = MyDownloadCallback()
         callback.parent = self
-        client.downloadPackage(update, callback: callback)
+//        client.downloadPackage(response, callback: callback)
     }
 }
 

@@ -15,16 +15,16 @@ import Foundation
 public class GetDevicePackagesResponse {
 
     /// List of packages newly available for the device
-    let available:[AvailablePackage]
+    public let available:[AvailablePackage]
     
     /// List of packages already installed on the device that have a new version
-    let changed:[ChangedPackage]
+    public let changed:[ChangedPackage]
     
     /// List of packages already installed on the device that still have the same version
-    let unchanged:[UnchangedPackage]
+    public let unchanged:[UnchangedPackage]
     
     /// List of packages already installed on the device that cannot be used by the device anymore
-    let unavailable:[UnavailablePackage]
+    public let unavailable:[UnavailablePackage]
     
     init(available:[AvailablePackage], changed:[ChangedPackage], unchanged:[UnchangedPackage], unavailable:[UnavailablePackage]) {
         self.available = available

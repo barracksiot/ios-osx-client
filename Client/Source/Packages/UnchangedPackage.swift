@@ -17,18 +17,15 @@
 import Foundation
 
 /**
- This class is a container for the device's installed package informations useful for checking the device's packages status.
+ This class is the container for unchanged package returned by the Barracks service.
  */
-class InstalledPackage {
-    
-    /// The unique reference of the package
-    let reference:String
+public class UnchangedPackage: DevicePackage {
     
     /// The version of the package
-    let version:String
+    public let version:String
     
     init(reference:String, version:String) {
-        self.reference = reference
         self.version = version
+        super.init(reference: reference)
     }
 }
