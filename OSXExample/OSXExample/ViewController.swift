@@ -29,6 +29,27 @@ class ViewController: NSViewController {
             parent.response = response
             printNotification(title: "Packages status available", subtitle: "Available: \(response.available.count), Changed: \(response.changed.count), Unchanged: \(response.unchanged.count), Unavailable: \(response.unavailable.count)")
             parent.btnDownload.isEnabled = true
+            
+            let availableStr = response.available.map({ (package) -> String in
+                return " \(package.reference) (\(package.version))"
+            })
+            parent.availableTextField.stringValue = "Available : \(availableStr)"
+            
+            let changedStr = response.changed.map({ (package) -> String in
+                return " \(package.reference) (\(package.version))"
+            })
+            parent.changedTextField.stringValue = "Changed : \(changedStr)"
+            
+            let unchangedStr = response.unchanged.map({ (package) -> String in
+                return " \(package.reference) (\(package.version))"
+            })
+            parent.unchangedTextField.stringValue = "Unchanged : \(unchangedStr)"
+            
+            let unavailableStr = response.unavailable.map({ (package) -> String in
+                return " \(package.reference) "
+            })
+            parent.unavailableTextField.stringValue = "Unavailable : \(unavailableStr)"
+            
         }
         
         func onError(_ request: GetDevicePackagesRequest, error: Error?) {
@@ -53,6 +74,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var version: NSTextField!
     @IBOutlet weak var btnCheck: NSButton!
     @IBOutlet weak var btnDownload: NSButton!
+    @IBOutlet weak var availableTextField: NSTextField!
+    @IBOutlet weak var changedTextField: NSTextField!
+    @IBOutlet weak var unchangedTextField: NSTextField!
+    @IBOutlet weak var unavailableTextField: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -60,11 +85,11 @@ class ViewController: NSViewController {
         btnCheck.action = #selector(ViewController.checkUpdate(obj:))
         btnDownload.target = self
         btnDownload.action = #selector(ViewController.downloadUpdate(obj:))
-        client = BarracksClient("747ae2efa7c0e68fa7dda312aaea2ddeb8bfcffb003c9205b509ae430760cabf", baseUrl: "https://app.barracks.io/", ignoreSSL:true)
+        client = BarracksClient("747ae2efa7c0e68fa7dda312aaea2ddeb8bfcffb003c9205b509ae430760cabf", baseUrl: "https://app.barracks.io/api/device/resolve", ignoreSSL:true)
     }
     
     func checkUpdate(obj: AnyObject) {
-        let request = GetDevicePackagesRequest(unitId: "", packages:[], customClientData:[:])
+        let request = GetDevicePackagesRequest(unitId: version.stringValue, packages:[], customClientData:[:])
         let callback = MyGetPackagesCallback()
         callback.parent = self
         client.getDevicePackages(request: request, callback: callback)
@@ -74,7 +99,14 @@ class ViewController: NSViewController {
         btnDownload.isEnabled = false
         let callback = MyDownloadCallback()
         callback.parent = self
-//        client.downloadPackage(response, callback: callback)
+        
+        for availablePackage in response.available {
+            client.downloadPackage(package: availablePackage, callback: callback)
+        }
+        
+        for changedPackage in response.changed {
+            client.downloadPackage(package: changedPackage, callback: callback)
+        }
     }
 }
 

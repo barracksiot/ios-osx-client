@@ -37,10 +37,10 @@ open class BarracksClient {
      Create a client using the parameters provided by the Barracks platform.
      
      - parameter apiKey:    Your account's API key
-     - parameter baseUrl:   The base URL for Barracks, if you have set one up. Default is https://app.barracks.io/api/device/update/check
+     - parameter baseUrl:   The base URL for Barracks, if you have set one up. Default is https://app.barracks.io/api/device/resolve
      - parameter ignoreSSL: Flag to ignore SSL certificate check
      */
-    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/", ignoreSSL:Bool = false) {
+    public init(_ apiKey:String, baseUrl:String = "https://app.barracks.io/api/device/resolve", ignoreSSL:Bool = false) {
         self.apiKey = apiKey
         self.baseUrl = baseUrl
         self.ignoreSSL = ignoreSSL

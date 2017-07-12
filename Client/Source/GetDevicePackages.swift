@@ -38,6 +38,7 @@ extension BarracksClient {
             .responseJSON { response in
                 guard response.result.isSuccess else {
                     callback.onError(request, error:response.result.error as NSError?)
+                    print("Error : \(error:response.result.error)")
                     return
                 }
                 

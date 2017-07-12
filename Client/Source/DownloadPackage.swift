@@ -41,8 +41,8 @@ extension BarracksClient {
                         localPath = URL(fileURLWithPath:destination!)
                     } else {
                         let directoryURL = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                        let pathComponent = response.suggestedFilename
-                        localPath = directoryURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "Barracks", isDirectory:true).appendingPathComponent(pathComponent!)
+                        let pathComponent = "\(UUID().uuidString)-\(package.filename)"
+                        localPath = directoryURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "Barracks", isDirectory:true).appendingPathComponent(pathComponent)
                     }
                     
                     if (manager.fileExists(atPath: localPath!.path)) {

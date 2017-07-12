@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="IeE-g4-ojj">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="IeE-g4-ojj">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -47,10 +48,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="In1-Jq-L7o">
-                                <rect key="frame" x="170" y="95" width="140" height="80"/>
+                                <rect key="frame" x="156" y="45" width="169" height="180"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TYA-UJ-d0l">
-                                        <rect key="frame" x="0.0" y="58" width="140" height="22"/>
+                                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYA-UJ-d0l">
+                                        <rect key="frame" x="14.5" y="158" width="140" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="v3H-EM-F0M">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -58,15 +59,47 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hdh-Y1-QUn">
-                                        <rect key="frame" x="-6" y="22" width="152" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="caa-eH-rOS">
+                                        <rect key="frame" x="-6" y="122" width="181" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Check packages status" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="caa-eH-rOS">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8b-v6-AES">
+                                        <rect key="frame" x="57.5" y="104" width="54" height="17"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="pjr-Fq-oKD">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mg-78-txq">
+                                        <rect key="frame" x="57.5" y="79" width="54" height="17"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="lGh-KS-1eU">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB5-QT-asS">
+                                        <rect key="frame" x="57.5" y="54" width="54" height="17"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="PX6-Xu-E7O">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5e-j2-Je2">
+                                        <rect key="frame" x="57.5" y="29" width="54" height="17"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="11r-Ac-PEV">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UBE-BL-bgs">
-                                        <rect key="frame" x="-3" y="-7" width="146" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Download update" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JCH-qz-U13">
+                                        <rect key="frame" x="3.5" y="-7" width="162" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Download packages" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JCH-qz-U13">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -76,8 +109,16 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -90,8 +131,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="availableTextField" destination="M8b-v6-AES" id="lPE-ZL-sDm"/>
                         <outlet property="btnCheck" destination="hdh-Y1-QUn" id="sab-f2-Gmr"/>
                         <outlet property="btnDownload" destination="UBE-BL-bgs" id="cYo-CO-PeV"/>
+                        <outlet property="changedTextField" destination="6Mg-78-txq" id="OkS-7r-MGf"/>
+                        <outlet property="unavailableTextField" destination="J5e-j2-Je2" id="YoA-93-M9v"/>
+                        <outlet property="unchangedTextField" destination="SB5-QT-asS" id="mq9-K7-H1G"/>
                         <outlet property="version" destination="TYA-UJ-d0l" id="9zI-fg-WrO"/>
                     </connections>
                 </viewController>
