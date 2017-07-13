@@ -19,16 +19,13 @@ import Foundation
 /**
  This class is a container for the device's installed package informations useful for checking the device's packages status.
  */
-public class InstalledPackage {
-    
-    /// The unique reference of the package
-    public let reference:String
+public class InstalledPackage : DevicePackage {
     
     /// The version of the package
     public let version:String
     
     public init(reference:String, version:String) {
-        self.reference = reference
         self.version = version
+        super.init(reference: reference)
     }
 }

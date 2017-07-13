@@ -68,7 +68,7 @@ class PackageDownloadTests: XCTestCase {
         let callback:ExpectedDownloadCallback = TestDownloadProgress(expectation: expectation(description: "testDownloadProgress"))
         stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
-        client.downloadPackage(validePackage, callback: callback)
+        client.downloadPackage(package: validePackage, callback: callback)
         waitForExpectations(
             timeout: 5,
             handler: {
@@ -85,7 +85,7 @@ class PackageDownloadTests: XCTestCase {
         let callback:ExpectedDownloadCallback = TestDownloadSuccess(expectation: expectation(description: "testDownloadSuccess"))
         stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
-        client.downloadPackage(validePackage, callback: callback)
+        client.downloadPackage(package: validePackage, callback: callback)
         waitForExpectations(
             timeout: 5,
             handler: {
@@ -108,7 +108,7 @@ class PackageDownloadTests: XCTestCase {
             .appendingPathComponent("BarracksTests", isDirectory:true)
             .appendingPathComponent("firmware.bin")
         
-        client.downloadPackage(validePackage, callback: callback, destination:destination.path)
+        client.downloadPackage(package: validePackage, callback: callback, destination:destination.path)
         waitForExpectations(
             timeout: 5,
             handler: {
@@ -124,7 +124,7 @@ class PackageDownloadTests: XCTestCase {
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectation(description: "testDownloadFileExists"))
         stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
-        client.downloadPackage(validePackage, callback: callback, destination:"/private")
+        client.downloadPackage(package: validePackage, callback: callback, destination:"/private")
         waitForExpectations(
             timeout: 5,
             handler: {
@@ -140,7 +140,7 @@ class PackageDownloadTests: XCTestCase {
         let callback:ExpectedDownloadCallback = TestDownloadError(expectation: expectation(description: "testDownloadDirectoryFailure"))
         stub(condition: isHost("app.barracks.io") && hasHeaderNamed("Authorization", value:client.apiKey), response: validFirmwareResponse).name = "Firmware response"
         
-        client.downloadPackage(validePackage, callback: callback, destination:"/private/directory/subdirectory/destination.bin")
+        client.downloadPackage(package: validePackage, callback: callback, destination:"/private/directory/subdirectory/destination.bin")
         waitForExpectations(
             timeout: 5,
             handler: {
@@ -160,7 +160,7 @@ class PackageDownloadTests: XCTestCase {
             return OHHTTPStubsResponse(error:notConnectedError)
             }.name = "Error Response"
         
-        client.downloadPackage(validePackage, callback: callback, destination: "/private/directory/subdirectory/destination.bin")
+        client.downloadPackage(package: validePackage, callback: callback, destination: "/private/directory/subdirectory/destination.bin")
         waitForExpectations(
             timeout: 5,
             handler: {
@@ -182,7 +182,7 @@ class PackageDownloadTests: XCTestCase {
             .appendingPathComponent("BarracksTests", isDirectory:true)
             .appendingPathComponent("firmware.bin")
         
-        client.downloadPackage(invalidePackage, callback: callback, destination: destination.path)
+        client.downloadPackage(package: invalidePackage, callback: callback, destination: destination.path)
         waitForExpectations(
             timeout: 5,
             handler: {

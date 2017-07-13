@@ -1,6 +1,8 @@
 ![Barracks logo](https://barracks.io/wp-content/uploads/2016/09/barracks_logo_green.png)
 # Barracks ios-osx-client
-iOS and OSX Client Library for [Barracks](https://barracks.io/) 
+This is the iOS and OSX Client Library for [Barracks](https://barracks.io/). </ br> </ br>
+
+This SDK help you interact with **Barracks v2** Checkout our [API Doccumentation](https://barracks.io/support/application-management/) to learn how to do **application-management** with Barracks.
 ## Requirements
 - iOS 8.0+
 - Xcode 8.0+
@@ -24,11 +26,12 @@ var barracksClient = BarracksClient("YOUR API KEY")
 ```
 You can change baseUrl and ignoreSSL parameters. Default value are <br />
 **baseUrl** : "https://app.barracks.io/api/device/resolve",<br />
-**ignoreSSL** : true<br />
+**ignoreSSL** : false<br />
 
 Your user api key can be found on the Account page of the [Barracks application](https://app.barracks.io/).
 
 ### Check for new packages and package updates:
+If you're not sure about how to **managed your package** from Barracks check [our doccumentation](https://barracks.io/support/application-management/)
 Create your callback by implementing the **GetDevicePackagesCallback** protocol
 
 ```swift

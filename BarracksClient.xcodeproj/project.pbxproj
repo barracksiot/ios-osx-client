@@ -298,12 +298,12 @@
 		39090D281CBEB9A0006FA104 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BF6482051F151F32004A81FB /* Packages */,
 				BF6482561F1671D8004A81FB /* DownloadPackageCallback.swift */,
 				BF6482571F1671D8004A81FB /* GetDevicePackages.swift */,
 				BF6482581F1671D8004A81FB /* GetDevicePackagesCallback.swift */,
 				BF6482591F1671D8004A81FB /* GetDevicePackagesRequest.swift */,
 				BF64825A1F1671D8004A81FB /* GetDevicePackagesResponse.swift */,
-				BF6482051F151F32004A81FB /* Packages */,
 				39D1DB731CE23B160040A04B /* DownloadPackage.swift */,
 				39D1DB711CE23B160040A04B /* BarracksClient.swift */,
 			);
