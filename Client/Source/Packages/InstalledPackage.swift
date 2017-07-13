@@ -27,7 +27,7 @@ public class InstalledPackage {
     /// The version of the package
     public let version:String
     
-    init(reference:String, version:String) {
+    public init(reference:String, version:String) {
         self.reference = reference
         self.version = version
     }

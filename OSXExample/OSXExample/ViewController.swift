@@ -82,13 +82,14 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         btnCheck.target = self
-        btnCheck.action = #selector(ViewController.checkUpdate(obj:))
+        btnCheck.action = #selector(ViewController.getDevicePackages(obj:))
         btnDownload.target = self
         btnDownload.action = #selector(ViewController.downloadUpdate(obj:))
         client = BarracksClient("747ae2efa7c0e68fa7dda312aaea2ddeb8bfcffb003c9205b509ae430760cabf", baseUrl: "https://app.barracks.io/api/device/resolve", ignoreSSL:true)
+        
     }
     
-    func checkUpdate(obj: AnyObject) {
+    func getDevicePackages(obj: AnyObject) {
         let request = GetDevicePackagesRequest(unitId: version.stringValue, packages:[], customClientData:[:])
         let callback = MyGetPackagesCallback()
         callback.parent = self
