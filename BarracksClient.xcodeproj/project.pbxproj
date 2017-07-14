@@ -55,6 +55,7 @@
 		BF6482721F167263004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64826F1F167256004A81FB /* get_device_packages_response.json */; };
 		BF6482731F16731B004A81FB /* get_device_packages_response.json in Resources */ = {isa = PBXBuildFile; fileRef = BF64826F1F167256004A81FB /* get_device_packages_response.json */; };
 		BF6482741F16731B004A81FB /* firmware.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39D1DB6B1CE23AF50040A04B /* firmware.jpg */; };
+		BF7C3C561F19552B007F427C /* Barracks.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 398FC4D61CE23E1000709F34 /* Barracks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8715E26AF5212396BA83B31 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CF54AA19277D7623E9B778 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework */; };
 		DDB64E9201667544456BF768 /* Pods_Barracks_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA77484393AD1D0979BA4C /* Pods_Barracks_OSX.framework */; };
 		F9E3BC5A1FCCEA5DDE114386 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFF0B46D7F008143EEB9B24 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework */; };
@@ -168,6 +169,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BF7C3C561F19552B007F427C /* Barracks.framework in CopyFiles */,
 				396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
