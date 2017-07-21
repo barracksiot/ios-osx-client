@@ -1,10 +1,14 @@
 language: swift
-osx_image: xcode8.3	
-
+osx_image: xcode8.3
 before_install:
-    - brew update
-    - brew outdated xctool || brew upgrade xctool
+- brew update
+- brew outdated xctool || brew upgrade xctool
 script:
-    - xcodebuild -workspace BarracksClient.xcworkspace -scheme Barracks_OSX build-for-testing 
-    - xctool -workspace BarracksClient.xcworkspace -scheme "Barracks_OSX" run-tests
-
+- xcodebuild -workspace BarracksClient.xcworkspace -scheme Barracks_OSX build-for-testing
+- xctool -workspace BarracksClient.xcworkspace -scheme "Barracks_OSX" run-tests
+notifications:
+  slack:
+    rooms:
+      secure: En73aQqDdnKRdZ4t70POSTpJolaZwKCHWO0xSputO4B1oqL7uMRjsFHGnIwzb4RCRQKPG5SZCQPju924rUloNykx6pK+9kbUcsaaLU7AS2PB8Frz8k6x3EisPX79YcCVpdz/THdMtXFWUDrBe8p1I4GKOjl9L1CnQ1uW4D8vnvghywXTVpn8HgKA52yf7NKmKokHalZKKa1QDA8CeCZhVdFBN0ySK64EUJRtZ7zIaBi+gvuYna7FWJbo1ib/iJf3oKxYJtYCGS16v+AovlXCirG78Sly1ROqxK0eYwVDB21825MKLs3ZnJrWHgmvYES0NuK/Ifz/vMob7UZthFY/UckwpjwIJnKg5nOmpzlsB34WSylQa9ETRU1ccfpLkb67+uNcbTIfNtQjPaNb+0QRmqtS/OxhvuOYjBVbWKqk5zv9qQY8cgRXLNWb4qcqlN1FhTBkCzUAvjTBTThflF64ZUABQJxPV0Hl4X9jacEaqipcToDdRSISbtyN3jie/S00P5ucKm0PLOvDe3c8DrEN8EeIW1Pwk5nZhsO84sCA2gw0ZhqT7GZoMwfJx6thUHqZ/h+FyNa9Eb8wTxnMYzeTA8EZbEjE/AQx9JE+L+o7Qn26dj0SfRH9hWNUh4m7hDEUzJxuitn5BsEjsMWgGzGBye7P3psRUTPCCWG9h442yoU=
+    on_success: change
+    on_failure: always
