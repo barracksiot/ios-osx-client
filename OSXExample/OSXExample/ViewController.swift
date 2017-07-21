@@ -90,7 +90,7 @@ class ViewController: NSViewController {
     }
     
     func getDevicePackages(obj: AnyObject) {
-        let request = GetDevicePackagesRequest(unitId: version.stringValue, packages:[], customClientData:[:])
+        let request = GetDevicePackagesRequest(unitId: version.stringValue, packages:[InstalledPackage(reference: "a.package", version: "2.9.0")], customClientData:[:])
         let callback = MyGetPackagesCallback()
         callback.parent = self
         client.getDevicePackages(request: request, callback: callback)

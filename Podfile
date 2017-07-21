@@ -8,21 +8,21 @@ def sharedPods
     pod 'CryptoSwift', '~> 0.6.0'
 end
 
-target 'Barracks iOS' do
+target 'Barracks_iOS' do
     project 'BarracksClient.xcodeproj'
     platform :ios, '9.0'
     sharedPods
-    target 'Barracks iOS Tests' do
+    target 'Barracks_iOS_Tests' do
         pod 'OHHTTPStubs'
         pod 'OHHTTPStubs/Swift'
     end
 end
 
-target 'Barracks OSX' do
+target 'Barracks_OSX' do
     project 'BarracksClient.xcodeproj'
     platform :osx, '10.11'
     sharedPods
-    target 'Barracks OSX Tests' do
+    target 'Barracks_OSX_Tests' do
         pod 'OHHTTPStubs'
         pod 'OHHTTPStubs/Swift'
     end

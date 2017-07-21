@@ -3,5 +3,7 @@ language: swift
 before_install:
     - brew update
     - brew outdated xctool || brew upgrade xctool
-script: xctool -workspace BarracksClient.xcworkspace -scheme "Barracks OSX" run-tests
+script:
+    - xcodebuild -workspace BarracksClient.xcworkspace -scheme Barracks_OSX build-for-testing 
+    - xctool -workspace BarracksClient.xcworkspace -scheme "Barracks OSX" run-tests
 

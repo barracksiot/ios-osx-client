@@ -17,9 +17,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39090CEA1CBEA17C006FA104"
-               BuildableName = "Barracks iOS Tests.xctest"
-               BlueprintName = "Barracks iOS Tests"
+               BlueprintIdentifier = "396729761CC57D090099D71C"
+               BuildableName = "Barracks_OSX_Tests.xctest"
+               BlueprintName = "Barracks_OSX_Tests"
                ReferencedContainer = "container:BarracksClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
