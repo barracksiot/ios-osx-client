@@ -46,6 +46,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBAction func getPackagesButtonClicked(_ sender: UIButton) {
         
         if(unitIdTextField.text != nil && !unitIdTextField.text!.isEmpty ){
+            
+            self.downloadablePackages.removeAll()
+            self.devicePackages.removeAll()
+            self.unavailablePackage.removeAll()
+            
+            self.collectionView.reloadData()
+            
             let request = GetDevicePackagesRequest(unitId: unitIdTextField.text!,
                                                    packages:[
                                                     DevicePackage(reference: "a.package", version: "2.9.0"),
