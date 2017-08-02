@@ -24,7 +24,11 @@ public class DevicePackage {
     /// The unique reference of the package
     public let reference:String
     
-    init(reference:String) {
+    /// The version of the package
+    public let version:String
+    
+    public init(reference:String, version:String) {
         self.reference = reference
+        self.version = version
     }
 }

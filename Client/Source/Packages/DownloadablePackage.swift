@@ -17,8 +17,25 @@
 import Foundation
 
 /**
- This class is the container for changed package returned by the Barracks service.
+ This class is the container for newly available package returned by the Barracks service.
  You can then use it to download the package using `BarracksClient.downloadPackage(package:, callback:, destination:)`.
  */
-public class ChangedPackage: AvailablePackage {
+public class DownloadablePackage: DevicePackage {
+    
+    /// The url at which the file is available
+    public let url: String
+    /// The MD5 hash which will be used to verify the file integrity
+    public let md5: String
+    /// The expected size of the file
+    public let size: UInt64
+    /// The name of the package file
+    public let filename:String
+    
+    init(reference:String, version:String, url:String, md5:String, size:UInt64, filename:String) {
+        self.url = url
+        self.md5 = md5
+        self.size = size
+        self.filename = filename
+        super.init(reference:reference, version:version)
+    }
 }

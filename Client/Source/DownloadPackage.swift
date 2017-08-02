@@ -26,7 +26,7 @@ extension BarracksClient {
      - parameter callback:      The `DownloadPackageCallback` which will be called during the process
      - parameter destination:   The optional destination for the update package on the filesystem
      */
-    public func downloadPackage(package:AvailablePackage, callback:DownloadPackageCallback, destination:String? = nil) {
+    public func downloadPackage(package:DownloadablePackage, callback:DownloadPackageCallback, destination:String? = nil) {
         var localPath: URL?
         
         networkSessionManager

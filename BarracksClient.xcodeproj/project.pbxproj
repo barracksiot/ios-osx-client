@@ -27,12 +27,8 @@
 		3D11473417D6DDCFEF400D5B /* Pods_Barracks_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C0DB5B3B750A1C74FF14F5 /* Pods_Barracks_iOS.framework */; };
 		4BD5735C992FA75B7C63136F /* Pods_Barracks_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B854AFD3C41E2CCCD277E651 /* Pods_Barracks_OSX.framework */; };
 		BF3F1D401F224FB900B4F7FD /* Barracks.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 39090CFE1CBEA1A5006FA104 /* Barracks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF6482501F1671C6004A81FB /* AvailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824A1F1671C6004A81FB /* AvailablePackage.swift */; };
-		BF6482511F1671C6004A81FB /* ChangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824B1F1671C6004A81FB /* ChangedPackage.swift */; };
+		BF6482501F1671C6004A81FB /* DownloadablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824A1F1671C6004A81FB /* DownloadablePackage.swift */; };
 		BF6482521F1671C6004A81FB /* DevicePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824C1F1671C6004A81FB /* DevicePackage.swift */; };
-		BF6482531F1671C6004A81FB /* InstalledPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824D1F1671C6004A81FB /* InstalledPackage.swift */; };
-		BF6482541F1671C6004A81FB /* UnavailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824E1F1671C6004A81FB /* UnavailablePackage.swift */; };
-		BF6482551F1671C6004A81FB /* UnchangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824F1F1671C6004A81FB /* UnchangedPackage.swift */; };
 		BF64825B1F1671D8004A81FB /* DownloadPackageCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482561F1671D8004A81FB /* DownloadPackageCallback.swift */; };
 		BF64825C1F1671D8004A81FB /* GetDevicePackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482571F1671D8004A81FB /* GetDevicePackages.swift */; };
 		BF64825D1F1671D8004A81FB /* GetDevicePackagesCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482581F1671D8004A81FB /* GetDevicePackagesCallback.swift */; };
@@ -43,12 +39,8 @@
 		BF6482621F1671E7004A81FB /* GetDevicePackagesCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482581F1671D8004A81FB /* GetDevicePackagesCallback.swift */; };
 		BF6482631F1671E7004A81FB /* GetDevicePackagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482591F1671D8004A81FB /* GetDevicePackagesRequest.swift */; };
 		BF6482641F1671E7004A81FB /* GetDevicePackagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64825A1F1671D8004A81FB /* GetDevicePackagesResponse.swift */; };
-		BF6482651F1671E7004A81FB /* AvailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824A1F1671C6004A81FB /* AvailablePackage.swift */; };
-		BF6482661F1671E7004A81FB /* ChangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824B1F1671C6004A81FB /* ChangedPackage.swift */; };
+		BF6482651F1671E7004A81FB /* DownloadablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824A1F1671C6004A81FB /* DownloadablePackage.swift */; };
 		BF6482671F1671E7004A81FB /* DevicePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824C1F1671C6004A81FB /* DevicePackage.swift */; };
-		BF6482681F1671E7004A81FB /* InstalledPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824D1F1671C6004A81FB /* InstalledPackage.swift */; };
-		BF6482691F1671E7004A81FB /* UnavailablePackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824E1F1671C6004A81FB /* UnavailablePackage.swift */; };
-		BF64826A1F1671E7004A81FB /* UnchangedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF64824F1F1671C6004A81FB /* UnchangedPackage.swift */; };
 		BF64826B1F1671FE004A81FB /* GetPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482461F167188004A81FB /* GetPackages.swift */; };
 		BF64826C1F1671FE004A81FB /* PackageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482471F167188004A81FB /* PackageDownload.swift */; };
 		BF64826D1F167204004A81FB /* GetPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6482461F167188004A81FB /* GetPackages.swift */; };
@@ -203,12 +195,8 @@
 		B854AFD3C41E2CCCD277E651 /* Pods_Barracks_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barracks_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6482461F167188004A81FB /* GetPackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPackages.swift; path = Client/Tests/GetPackages.swift; sourceTree = "<group>"; };
 		BF6482471F167188004A81FB /* PackageDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PackageDownload.swift; path = Client/Tests/PackageDownload.swift; sourceTree = "<group>"; };
-		BF64824A1F1671C6004A81FB /* AvailablePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailablePackage.swift; path = Client/Source/Packages/AvailablePackage.swift; sourceTree = "<group>"; };
-		BF64824B1F1671C6004A81FB /* ChangedPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangedPackage.swift; path = Client/Source/Packages/ChangedPackage.swift; sourceTree = "<group>"; };
+		BF64824A1F1671C6004A81FB /* DownloadablePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadablePackage.swift; path = Client/Source/Packages/DownloadablePackage.swift; sourceTree = "<group>"; };
 		BF64824C1F1671C6004A81FB /* DevicePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DevicePackage.swift; path = Client/Source/Packages/DevicePackage.swift; sourceTree = "<group>"; };
-		BF64824D1F1671C6004A81FB /* InstalledPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstalledPackage.swift; path = Client/Source/Packages/InstalledPackage.swift; sourceTree = "<group>"; };
-		BF64824E1F1671C6004A81FB /* UnavailablePackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnavailablePackage.swift; path = Client/Source/Packages/UnavailablePackage.swift; sourceTree = "<group>"; };
-		BF64824F1F1671C6004A81FB /* UnchangedPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnchangedPackage.swift; path = Client/Source/Packages/UnchangedPackage.swift; sourceTree = "<group>"; };
 		BF6482561F1671D8004A81FB /* DownloadPackageCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadPackageCallback.swift; path = Client/Source/DownloadPackageCallback.swift; sourceTree = "<group>"; };
 		BF6482571F1671D8004A81FB /* GetDevicePackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetDevicePackages.swift; path = Client/Source/GetDevicePackages.swift; sourceTree = "<group>"; };
 		BF6482581F1671D8004A81FB /* GetDevicePackagesCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetDevicePackagesCallback.swift; path = Client/Source/GetDevicePackagesCallback.swift; sourceTree = "<group>"; };
@@ -374,12 +362,8 @@
 		BF6482051F151F32004A81FB /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				BF64824A1F1671C6004A81FB /* AvailablePackage.swift */,
-				BF64824B1F1671C6004A81FB /* ChangedPackage.swift */,
+				BF64824A1F1671C6004A81FB /* DownloadablePackage.swift */,
 				BF64824C1F1671C6004A81FB /* DevicePackage.swift */,
-				BF64824D1F1671C6004A81FB /* InstalledPackage.swift */,
-				BF64824E1F1671C6004A81FB /* UnavailablePackage.swift */,
-				BF64824F1F1671C6004A81FB /* UnchangedPackage.swift */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -833,15 +817,11 @@
 				BF64825E1F1671D8004A81FB /* GetDevicePackagesRequest.swift in Sources */,
 				BF64825C1F1671D8004A81FB /* GetDevicePackages.swift in Sources */,
 				BF6482521F1671C6004A81FB /* DevicePackage.swift in Sources */,
-				BF6482501F1671C6004A81FB /* AvailablePackage.swift in Sources */,
+				BF6482501F1671C6004A81FB /* DownloadablePackage.swift in Sources */,
 				39D1DB831CE23B320040A04B /* DownloadPackage.swift in Sources */,
-				BF6482531F1671C6004A81FB /* InstalledPackage.swift in Sources */,
 				BF64825D1F1671D8004A81FB /* GetDevicePackagesCallback.swift in Sources */,
 				BF64825B1F1671D8004A81FB /* DownloadPackageCallback.swift in Sources */,
-				BF6482511F1671C6004A81FB /* ChangedPackage.swift in Sources */,
-				BF6482541F1671C6004A81FB /* UnavailablePackage.swift in Sources */,
 				BF64825F1F1671D8004A81FB /* GetDevicePackagesResponse.swift in Sources */,
-				BF6482551F1671C6004A81FB /* UnchangedPackage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,12 +843,8 @@
 				BF6482621F1671E7004A81FB /* GetDevicePackagesCallback.swift in Sources */,
 				BF6482631F1671E7004A81FB /* GetDevicePackagesRequest.swift in Sources */,
 				BF6482641F1671E7004A81FB /* GetDevicePackagesResponse.swift in Sources */,
-				BF6482651F1671E7004A81FB /* AvailablePackage.swift in Sources */,
-				BF6482661F1671E7004A81FB /* ChangedPackage.swift in Sources */,
+				BF6482651F1671E7004A81FB /* DownloadablePackage.swift in Sources */,
 				BF6482671F1671E7004A81FB /* DevicePackage.swift in Sources */,
-				BF6482681F1671E7004A81FB /* InstalledPackage.swift in Sources */,
-				BF6482691F1671E7004A81FB /* UnavailablePackage.swift in Sources */,
-				BF64826A1F1671E7004A81FB /* UnchangedPackage.swift in Sources */,
 				39D1DBA51CE24D6C0040A04B /* BarracksClient.swift in Sources */,
 				39D1DBA71CE24D6C0040A04B /* DownloadPackage.swift in Sources */,
 			);

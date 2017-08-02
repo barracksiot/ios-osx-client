@@ -48,7 +48,7 @@ extension BarracksClient {
                 }
                 
                 /// Available pacakges
-                var available:[AvailablePackage] = []
+                var available:[DownloadablePackage] = []
                 if let availableJSON = responseJSON["available"] as? [[String: AnyObject]] {
                     for jsonPackage in availableJSON {
                     
@@ -61,7 +61,7 @@ extension BarracksClient {
                                 continue
                         }
                         
-                        available.append(AvailablePackage(reference: reference,
+                        available.append(DownloadablePackage(reference: reference,
                                                           version: version,
                                                           url: url,
                                                           md5: md5,
@@ -71,7 +71,7 @@ extension BarracksClient {
                 }
                 
                 /// Changed packages
-                var changed:[ChangedPackage] = []
+                var changed:[DownloadablePackage] = []
                 if let changedJSON = responseJSON["changed"] as? [[String: AnyObject]] {
                     for jsonPackage in changedJSON {
                         
@@ -84,7 +84,7 @@ extension BarracksClient {
                                 continue
                         }
                         
-                        changed.append(ChangedPackage(reference: reference,
+                        changed.append(DownloadablePackage(reference: reference,
                                                       version: version,
                                                       url: url,
                                                       md5: md5,
@@ -94,7 +94,7 @@ extension BarracksClient {
                 }
                 
                 /// Unchanged packages
-                var unchanged:[UnchangedPackage] = []
+                var unchanged:[DevicePackage] = []
                 if let unchangedJSON = responseJSON["unchanged"] as? [[String: AnyObject]] {
                     for jsonPackage in unchangedJSON {
                         
@@ -103,13 +103,13 @@ extension BarracksClient {
                                 continue
                         }
                         
-                        unchanged.append(UnchangedPackage(reference: reference,
+                        unchanged.append(DevicePackage(reference: reference,
                                                           version: version))
                     }
                 }
                 
                 /// Unavailable packages
-                var unavailable:[UnavailablePackage] = []
+                var unavailable:[String] = []
                 if let unavailableJSON = responseJSON["unavailable"] as? [[String: AnyObject]] {
                     for jsonPackage in unavailableJSON {
                         
@@ -117,7 +117,7 @@ extension BarracksClient {
                                 continue
                         }
                         
-                        unavailable.append(UnavailablePackage(reference: reference))
+                        unavailable.append(reference)
                     }
                 }
                 

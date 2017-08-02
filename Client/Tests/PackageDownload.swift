@@ -30,14 +30,14 @@ import OHHTTPStubs
 
 class PackageDownloadTests: XCTestCase {
     
-    let validePackage = AvailablePackage(reference: "montreal.poutine",
+    let validePackage = DownloadablePackage(reference: "montreal.poutine",
                                          version: "0.1",
                                          url: "https://app.barracks.io/api/devices/update/download/v0.2",
                                          md5: "09928956275ef9e22ac2c0208bbc2928",
                                          size: 101236,
                                          filename: "firmware.jpg")
     
-    let invalidePackage = AvailablePackage(reference: "montreal.poutine",
+    let invalidePackage = DownloadablePackage(reference: "montreal.poutine",
                                          version: "0.1",
                                          url: "https://app.barracks.io/api/devices/update/download/v0.2",
                                          md5: "dummycrapfortestpurpose",
@@ -201,21 +201,21 @@ class PackageDownloadTests: XCTestCase {
             self.expectation = expectation
         }
         
-        func onProgress(_ package: AvailablePackage, progress: UInt) {
+        func onProgress(_ package: DownloadablePackage, progress: UInt) {
             
         }
         
-        func onSuccess(_ package: AvailablePackage, path: String) {
+        func onSuccess(_ package: DownloadablePackage, path: String) {
         }
         
-        func onError(_ package: AvailablePackage, error: Error?) {
+        func onError(_ package: DownloadablePackage, error: Error?) {
             expectation?.fulfill()
         }
     }
     
     class TestDownloadProgress:ExpectedDownloadCallback {
         
-        override func onProgress(_ package: AvailablePackage, progress: UInt) {
+        override func onProgress(_ package: DownloadablePackage, progress: UInt) {
             if(progress >= 0 && progress < 100) {
                 print(progress)
             } else {
@@ -228,14 +228,14 @@ class PackageDownloadTests: XCTestCase {
     }
     
     class TestDownloadSuccess:ExpectedDownloadCallback {
-        override func onSuccess(_ package: AvailablePackage, path: String) {
+        override func onSuccess(_ package: DownloadablePackage, path: String) {
             success = true
             expectation?.fulfill()
         }
     }
     
     class TestDownloadError:ExpectedDownloadCallback {
-        override func onError(_ package:AvailablePackage, error: Error?) {
+        override func onError(_ package:DownloadablePackage, error: Error?) {
             success = true
             expectation?.fulfill()
         }

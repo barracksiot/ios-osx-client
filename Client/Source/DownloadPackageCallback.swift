@@ -23,24 +23,24 @@ public protocol DownloadPackageCallback {
     /**
      This method is called during the download, to inform of the progress of the download.
      
-     - parameter package:   The `AvailablePackage or ChangedPackage` to download.
+     - parameter package:   The `DownloadablePackage` to download.
      - parameter progress:  The download progress in percent.
      */
-    func onProgress(_ package:AvailablePackage, progress:UInt)
+    func onProgress(_ package:DownloadablePackage, progress:UInt)
     
     /**
      This method is called when an error occurs during the download.
      
-     - parameter package:   The `AvailablePackage or ChangedPackage` to download.
+     - parameter package:   The `DownloadablePackage` to download.
      - parameter error:     The error raised during the download.
      */
-    func onError(_ package:AvailablePackage, error: Error?)
+    func onError(_ package:DownloadablePackage, error: Error?)
     
     /**
      This method is used when an download is successfully completed.
      
-     - parameter package:   The `AvailablePackage or ChangedPackage` to download.
+     - parameter package:   The `DownloadablePackage` to download.
      - parameter path:      The path of the downloaded file.
      */
-    func onSuccess(_ package:AvailablePackage, path:String)
+    func onSuccess(_ package:DownloadablePackage, path:String)
 }

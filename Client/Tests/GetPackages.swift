@@ -59,7 +59,7 @@ class GetPackagesTests: XCTestCase {
             return fixture(filePath: stubPath!, status:200, headers: ["Content-Type" as NSObject:"application/json" as AnyObject])
             }.name = "Available Response"
         
-        let request = GetDevicePackagesRequest(unitId: "deadbeef", packages: [InstalledPackage(reference:"an.ungchanged.package", version:"0.0.1")], customClientData: [:])
+        let request = GetDevicePackagesRequest(unitId: "deadbeef", packages: [DevicePackage(reference:"an.ungchanged.package", version:"0.0.1")], customClientData: [:])
         client.getDevicePackages(request: request, callback: callback)
         waitForExpectations(
             timeout: 50,
@@ -98,10 +98,10 @@ class GetPackagesTests: XCTestCase {
     
     class TestCallbackResponse:ExpectedGetDevicePackagesCallback {
         override func onResponse(request: GetDevicePackagesRequest, response: GetDevicePackagesResponse) {
-            success = response.available.count == 1
-                && response.changed.count == 1
-                && response.unavailable.count == 1
-                && response.unchanged.count == 1
+            success = response.availablePackages.count == 1
+                && response.changedPackages.count == 1
+                && response.unavailablePackages.count == 1
+                && response.unchangedPackages.count == 1
             
             super.onResponse(request: request, response: response)
         }

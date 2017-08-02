@@ -33,3 +33,9 @@ target 'OSXExample' do
     project 'OSXExample/OSXExample.xcodeproj'
     pod 'Barracks', :path => './'
 end
+
+target 'iOSExample' do
+    platform :ios, '9.0'
+    project 'iOSExample/iOSExample.xcodeproj'
+    pod 'Barracks', :path => './'
+end

@@ -10,12 +10,17 @@
  *    Unless required by applicable law or agreed to in writing, software
  *    distributed under the License is distributed on an "AS IS" BASIS,
  *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ @IBOutlet weak var collectionView: UICollectionView!
+ @IBOutlet weak var collectionView: UICollectionView!
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
 
 import Cocoa
 import Barracks
+@IBOutlet weak var unitIdTextField: UITextField!
+@IBAction func getPackagesButtonClicked(_ sender: Any) {
+}
 
 class ViewController: NSViewController {
     var client: BarracksClient!
@@ -27,26 +32,26 @@ class ViewController: NSViewController {
         func onResponse(request: GetDevicePackagesRequest, response: GetDevicePackagesResponse) {
             debugPrint(response)
             parent.response = response
-            printNotification(title: "Packages status available", subtitle: "Available: \(response.available.count), Changed: \(response.changed.count), Unchanged: \(response.unchanged.count), Unavailable: \(response.unavailable.count)")
+            printNotification(title: "Packages status available", subtitle: "Available: \(response.availablePackages.count), Changed: \(response.changedPackages.count), Unchanged: \(response.unchangedPackages.count), Unavailable: \(response.unavailablePackages.count)")
             parent.btnDownload.isEnabled = true
             
-            let availableStr = response.available.map({ (package) -> String in
+            let availableStr = response.availablePackages.map({ (package) -> String in
                 return " \(package.reference) (\(package.version))"
             })
             parent.availableTextField.stringValue = "Available : \(availableStr)"
             
-            let changedStr = response.changed.map({ (package) -> String in
+            let changedStr = response.changedPackages.map({ (package) -> String in
                 return " \(package.reference) (\(package.version))"
             })
             parent.changedTextField.stringValue = "Changed : \(changedStr)"
             
-            let unchangedStr = response.unchanged.map({ (package) -> String in
+            let unchangedStr = response.unchangedPackages.map({ (package) -> String in
                 return " \(package.reference) (\(package.version))"
             })
             parent.unchangedTextField.stringValue = "Unchanged : \(unchangedStr)"
             
-            let unavailableStr = response.unavailable.map({ (package) -> String in
-                return " \(package.reference) "
+            let unavailableStr = response.unavailablePackages.map({ (package) -> String in
+                return " \(package) "
             })
             parent.unavailableTextField.stringValue = "Unavailable : \(unavailableStr)"
             
@@ -60,13 +65,13 @@ class ViewController: NSViewController {
     
     class MyDownloadCallback : DownloadPackageCallback {
         weak var parent: ViewController! = nil
-        func onError(_ package: AvailablePackage, error: Error?) {
+        func onError(_ package: DownloadablePackage, error: Error?) {
             printNotification(title: "Error while checking for updates", subtitle: (error?.localizedDescription)!)
         }
-        func onProgress(_ package: AvailablePackage, progress: UInt) {
+        func onProgress(_ package: DownloadablePackage, progress: UInt) {
             
         }
-        func onSuccess(_ package: AvailablePackage, path: String) {
+        func onSuccess(_ package: DownloadablePackage, path: String) {
             printNotification(title: "Package \(package.reference) version \(package.version) downloaded", subtitle: path, userInfo: ["path": path as AnyObject])
         }
     }
@@ -85,12 +90,12 @@ class ViewController: NSViewController {
         btnCheck.action = #selector(ViewController.getDevicePackages(obj:))
         btnDownload.target = self
         btnDownload.action = #selector(ViewController.downloadUpdate(obj:))
-        client = BarracksClient("747ae2efa7c0e68fa7dda312aaea2ddeb8bfcffb003c9205b509ae430760cabf", baseUrl: "https://app.barracks.io/api/device/resolve", ignoreSSL:true)
+        client = BarracksClient("", baseUrl: "https://app.barracks.io/api/device/resolve", ignoreSSL:true)
         
     }
     
     func getDevicePackages(obj: AnyObject) {
-        let request = GetDevicePackagesRequest(unitId: version.stringValue, packages:[InstalledPackage(reference: "a.package", version: "2.9.0")], customClientData:[:])
+        let request = GetDevicePackagesRequest(unitId: version.stringValue, packages:[DevicePackage(reference: "a.package", version: "2.9.0")], customClientData:[:])
         let callback = MyGetPackagesCallback()
         callback.parent = self
         client.getDevicePackages(request: request, callback: callback)
@@ -101,11 +106,11 @@ class ViewController: NSViewController {
         let callback = MyDownloadCallback()
         callback.parent = self
         
-        for availablePackage in response.available {
+        for availablePackage in response.availablePackages {
             client.downloadPackage(package: availablePackage, callback: callback)
         }
         
-        for changedPackage in response.changed {
+        for changedPackage in response.changedPackages {
             client.downloadPackage(package: changedPackage, callback: callback)
         }
     }
