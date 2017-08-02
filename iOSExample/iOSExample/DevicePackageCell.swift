@@ -54,4 +54,12 @@ class DevicePackageCell: UICollectionViewCell {
     private func getKbSize(size:UInt64) -> String {
         return "\(size / 1000)Kb"
     }
+    
+    override func prepareForReuse() {
+        self.statusImage.image = UIImage(named:"download.png")
+        self.downloadStatus.isHidden = true
+        self.progressBar.isHidden = true
+        self.progressBar.progress = 1.0
+        
+    }
 }
