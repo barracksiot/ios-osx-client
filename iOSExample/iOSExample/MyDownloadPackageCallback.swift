@@ -8,6 +8,7 @@
 
 import Foundation
 import Barracks
+import UIKit
 
 class MyDownloadPackageCallback: DownloadPackageCallback {
     
