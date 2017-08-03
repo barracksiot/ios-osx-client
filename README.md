@@ -90,19 +90,19 @@ First create a callback by implenting **DownloadPackageCallback** protocol
 
 ```swift
 class MyDownloadCallback : DownloadPackageCallback {
-func onError(_ package: AvailablePackage, error: Error?) {
+func onError(_ package: DownloadablePackage, error: Error?) {
 // Handle any download error here
 }
-func onProgress(_ package: AvailablePackage, progress: UInt) {
+func onProgress(_ package: DownloadablePackage, progress: UInt) {
 // Here is the progress of your download
 }
-func onSuccess(_ package: AvailablePackage, path: String) {
+func onSuccess(_ package: DownloadablePackage, path: String) {
 // On success you got the download path of th package file
 }
 ```
-Then you can Download a package wrapped in **AvailablePackage** or **ChangedPackage** object
+Then you can Download a package wrapped in **DownloadablePackage** object
 ```swift
-barracksClient.downloadPackage(package: anAvailablePackage, callback: MyDownloadCallback())
+barracksClient.downloadPackage(package: aDownloadablePackage, callback: MyDownloadCallback())
 ```
 The **default** path for file is </br>
 ```<NSFileManager.SearchPathDirectory.doccument>/<Your app Bundle ID>/<A random UUID>-<the filename from Barracks>```
@@ -111,7 +111,7 @@ The **default** path for file is </br>
 ```swift
 // To dowload the file to a custom path simply use :
 barracksClient.downloadPackage(
-package: anAvailablePackage, 
+package: aDownloadablePackage, 
 callback: MyDownloadCallback(), 
 destination: "/a/custom/file/path/for/myFile.zip")
 ```
