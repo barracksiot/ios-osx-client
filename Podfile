@@ -5,7 +5,7 @@ use_frameworks!
 
 def sharedPods
     pod 'Alamofire', '~> 4.0.0'
-    pod 'CryptoSwift', '~> 0.6.0'
+    pod 'CryptoSwift', '~> 0.7.0'
 end
 
 target 'Barracks_iOS' do

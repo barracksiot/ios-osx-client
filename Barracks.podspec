@@ -16,7 +16,7 @@ s.source_files = 'Client/Source/*.swift', 'Client/Source/Packages/*.swift'
 s.requires_arc = true
 
 s.dependency 'Alamofire', '~> 4.0.0'
-s.dependency 'CryptoSwift', '~> 0.6.0'
+s.dependency 'CryptoSwift', '~> 0.7.0'
 
 end
 
