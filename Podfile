@@ -5,12 +5,12 @@ use_frameworks!
 
 def sharedPods
     pod 'Alamofire', '~> 4.0.0'
-    pod 'IDZSwiftCommonCrypto'
+    pod 'CryptoSwift', '~> 0.7.0'
 end
 
 target 'Barracks iOS' do
     project 'BarracksClient.xcodeproj'
-    platform :ios, '9.3'
+    platform :ios, '9.0'
     sharedPods
     target 'Barracks iOS Tests' do
         pod 'OHHTTPStubs'
