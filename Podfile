@@ -4,7 +4,7 @@ workspace 'BarracksClient.xcworkspace'
 use_frameworks!
 
 def sharedPods
-    pod 'Alamofire', '~> 4.0.0'
+    pod 'Alamofire', '~> 4.5.0'
     pod 'CryptoSwift', '~> 0.7.0'
 end
 

@@ -103,7 +103,7 @@ extension BarracksClient {
             while(input.hasBytesAvailable) {
                 let size = input.read(UnsafeMutablePointer(mutating: buffer), maxLength:4096)
                 if(size > 0){
-                    try hashObject.update(withBytes: buffer[0...(size-1)]);
+                    let _ = try hashObject.update(withBytes: buffer[0...(size-1)]);
                 }
             }
             let MD5hash = try hashObject.finish().map() { String(format:"%02x", $0) }.reduce("", +)
