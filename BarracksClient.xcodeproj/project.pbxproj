@@ -11,7 +11,6 @@
 		39090CEC1CBEA17C006FA104 /* Barracks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CE11CBEA17C006FA104 /* Barracks.framework */; };
 		39090D5C1CBEC3FE006FA104 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
 		3967297C1CC57D090099D71C /* Barracks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39090CFE1CBEA1A5006FA104 /* Barracks.framework */; };
-		396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3998135B1CC41E2D000AF010 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39BB42AD1CBF071400AAF5C9 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A1891CC578CF004E8725 /* Barracks.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39BB42AC1CBF071400AAF5C9 /* Barracks.podspec */; };
 		39C3A18A1CC578CF004E8725 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 39090D5B1CBEC3FE006FA104 /* Podfile */; };
@@ -82,26 +81,12 @@
 			remoteGlobalIDString = 5B707328E6DCDC2637B70C28F99E11FD;
 			remoteInfo = "CryptoSwift-iOS";
 		};
-		39975F2F1DAEAD8B00F39850 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1A158F1C04F269F975BC06B58F5125AE;
-			remoteInfo = "CryptoSwift-OSX";
-		};
 		399813581CC41E2D000AF010 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 77E8C611A5D0D109B922B6C0B5BE8BE8;
 			remoteInfo = "Alamofire-iOS";
-		};
-		3998135A1CC41E2D000AF010 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B24C24FA56B6D7CC780E7FD54745838B;
-			remoteInfo = "Alamofire-OSX";
 		};
 		399813771CC55A0F000AF010 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -110,13 +95,6 @@
 			remoteGlobalIDString = B22234106C5399FFA9343F0B69B271E7;
 			remoteInfo = "OHHTTPStubs-iOS";
 		};
-		399813791CC55A0F000AF010 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 938E28E0ED06DF610DC3974B5A4CF5E1;
-			remoteInfo = "OHHTTPStubs-OSX";
-		};
 		BF20191D1FA76DFC00BBD2A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
@@ -124,19 +102,40 @@
 			remoteGlobalIDString = 9715AE491DD4DAB0DEF2BC989F21F675;
 			remoteInfo = "Barracks-iOS";
 		};
-		BF20191F1FA76DFC00BBD2A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 87A4CFF912D013724F963A10D61E291F;
-			remoteInfo = "Barracks-OSX";
-		};
 		BF2019211FA76DFC00BBD2A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5DCB08AF651A99D1F70FE91E25AF2D70;
 			remoteInfo = "Pods-iOSExample";
+		};
+		BF2019331FA779B600BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5640B1CCBCA432296507DB55A9295673;
+			remoteInfo = "Alamofire-macOS";
+		};
+		BF2019351FA779B600BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA6B89FB3ED1BAF602397D228D64794A;
+			remoteInfo = "Barracks-macOS";
+		};
+		BF2019371FA779B600BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 820B4603E6BA588D95A39B473F65435F;
+			remoteInfo = "CryptoSwift-macOS";
+		};
+		BF2019391FA779B600BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60C81E6EC698EC395C749354DB7D0A71;
+			remoteInfo = "OHHTTPStubs-macOS";
 		};
 		BF28C1AD1F21287E00427CD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -176,7 +175,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BF3F1D401F224FB900B4F7FD /* Barracks.framework in CopyFiles */,
-				396729931CC5837B0099D71C /* Alamofire.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,13 +344,13 @@
 			isa = PBXGroup;
 			children = (
 				399813591CC41E2D000AF010 /* Alamofire.framework */,
-				3998135B1CC41E2D000AF010 /* Alamofire.framework */,
+				BF2019341FA779B600BBD2A2 /* Alamofire.framework */,
 				BF20191E1FA76DFC00BBD2A2 /* Barracks.framework */,
-				BF2019201FA76DFC00BBD2A2 /* Barracks.framework */,
+				BF2019361FA779B600BBD2A2 /* Barracks.framework */,
 				39975F2E1DAEAD8B00F39850 /* CryptoSwift.framework */,
-				39975F301DAEAD8B00F39850 /* CryptoSwift.framework */,
+				BF2019381FA779B600BBD2A2 /* CryptoSwift.framework */,
 				399813781CC55A0F000AF010 /* OHHTTPStubs.framework */,
-				3998137A1CC55A0F000AF010 /* OHHTTPStubs.framework */,
+				BF20193A1FA779B600BBD2A2 /* OHHTTPStubs.framework */,
 				BF28C1AE1F21287E00427CD0 /* Pods_Barracks_iOS.framework */,
 				BF28C1B01F21287E00427CD0 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework */,
 				BF28C1B21F21287E00427CD0 /* Pods_Barracks_OSX.framework */,
@@ -556,25 +554,11 @@
 			remoteRef = 39975F2D1DAEAD8B00F39850 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		39975F301DAEAD8B00F39850 /* CryptoSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CryptoSwift.framework;
-			remoteRef = 39975F2F1DAEAD8B00F39850 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		399813591CC41E2D000AF010 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
 			remoteRef = 399813581CC41E2D000AF010 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3998135B1CC41E2D000AF010 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 3998135A1CC41E2D000AF010 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		399813781CC55A0F000AF010 /* OHHTTPStubs.framework */ = {
@@ -584,13 +568,6 @@
 			remoteRef = 399813771CC55A0F000AF010 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3998137A1CC55A0F000AF010 /* OHHTTPStubs.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OHHTTPStubs.framework;
-			remoteRef = 399813791CC55A0F000AF010 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		BF20191E1FA76DFC00BBD2A2 /* Barracks.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -598,18 +575,39 @@
 			remoteRef = BF20191D1FA76DFC00BBD2A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF2019201FA76DFC00BBD2A2 /* Barracks.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Barracks.framework;
-			remoteRef = BF20191F1FA76DFC00BBD2A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		BF2019221FA76DFC00BBD2A2 /* Pods_iOSExample.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pods_iOSExample.framework;
 			remoteRef = BF2019211FA76DFC00BBD2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF2019341FA779B600BBD2A2 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = BF2019331FA779B600BBD2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF2019361FA779B600BBD2A2 /* Barracks.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Barracks.framework;
+			remoteRef = BF2019351FA779B600BBD2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF2019381FA779B600BBD2A2 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = BF2019371FA779B600BBD2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF20193A1FA779B600BBD2A2 /* OHHTTPStubs.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OHHTTPStubs.framework;
+			remoteRef = BF2019391FA779B600BBD2A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		BF28C1AE1F21287E00427CD0 /* Pods_Barracks_iOS.framework */ = {

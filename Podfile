@@ -13,7 +13,8 @@ target 'Barracks_iOS' do
     platform :ios, '9.0'
     sharedPods
     target 'Barracks_iOS_Tests' do
-        pod 'OHHTTPStubs'
+        sharedPods
+	pod 'OHHTTPStubs'
         pod 'OHHTTPStubs/Swift'
     end
 end
@@ -23,7 +24,8 @@ target 'Barracks_OSX' do
     platform :osx, '10.11'
     sharedPods
     target 'Barracks_OSX_Tests' do
-        pod 'OHHTTPStubs'
+        sharedPods
+	pod 'OHHTTPStubs'
         pod 'OHHTTPStubs/Swift'
     end
 end
