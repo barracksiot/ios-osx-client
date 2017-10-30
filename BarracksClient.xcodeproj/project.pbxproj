@@ -75,13 +75,6 @@
 			remoteGlobalIDString = CD90AC301E1F943BB53157E71281B2AD;
 			remoteInfo = "Pods-OSXExample";
 		};
-		398FC4D51CE23E1000709F34 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BA8D074269666E05752CA9AAD7D3FEED;
-			remoteInfo = Barracks;
-		};
 		39975F2D1DAEAD8B00F39850 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
@@ -123,6 +116,27 @@
 			proxyType = 2;
 			remoteGlobalIDString = 938E28E0ED06DF610DC3974B5A4CF5E1;
 			remoteInfo = "OHHTTPStubs-OSX";
+		};
+		BF20191D1FA76DFC00BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9715AE491DD4DAB0DEF2BC989F21F675;
+			remoteInfo = "Barracks-iOS";
+		};
+		BF20191F1FA76DFC00BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 87A4CFF912D013724F963A10D61E291F;
+			remoteInfo = "Barracks-OSX";
+		};
+		BF2019211FA76DFC00BBD2A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 399813511CC41E2D000AF010 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DCB08AF651A99D1F70FE91E25AF2D70;
+			remoteInfo = "Pods-iOSExample";
 		};
 		BF28C1AD1F21287E00427CD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -333,7 +347,8 @@
 			children = (
 				399813591CC41E2D000AF010 /* Alamofire.framework */,
 				3998135B1CC41E2D000AF010 /* Alamofire.framework */,
-				398FC4D61CE23E1000709F34 /* Barracks.framework */,
+				BF20191E1FA76DFC00BBD2A2 /* Barracks.framework */,
+				BF2019201FA76DFC00BBD2A2 /* Barracks.framework */,
 				39975F2E1DAEAD8B00F39850 /* CryptoSwift.framework */,
 				39975F301DAEAD8B00F39850 /* CryptoSwift.framework */,
 				399813781CC55A0F000AF010 /* OHHTTPStubs.framework */,
@@ -342,6 +357,7 @@
 				BF28C1B01F21287E00427CD0 /* Pods_Barracks_iOS_Barracks_iOS_Tests.framework */,
 				BF28C1B21F21287E00427CD0 /* Pods_Barracks_OSX.framework */,
 				BF28C1B41F21287E00427CD0 /* Pods_Barracks_OSX_Barracks_OSX_Tests.framework */,
+				BF2019221FA76DFC00BBD2A2 /* Pods_iOSExample.framework */,
 				396729B21CC6DE730099D71C /* Pods_OSXExample.framework */,
 			);
 			name = Products;
@@ -533,13 +549,6 @@
 			remoteRef = 396729B11CC6DE730099D71C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		398FC4D61CE23E1000709F34 /* Barracks.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Barracks.framework;
-			remoteRef = 398FC4D51CE23E1000709F34 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		39975F2E1DAEAD8B00F39850 /* CryptoSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -580,6 +589,27 @@
 			fileType = wrapper.framework;
 			path = OHHTTPStubs.framework;
 			remoteRef = 399813791CC55A0F000AF010 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF20191E1FA76DFC00BBD2A2 /* Barracks.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Barracks.framework;
+			remoteRef = BF20191D1FA76DFC00BBD2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF2019201FA76DFC00BBD2A2 /* Barracks.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Barracks.framework;
+			remoteRef = BF20191F1FA76DFC00BBD2A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF2019221FA76DFC00BBD2A2 /* Pods_iOSExample.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_iOSExample.framework;
+			remoteRef = BF2019211FA76DFC00BBD2A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		BF28C1AE1F21287E00427CD0 /* Pods_Barracks_iOS.framework */ = {
@@ -1073,7 +1103,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B0DAA11B9C732AFBC1DD595 /* Pods-Barracks_iOS-Barracks_iOS_Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1126,7 +1156,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3477CCC18937BB0414CBD99A /* Pods-Barracks_iOS-Barracks_iOS_Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1292,7 +1322,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AADD81B1C1E3F1AF0490166F /* Pods-Barracks_OSX-Barracks_OSX_Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1343,7 +1373,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC6FA8A7151907143BD9461B /* Pods-Barracks_OSX-Barracks_OSX_Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
