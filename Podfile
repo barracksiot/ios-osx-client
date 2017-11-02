@@ -10,7 +10,7 @@ end
 
 target 'Barracks iOS' do
     project 'BarracksClient.xcodeproj'
-    platform :ios, '9.0'
+    platform :ios, '9.3'
     sharedPods
     target 'Barracks iOS Tests' do
         pod 'OHHTTPStubs'

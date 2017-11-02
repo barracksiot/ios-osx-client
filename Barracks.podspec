@@ -8,7 +8,7 @@ s.social_media_url = 'http://twitter.com/barracksiot'
 s.authors = { 'Barracks Solutions' => 'contact@barracks.io' }
 s.source = { :git => 'https://github.com/barracksiot/ios-osx-client.git', :tag => '1.2.0' }
 
-s.ios.deployment_target = '9.0'
+s.ios.deployment_target = '9.3'
 s.osx.deployment_target = '10.11'
 
 s.source_files = 'Client/Source/*.swift'
