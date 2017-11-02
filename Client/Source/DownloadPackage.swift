@@ -81,7 +81,7 @@ extension BarracksClient {
                     callback.onError(response, error:downloadResponse.error)
                     return
                 }
-                print(downloadResponse.response)
+                print(downloadResponse.response ?? "no response")
                 print("Downloaded file to \(localPath!.path)")
                 do {
                     let isHashCorrect = try self.checkMD5(localPath!, hash:response.packageInfo.md5)
@@ -105,7 +105,7 @@ extension BarracksClient {
             while(input.hasBytesAvailable) {
                 let size = input.read(UnsafeMutablePointer(mutating: buffer), maxLength:4096)
                 if(size > 0){
-                    try hashObject.update(withBytes: buffer[0...(size-1)]);
+                    try _ = hashObject.update(withBytes: buffer[0...(size-1)]);
                 }
             }
             let MD5hash = try hashObject.finish().map() { String(format:"%02x", $0) }.reduce("", +)
