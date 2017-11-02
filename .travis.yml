@@ -2,7 +2,7 @@ language: swift
 osx_image: xcode9
 before_install:
 - brew update
-- brew outdated xctool || brew upgrade xctool
+- brew upgrade xctool
 script:
 - xcodebuild -workspace BarracksClient.xcworkspace -scheme Barracks_OSX build-for-testing
 - xctool -workspace BarracksClient.xcworkspace -scheme "Barracks_OSX" run-tests
