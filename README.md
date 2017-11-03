@@ -12,7 +12,7 @@ This SDK help you interact with **Barracks v2** Checkout our [API Doccumentation
 ### CocoaPods
 Add Barracks to your **Podfile**
 ```text
-pod 'Barracks'
+pod 'Barracks', '~> 2.0.0'
 ```
 Then run the following : 
 ```bash
